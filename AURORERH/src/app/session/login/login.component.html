@@ -1,0 +1,97 @@
+<div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
+  <div class="d-none d-lg-block col-lg-9">
+    <div class="slider-light">
+        <div class="slick-slider slick-initialized slick-dotted">
+          <div class="slick-list draggable">
+            <div class="slick-track" style=" width: 3150rem; transform: translate3d(-450px, 0px, 450px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 450px;">
+        </div>
+        <div class="slick-slide slick-cloned" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 450px;">
+          <div>
+            <div style="width: 200%; ">
+                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
+                    <div class="slide-img-bg" style="background-image: url('assets/pexels-nataliya-vaitkevich-7173040.jpg'); ">
+                    </div>
+                    <div class="slider-content">
+               </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+ </div>
+  <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+     <img src="assets\logo.png" style="margin-top: -10rem;" >
+      <h4 class="mb-0">
+          <span class="d-block">
+            Bienvenue,</span>
+          <span>Connectez-vous à votre compte s'il vous plaît.</span></h4>
+
+<br><br>
+      <div>
+          <form class="" [formGroup]="formLogin">
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="position-relative form-group">
+                        <label for="exampleEmail" class="">
+                          Pseudo
+                          </label>
+                        <input name="login" id="" placeholder="pseudo ici..." type="" class="form-control" formControlName="login">
+                        <span *ngIf=" (submitted || formLogin.controls.login.touched) && formLogin.controls.login.errors "   style="color:red">  le Pseudo ou Username est requis  </span>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="position-relative form-group">
+                        <label for="examplePassword" class="">Mot de passe</label><input name="password" id="examplePassword" placeholder="mot de passe ici..." type="password" class="form-control" formControlName="password">
+                        <span *ngIf=" (submitted || formLogin.controls.password.touched) && formLogin.controls.password.errors "   style="color:red">  le mot de passe est requis  </span>
+                      </div>
+                  </div>
+              </div>
+
+              <div >
+              <div class="d-flex align-items-center" style="float: right;">
+                <a href="#" style="margin-right: 1rem; "> Mot de passe oublié ?</a>
+
+  <button (click)="login()"  class="btn btn-primary mr-2 mb-2 block-page-btn-example-2" >
+    <!-- <div class="" *ngIf="isLoading">
+      <div class="loader-wrapper d-flex justify-content-center align-items-center" style="height: 1%; width: 1rem;">
+          <div class="loader">
+              <div class="line-spin-fade-loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+              </div>
+          </div>
+      </div>
+     </div> -->
+    connexion
+   </button>
+
+
+
+<div *ngIf="isLoading" class="body-block-example-2 d-none" style="cursor: default;">
+                              <div class="loader">
+                                  <div class="ball-pulse-sync">
+                                      <div class="bg-primary"></div>
+                                      <div class="bg-primary"></div>
+                                      <div class="bg-primary"></div>
+                                  </div>
+                              </div>
+                          </div>
+
+                  </div>
+              </div>
+          </form>
+
+      </div>
+  </div>
+</div>

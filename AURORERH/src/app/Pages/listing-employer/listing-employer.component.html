@@ -1,0 +1,95 @@
+<div class="row">
+
+  <h3 style="margin-left: 3rem;color: blue;"><b>Liste des Employés</b> </h3>
+  <div class="container-fluid">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a  routerLink="listing-employer" routerLinkActive="router-link-active"  >Employés</a></li>
+        <li class="breadcrumb-item"><a (click)="goTi()" style="color: blue;">Liste des employés </a></li>
+      </ol>
+    </nav>
+  </div>
+  <hr>
+    <div class="col-sm-12">
+        <button (click)="goTo()" style="float: right;  " class="mb-2 mr-2 btn-icon btn btn-success">   <i class="fa-solid fa-user"></i>
+          Ajouter </button>
+          <br>  <br>
+          <div >
+            <label style="margin-top:1.2rem ;"> Montrer
+               <select name="example_length" aria-controls="example" style="width: 5rem;" class="custom-select custom-select-sm form-control form-control-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entrées</label>
+
+              <label style="float: right;"> Recherche:
+                <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
+              </label>
+            </div>
+      <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
+  <thead>
+  <tr role="row">
+    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">poste</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Type de contrat</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Start date: activate to sort column ascending">Date de debut </th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr role="row" class="odd" *ngFor="let employer of employers">
+
+      <td tabindex="0" class="sorting_1">{{employer?.nom}}</td>
+      <td>{{employer?.matricule}}</td>
+      <td>{{employer?.poste}}</td>
+      <td>{{employer?.type_contrat}}</td>
+      <td>{{employer?.date_debut | date: 'dd-MM-yyy'}}</td>
+      <td>
+        <button  (click)="goToViewId(employer)" routerLink="/affich-employer" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+        <button (click)="recupId(employer)" routerLinkActive="router-link-active"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button  (click)="deleteEmployer(employer)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </td>
+  </tr>
+<!-- </tbody>
+  <tfoot  >
+  <tr>
+    <th rowspan="1" colspan="1">Nom</th>
+    <th rowspan="1" colspan="1">Matricule</th>
+    <th rowspan="1" colspan="1">poste</th>
+    <th rowspan="1" colspan="1">type de contrat</th>
+    <th rowspan="1" colspan="1">date de debut</th>
+    <th rowspan="1" colspan="1">Action</th>
+  </tr>
+  </tfoot> -->
+</table>
+<ul class="pagination" style="float: right;">
+  <li class="paginate_button page-item previous disabled" id="example_previous">
+    <a href="#" aria-controls="example" data-dt-idx="0" tabindex="0" class="page-link">
+      Précedent
+    </a>
+  </li>
+  <li class="paginate_button page-item active">
+    <a href="#" aria-controls="example" data-dt-idx="1" tabindex="0" class="page-link">
+      1
+    </a>
+  </li>
+  <li class="paginate_button page-item next disabled" id="example_next">
+    <a href="#" aria-controls="example" data-dt-idx="2" tabindex="0" class="page-link">
+      Suivant
+    </a>
+  </li>
+</ul>
+</div>
+</div>
+<div class="row">
+</div>
+
+

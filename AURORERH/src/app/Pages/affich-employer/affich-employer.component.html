@@ -1,0 +1,215 @@
+<div class="container-fluid"  >
+  <nav aria-label="breadcrumb" >
+    <ol class="breadcrumb" style="width: 91%; " >
+      <li class="breadcrumb-item"><a    >Employés</a></li>
+      <li class="breadcrumb-item"><a (click)="goTi()" style="color: blue;">Liste des employés </a></li>
+      <li class="breadcrumb-item"><a  style="color: blue;"> Détail de {{id?.nom}}</a></li>
+    </ol>
+  </nav>
+</div>
+
+<section style="background-color: #eee; width: 90%;" >
+  <div class="container py-5" style="height: 90%;">
+    <div class="row">
+      <div class="col-lg-4" style="margin-left: 5rem;">
+        <div class="card mb-4"style="height:35%">
+          <div class="card-body text-center" >
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+              <!-- {{id?.photo  }} -->
+            <h5 class="my-3">{{id?.nom}}</h5>
+            <p class="text-muted mb-1">{{id?.poste}}</p>
+            <p class="text-muted mb-4">{{id?.numero}}</p>
+            <div class="d-flex justify-content-center mb-2">
+
+              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0" style="height:30%">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fas fa-globe fa-lg text-warning"></i>
+                <p class="mb-0">https://{{id?.nom}}com</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                <p class="mb-0">{{id?.nom}}.github</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                <p class="mb-0">@{{id?.nom}}.twiter</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                <p class="mb-0">{{id?.nom}}..insta</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                <p class="mb-0">{{id?.nom}}.facebook</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6"  >
+
+        <div class="card mb-4" style="height:100%" >
+          <div class="card-body" >
+
+            <h4 style="text-align: center;"><b>Informations Personnelles </b>  </h4>
+          <hr>
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"> <b>Nom</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.nom}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Prénom</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.prenom}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Numero</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.numero}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Matricule</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.matricule}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Address</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.adresse}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>né le </b></p>
+              </div>
+              <div class="col-sm-6">
+                <h5 >{{id?.date_naissance | date: 'd MMMM yyyy' }}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>à</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.lieu_naissance}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Sexe</b></p>
+              </div>
+              <div class="col-sm-3">
+                <h5 >{{id?.sexe}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Statut Matrimonial</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.statut_matrimoniale}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Nationalite</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.nationalite}}</h5>
+              </div>
+            </div>
+
+            <div class="row"style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Nombre d'enfant</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.nbr_enfant}}</h5>
+              </div>
+            </div>
+
+            <h4 style="text-align: center;"><b>Informations professionnelles</b>  </h4>
+<hr>
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Type de Contrat</b></p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.type_contrat}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Poste</b> </p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.poste}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Profession</b> </p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.profession}}</h5>
+              </div>
+            </div>
+
+            <div class="row"style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"><b>Ville d'exertion</b> </p>
+              </div>
+              <div class="col-sm-5">
+                <h5 >{{id?.ville_exertion}}</h5>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+              <div class="col-sm-5">
+                <p class="mb-0"> <b> Date de début</b></p>
+              </div>
+              <div class="col-sm-6">
+                <h5 >{{id?.date_debut| date:  'd MMMM yyyy'}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

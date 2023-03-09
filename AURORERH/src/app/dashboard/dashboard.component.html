@@ -1,0 +1,118 @@
+
+
+<!-- <form #userForm="ngForm" (ngSubmit)="onSubmitForm(userForm)" style=" margin: 3%;" [formGroup]="form">
+
+  <form   style=" margin: 3%;" [formGroup]="form">
+
+<div style="margin: 2%; ;">
+    <label for=" name" > nom </label>
+    <input type="text" id="name" [(ngModel)]="userName" name="userName" formControlName="nom">
+    <span *ngIf=" (submited || form.controls.nom.touched) && form.controls.nom.errors "   style="color:red">  le nom est requis  </span>
+
+</div>
+
+<div style="margin: 2%;">
+    <label for="surname" > prénom</label>
+    <input type="text" id="surname" [(ngModel)]="userSurname" name="userSurname" formControlName="prenom" >
+</div>
+
+
+<div style="margin-left: 2%; display: flex;">
+    <label for="emailInput" > entre votre email </label>
+    <input type="email" id="emailInput" [(ngModel)]="userEmail" name="userEmail" formControlName="email">
+</div>
+
+<button  (click)="onSave()"  style="margin-left: 2%;"> ok</button>
+</form>
+ -->
+
+ <div class="row">
+  <div class="col-md-6 col-lg-3">
+      <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-primary border-primary card">
+          <div class="widget-chat-wrapper-outer">
+              <div class="widget-chart-content">
+                  <div class="widget-title  " style="color: black;">Total Employer</div>
+                  <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                      <div class="widget-chart-flex align-items-center">
+                          <div class="opacity-8" style="color: black;">
+                              20
+                              <div style="color: black;"> Employés</div>
+                              <small class="opacity-5 "></small>
+                          </div>
+                          <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                <i class="fas fa-user-tie fa-2x"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-warning border-warning card">
+        <div class="widget-chat-wrapper-outer">
+            <div class="widget-chart-content">
+                <div class="widget-title  " style="color: black;">Projets en cour</div>
+                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                    <div class="widget-chart-flex align-items-center">
+                        <div class="opacity-8" style="color: black;">
+                            5
+                            <div style="color: black;"> projets</div>
+                            <small class="opacity-5 "></small>
+                        </div>
+                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                          <i class="fa-solid fa-folder-open fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <div class="col-md-6 col-lg-3">
+      <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-primary border-secondary card">
+          <div class="widget-chat-wrapper-outer">
+              <div class="widget-chart-content">
+                  <div class="widget-title  " style="color: black;">Formations</div>
+                  <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                      <div class="widget-chart-flex align-items-center">
+                          <div class="opacity-8" style="color: black;">
+                              20
+                              <div style="color: black;"> Formations</div>
+                              <small class="opacity-5 "></small>
+                          </div>
+                          <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                            <i class="fa-solid fa-sitemap fa-2x"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-sucess border-danger card">
+        <div class="widget-chat-wrapper-outer">
+            <div class="widget-chart-content">
+                <div class="widget-title  " style="color: black;">Employer en congé</div>
+                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                    <div class="widget-chart-flex align-items-center">
+                        <div class="opacity-8" style="color: black;">
+                            2
+                            <div style="color: black;"> Employés </div>
+                            <small class="opacity-5 "></small>
+                        </div>
+                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                          <i class="fa-solid fa-rocket fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
