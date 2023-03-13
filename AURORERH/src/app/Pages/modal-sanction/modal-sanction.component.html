@@ -15,8 +15,6 @@
                   </div>
               </div>
             </div>
-
-
           <div class="form-row">
             <div class="col-md-6">
               <div class="position-relative form-group card-title">
@@ -71,7 +69,7 @@
               </label>
               <input type="textarea" name="textarea" style=" height: 8rem; width: 100%;" id="message" placeholder="entrer les details de la sanction ..." class="form-control" formControlName="description">
                 <span *ngIf=" (submitted || formSanction.controls.description.touched) && formSanction.controls.description.errors "   style="color:red"> la description est requise</span>
-                
+
               </div>
               </div>
 <div *ngIf="isLoading" class="body-block-example-2 d-none" style="cursor: default;">

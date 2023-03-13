@@ -42,3 +42,12 @@ export const UPDATE_CONGERS = CONGERS + '/update';
 export const DELETE_CONGERS = CONGERS + '/delete';
 export const READ_CONGERS = CONGERS + '/read';
 export const READBYID_CONGERS = CONGERS + '/read';
+
+//les stagiaire
+export const STAGIAIRE = SERVEUR + 'stagiaire';
+export const LIST_STAGIAIRE = STAGIAIRE + '/read';
+export const ADD_STAGIAIRE= STAGIAIRE + '/create';
+export const UPDATE_STAGIAIRE = STAGIAIRE + '/update';
+export const DELETE_STAGIAIRE = STAGIAIRE + '/delete';
+export const READ_STAGIAIRE= STAGIAIRE + '/read';
+export const READBYID_STAGIAIRE = STAGIAIRE + '/read';
