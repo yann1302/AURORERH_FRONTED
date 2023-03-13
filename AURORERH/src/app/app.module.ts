@@ -29,6 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.component';
+import { ModalCongerComponent } from './Pages/modal-conger/modal-conger.component';
 
 
 
@@ -50,6 +51,7 @@ import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.co
     ListingSanctionComponent,
     ModalSanctionComponent,
     ListingCongerComponent,
+    ModalCongerComponent,
   ],
   imports: [
     BrowserModule,

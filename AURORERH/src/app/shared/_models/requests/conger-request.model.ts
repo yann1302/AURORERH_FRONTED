@@ -14,6 +14,8 @@ export class CongerRequestModel{
 
     public  validation: string,
 
+    public statut: String,
+
     public  description: String,
 
     public  id_Employer: number,

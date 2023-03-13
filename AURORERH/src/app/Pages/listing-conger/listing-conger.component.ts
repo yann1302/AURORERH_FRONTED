@@ -4,6 +4,8 @@ import { DELETE_CONGERS, LIST_CONGERS } from 'src/app/shared/_elements/api_const
 import { CongerResponseModel } from 'src/app/shared/_models/responses/conger-response.model';
 import { CongerService } from 'src/app/shared/_services/conger.service';
 import Swal from 'sweetalert2';
+import {MatDialog} from '@angular/material/dialog';
+import { ModalCongerComponent } from '../modal-conger/modal-conger.component';
 
 @Component({
   selector: 'app-listing-conger',
@@ -16,7 +18,8 @@ public congers: CongerResponseModel[] = [];
 
   constructor(
    private router: Router,
-   private congerService: CongerService
+   private congerService: CongerService,
+   public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -63,6 +66,18 @@ public congers: CongerResponseModel[] = [];
           'error'
         )}
     })
+  }
+
+  openDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalCongerComponent, {
+     width: '700px',
+     height: 'auto',
+     data:data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   goTi(){

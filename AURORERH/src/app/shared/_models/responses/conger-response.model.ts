@@ -13,6 +13,8 @@ export class CongerResponseModel{
 
     public  validation: String,
 
+    public statut: String,
+
     public  description: String,
 
     public  date_reprise: Date,
