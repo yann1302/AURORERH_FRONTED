@@ -33,6 +33,7 @@ import { ModalCongerComponent } from './Pages/modal-conger/modal-conger.componen
 import { ListingStagiaireComponent } from './Pages/listing-stagiaire/listing-stagiaire.component';
 import { ModalStagiaireComponent } from './Pages/modal-stagiaire/modal-stagiaire.component';
 import { AffichStagiaireComponent } from './Pages/affich-stagiaire/affich-stagiaire.component';
+import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-professionnelle/listing-note-professionnelle.component';
 
 
 
@@ -58,6 +59,7 @@ import { AffichStagiaireComponent } from './Pages/affich-stagiaire/affich-stagia
     ListingStagiaireComponent,
     ModalStagiaireComponent,
     AffichStagiaireComponent,
+    ListingNoteProfessionnelleComponent,
   ],
   imports: [
     BrowserModule,

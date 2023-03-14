@@ -7,7 +7,7 @@
     </ol>
   </nav>
 </div>
-<div class="main-card mb-3 card" style="height: 60rem;">
+<div class="main-card mb-3 card" style="height: 70rem;">
   <div class="card-body"  >
     <div ><h1 class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); " >Enregistrement des informations  d'un employé</h1></div>
 
@@ -125,28 +125,13 @@
           <h3 class="card-title">Informations professionnelles</h3>
 
           <div class="form-row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="position-relative form-group">
                   <label for="" class="">
                Poste<span style="color: red;">*</span>
                   </label>
                   <input name="" id="" placeholder="" type="" class="form-control" formControlName="poste">
                   <span *ngIf=" (submitted || formEmployer.controls.poste.touched) && formEmployer.controls.poste.errors "   style="color:red">  le poste est requis   </span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="position-relative form-group">
-                  <label for="examplePassword11" class="">
-                   Type de contrat<span style="color: red;">*</span>
-                  </label>
-                  <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="type_contrat" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
-                    <option value=""></option>
-                    <option value="CDI">CDI</option>
-                    <option value="CDD">CDD</option>
-                    <option value="CTT">CTT</option>
-                    <option value="ALTERNANCE">ALTERNANCE</option>
-                  </select>
-                  <span *ngIf=" (submitted || formEmployer.controls.type_contrat.touched) && formEmployer.controls.type_contrat.errors "   style="color:red">  le type de contrat avec l'entreprise est requis est requis   </span>
                 </div>
             </div>
         </div>
@@ -196,6 +181,30 @@
         </div>
     </div>
     </div>
+    <br><br>
+          <h3 class="card-title">Informations Relatifs à la connexion</h3>
+
+    <div class="form-row">
+      <div class="col-md-6">
+          <div class="position-relative form-group">
+            <label for="" class="">
+         pseudo<span style="color: red;">*</span>
+            </label>
+            <input name="" id="" placeholder="" type="" class="form-control" formControlName="username">
+            <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le poste est requis   </span>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="position-relative form-group">
+          <label for="" class="">
+       Mot de passe<span style="color: red;">*</span>
+          </label>
+          <input name="" id="" placeholder="" type="" class="form-control" formControlName="password">
+          <span *ngIf=" (submitted || formEmployer.controls.password.touched) && formEmployer.controls.password.errors "   style="color:red">  le poste est requis   </span>
+        </div>
+    </div>
+  </div>
     <br>
 
     <button style="height: 3rem; width: 15%; float: right;" (click)="addEmployer()  "class="btn btn-success mr-2 mb-2 block-page-btn-example-2">

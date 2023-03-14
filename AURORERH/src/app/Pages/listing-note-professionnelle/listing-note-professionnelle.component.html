@@ -1,0 +1,33 @@
+<h3 style="color: blue;"><b>Notes Professionnelles</b> </h3>
+<div class="container-fluid" >
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a  routerLink="listing-employer" routerLinkActive="router-link-active"  >Notes Professionnelles</a></li>
+      <li class="breadcrumb-item"><a  style="color: blue;">Liste des employés </a></li>
+    </ol>
+  </nav>
+  <button  style="float: right;  " class="mb-2 mr-2 btn-icon btn btn-success">   <i class="fa-solid fa-user"></i>
+    Ajouter </button>
+</div>
+
+
+<div class="card" style="height:21rem" *ngFor="let items of notesProfessionnelles" >
+  <div class="row ">
+    <div class="col-md-7 px-3">
+      <div class="card-block px-6">
+        <h4 class="card-title">{{items?.theme}} </h4>
+        <p class="card-text">
+          {{items?.date_publication | date}}
+        </p>
+        <p class="card-text"> {{items?.description}}</p>
+        <br>
+        <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+      </div>
+    </div>
+    <div class="col-md-5">
+          <div >
+            <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
+          </div>
+    </div>
+  </div>
+</div>

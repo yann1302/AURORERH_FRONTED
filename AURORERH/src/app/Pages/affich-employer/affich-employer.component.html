@@ -12,20 +12,23 @@
   <form method="post">
       <div class="row">
           <div class="col-md-4">
+            <mat-for-field>
               <div class="profile-img">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                  <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> -->
                   <!-- {{id?.photo}} -->
+                  <input matInput >
               </div>
+            </mat-for-field>
           </div>
           <div class="col-md-6">
               <div class="profile-head">
-                          <h5>
-                            {{id?.nom}}
-                          </h5>
-                          <h6>
-                            {{id?.poste}}
-                          </h6>
-                          <p class="proile-rating">Matricule : <span> {{id?.matricule}}</span></p>
+                 <h5>
+                   {{id?.nom}}
+                  </h5>
+                  <h6>
+                    {{id?.poste}}
+                  </h6>
+                    <p class="proile-rating">Matricule : <span> {{id?.matricule}}</span></p>
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
                       <li class="nav-item">
                           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Informations Personelles</a>
@@ -75,7 +78,7 @@
                                       <label>Pseudo</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>  {{id?.user}}</p>
+                                      <p>  {{id?.nom}}</p>
                                   </div>
                               </div>
                               <div class="row">

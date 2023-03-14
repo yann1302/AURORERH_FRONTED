@@ -33,7 +33,7 @@
     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">poste</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Type de contrat</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Ville d'exertion</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Start date: activate to sort column ascending">Date de debut </th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
@@ -44,7 +44,7 @@
       <td tabindex="0" class="sorting_1">{{employer?.nom}}</td>
       <td>{{employer?.matricule}}</td>
       <td>{{employer?.poste}}</td>
-      <td>{{employer?.type_contrat}}</td>
+      <td>{{employer?.ville_exertion}}</td>
       <td>{{employer?.date_debut | date: 'dd-MM-yyy'}}</td>
       <td>
         <button  (click)="goToViewId(employer)" routerLink="/affich-employer" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">

@@ -16,49 +16,50 @@
               </div>
             </div>
 
-
           <div class="form-row">
             <div class="col-md-6">
               <div class="position-relative form-group card-title">
-                <label  class="card-title">type de Sanction<span style="color: red;">*</span></label>
-                <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="type_sanction" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
+                <label  class="card-title">Type<span style="color: red;">*</span></label>
+                <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="type_conger" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                   <option value=""></option>
-                  <option value="Avertissement">Avertissement</option>
-                  <option value="Mise à pied">Mise à pied</option>
-                  <option value="Mutation">Mutation</option>
-                  <option value="Rétrogradation">Rétrogradation</option>
-                  <option value="Licenciement"> Licenciement</option>
+                  <option value="congés payés annuels">congés payés annuels</option>
+                  <option value="Réduction du temps de travail (RTT)">Réduction du temps de travail (RTT)</option>
+                  <option value="Congé maternité">Congé maternité</option>
+                  <option value="Congé de paternité et d'accueil de l'enfant">Congé de paternité et d'accueil de l'enfant</option>
+                  <option value="Congé en cas d'hospitalisation immédiate de l'enfant après sa naissance"> Congé en cas d'hospitalisation immédiate de l'enfant après sa naissance</option>
+                  <option value="Congé d'adoption">Congé d'adoption </option>
+                  <option value="Autorisation d'absence pour garde d'enfant ou enfant malade">Autorisation d'absence pour garde d'enfant ou enfant malade</option>
+                  <option vamue="Décès d'un proche">Décès d'un proche</option>
+                  <option vamue="Permission">Permision</option>
                 </select>
                  <!-- <span *ngIf=" (submitted || formSanction.controls.type_sanction.touched) && formSanction.controls.type_sanction.errors "style="color:red">le type de sanction est requis  </span> -->
               </div>
-          </div>
+              <div class="col-md-6">
+                <div  class="card-title">
+                <label for=""><span style="color: red;">*</span>
+                </label>
+                <input type="" name="" id="message" placeholder="" class="form-control" formControlName="etablissement_conger">
+                  <!-- <span *ngIf=" (submitted || formSanction.controls.description.touched) && formSanction.controls.description.errors "   style="color:red"> la description est requise</span> -->
 
-          <div class="col-md-6">
-            <div class="position-relative form-group card-title">
-              <label  class="card-title">Statut<span style="color: red;">*</span></label>
-              <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
-                <option value=""></option>
-                <option value="en cours">en cours</option>
-                <option value="Terminer">Terminer</option>
-              </select>
-  <!-- <span *ngIf=" (submitted || formSanction.controls.statut.touched) && formSanction.controls.statut.errors "style="color:red">le statut de cette sanction est requis  </span> -->
-            </div>
+                </div>
+                </div>
+          </div>
 
       </div>
       </div>
         <div class="form-row">
           <div class="col-md-6">
           <div class="position-relative form-group card-title">
-            <label  class="card-title" for="">  date de debut de la sanction <span style="color: red;">*</span> </label>
-            <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="debut_sanction">
+            <label  class="card-title" for="">Jour de debut <span style="color: red;">*</span> </label>
+            <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="date_debut">
             <!-- <span *ngIf=" (submitted || formSanction.controls.debut_sanction.touched) && formSanction.controls.debut_sanction.errors "   style="color:red">  cette date est requise  </span> -->
           </div>
           </div>
 
             <div class="col-md-6">
                 <div  class="card-title">
-                  <label class="card-title" for="">date de fin de la sanction<span style="color: red;">*</span></label>
-                  <input type="date" class="form-control"  placeholder="" formControlName="fin_sanction">
+                  <label class="card-title" for="">Jour de fin <span style="color: red;">*</span></label>
+                  <input type="date" class="form-control"  placeholder="" formControlName="date_fin">
                   <!-- <span *ngIf=" (submitted || formSanction.controls.fin_sanction.touched) && formSanction.controls.fin_sanction.errors "   style="color:red">  cette date est requise  </span> -->
                 </div>
 

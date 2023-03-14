@@ -67,8 +67,10 @@ export class AjoutEmployerComponent implements OnInit {
         profession:[data ? data.profession: '', Validators.required],
         sexe:[data ? data.sexe: ''],
         statut_matrimoniale:[data ? data.statut_matrimoniale: ''],
-        type_contrat:[data ? data.type_contrat: '', Validators.required],
         ville_exertion:[data ? data.ville_exertion: '', Validators.required],
+        type_contrat:[data ? data.type_contrat: ''],
+        username:[data ? data.username: '', Validators.required],
+        password:[data ? data.password: '', Validators.required]
 
     });
 }
@@ -83,25 +85,27 @@ export class AjoutEmployerComponent implements OnInit {
     console.log( 'fb',this.fb)
     let dto;
     dto = new EmployerRequestModel(
+      this.f.id.value,
+      this.f.nom.value,
+      this.f.prenom.value,
+      this.f.photo.value,
+      this.f.date_naissance.value,
+      this.f.lieu_naissance.value,
+      this.f.statut_matrimoniale.value,
       this.f.adresse.value,
+      this.f.numero.value,
+      this.f.type_contrat.value,
       this.f.date_debut.value,
       this.f.date_fin.value,
-      this.f.date_naissance.value,
-      this.f.id.value,
-      this.f.lieu_naissance.value,
-      this.f.matricule.value,
+      this.f.ville_exertion.value,
       this.f.nationalite.value,
-      this.f.nbr_enfant.value,
-      this.f.nom.value,
-      this.f.numero.value,
-      this.f.photo.value,
-      this.f.poste.value,
-      this.f.prenom.value,
-      this.f.profession.value,
+      this.f.matricule.value,
       this.f.sexe.value,
-      this.f.statut_matrimoniale.value,
-      this.f.type_contrat.value,
-      this.f.ville_exertion.value
+      this.f.nbr_enfant.value,
+      this.f.profession.value,
+      this.f.poste.value,
+      this.f.username.value,
+      this.f.password.value
       )
       console.log('avant', dto)
     this.employerService.post(ADD_EMPLOYER,dto )

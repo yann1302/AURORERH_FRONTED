@@ -20,7 +20,9 @@ export class EmployerReponseModel{
   public  sexe: string,
   public  statut_matrimoniale: string,
   public  type_contrat: string,
-  public  ville_exertion: string
+  public  ville_exertion: string,
+  public  username:String,
+  public  password:String
 
   )
   {

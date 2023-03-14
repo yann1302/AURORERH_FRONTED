@@ -10,6 +10,7 @@ import { AjoutEmployerComponent } from './Pages/ajout-employer/ajout-employer.co
 import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.component';
 import { ListingContratComponent } from './Pages/listing-contrat/listing-contrat.component';
 import { ListingEmployerComponent } from './Pages/listing-employer/listing-employer.component';
+import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-professionnelle/listing-note-professionnelle.component';
 import { ListingSanctionComponent } from './Pages/listing-sanction/listing-sanction.component';
 import { ListingStagiaireComponent } from './Pages/listing-stagiaire/listing-stagiaire.component';
 import { LoginComponent } from './session/login/login.component';
@@ -20,23 +21,26 @@ const routes: Routes = [
 {
   path:'', component:MainComponent, canActivate: [UserGuardService],
   children:[
+    //employés
     {path:'', component:DashboardComponent},
     {path:'listing-employer', component:ListingEmployerComponent },
     {path: 'ajout-employer', component:AjoutEmployerComponent},
     {path: 'ajout-employer/:id', component:AjoutEmployerComponent},
     {path: 'affich-employer/:id',component:AffichEmployerComponent},
-
+    //contrats
     {path: 'listing-contrat', component:ListingContratComponent},
     {path: 'ajout-contrat', component:AjoutContratComponent},
     {path: 'affich-contrat/:id', component:AffichContratComponent},
     {path: 'ajout-contrat/:id', component:AjoutContratComponent},
-
+    //sanctions
     {path: 'listing-sanction', component:ListingSanctionComponent},
-
+    //conger
     {path: 'listing-conger', component:ListingCongerComponent},
-
+    //stagiaire
     {path:'listing-stagiaire', component:ListingStagiaireComponent},
-    {path:'affich-stagiaire/:id', component:AffichStagiaireComponent}
+    {path:'affich-stagiaire/:id', component:AffichStagiaireComponent},
+    //noteProfessionnelle
+    {path:'listing-noteProfessionelle', component:ListingNoteProfessionnelleComponent}
   ]
 },
 

@@ -55,6 +55,8 @@ editContrat(id:number){
 
 public initFormContrat(data: any){
   this.formContrat = this.fb.group({
+    nom:[data ? data.nom: ''],
+    prenom:[data ? data.prenom: ''],
     lieu_recrutememnt:[data ? data.lieu_recrutememnt: ''],
     date_embauche:[data ? data.date_embauche: ''],
     periode_essaie:[data ? data.periode_essaie: ''],
