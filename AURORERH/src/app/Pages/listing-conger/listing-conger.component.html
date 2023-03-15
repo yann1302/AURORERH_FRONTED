@@ -11,7 +11,7 @@
   <hr>
     <div class="col-sm-12">
         <button style="float: right; " (click)="openDialog(null)" class="mb-2 mr-2 btn-icon btn btn-success">  <i class="fa-solid fa-plus"></i>
-          Ajouter  </button>
+          Demander  </button>
           <br>  <br>
           <div >
           <label style="margin-top:1.2rem ;"> Montrer
@@ -49,7 +49,7 @@
         <button  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
           <i class="fa-solid fa-eye"></i>
         </button>
-        <button   class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+        <button  (click)="openDialog(conger)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
           <i class="fa-solid fa-pen"></i>
         </button>
         <button (click)="deleteConger(conger)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">

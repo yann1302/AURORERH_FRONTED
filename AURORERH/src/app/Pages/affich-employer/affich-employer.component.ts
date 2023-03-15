@@ -11,7 +11,7 @@ import { EmployerService } from 'src/app/shared/_services/employerService';
 })
 export class AffichEmployerComponent implements OnInit {
   public id!: any;
-
+  public photo!: any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -27,9 +27,11 @@ export class AffichEmployerComponent implements OnInit {
   viewEmployer(id:number){
     this.employerService.get(`${READBYID_EMPLOYER}/${id}`)
     .then((response:any)=>{
-      console.log('response', response)
-      this.id = response.data
-      console.log( 'test', this.id)
+      console.log('response', response);
+      console.log('photo', response.data.photo);
+      this.photo = response.data.photo;
+      this.id = response.data;
+      console.log( 'test', this.id);
     });
   }
 

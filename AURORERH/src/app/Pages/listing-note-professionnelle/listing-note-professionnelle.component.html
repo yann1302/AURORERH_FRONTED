@@ -1,33 +1,54 @@
+<section style="width:91%">
 <h3 style="color: blue;"><b>Notes Professionnelles</b> </h3>
-<div class="container-fluid" >
+<div class="" >
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a  routerLink="listing-employer" routerLinkActive="router-link-active"  >Notes Professionnelles</a></li>
-      <li class="breadcrumb-item"><a  style="color: blue;">Liste des employés </a></li>
+      <li class="breadcrumb-item"><a  style="color: blue;">Liste Notes Professionnelles </a></li>
     </ol>
   </nav>
-  <button  style="float: right;  " class="mb-2 mr-2 btn-icon btn btn-success">   <i class="fa-solid fa-user"></i>
+  <button style="float: right;" (click)="openDialog(null)" class="mb-2 mr-2 btn-icon btn btn-success">   <i class="fa-solid fa-user"></i>
     Ajouter </button>
 </div>
+</section>
 
 
-<div class="card" style="height:21rem" *ngFor="let items of notesProfessionnelles" >
+<div class="card" style="height:16rem" *ngFor="let items of notesProfessionnelles" >
   <div class="row ">
     <div class="col-md-7 px-3">
       <div class="card-block px-6">
+        <div class="btn-group " style="float:right; height:1rem ">
+          <button type="button" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="fas fa-ellipsis-h"></i></button>
+          <div class="dropdown-menu-right  dropdown-menu" ><h6 tabindex="-1" style="margin-left:4rem" class="dropdown-header">Actions</h6>
+            <button style="margin-left:3rem" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button (click)="deleteNP(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+              <div class="p-3 text-right">
+              </div>
+          </div>
+      </div>
         <h4 class="card-title">{{items?.theme}} </h4>
+
         <p class="card-text">
-          {{items?.date_publication | date}}
+          Mise en ligne le {{items?.date_publication | date: 'dd/MM/yy, à HH:mm' }}
         </p>
         <p class="card-text"> {{items?.description}}</p>
         <br>
-        <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+
       </div>
     </div>
     <div class="col-md-5">
           <div >
-            <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
+            <img style ="width:100%" src="https://picsum.photos/450/300?image=1072" alt="">
           </div>
     </div>
   </div>
 </div>
+<br>
+

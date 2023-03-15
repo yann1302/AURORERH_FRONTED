@@ -34,7 +34,6 @@ public congers: CongerResponseModel[] = [];
     )
   }
 
-
   deleteConger(item: any){
     Swal.fire({
       title: 'Êtes-vous sure?',

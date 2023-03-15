@@ -7,6 +7,7 @@ import { EmployerRequestModel } from 'src/app/shared/_models/requests/employer-r
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { EmployerService } from 'src/app/shared/_services/employerService';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ajout-employer',
@@ -21,7 +22,7 @@ export class AjoutEmployerComponent implements OnInit {
   public submitted!: boolean;
   public isLoading!: boolean;
   public id!: any;
-
+ 
 
   constructor(
     private employerService: EmployerService,
@@ -84,6 +85,7 @@ export class AjoutEmployerComponent implements OnInit {
     console.log('f',this.f)
     console.log( 'fb',this.fb)
     let dto;
+    console.log('photo', this.f.photo.value);
     dto = new EmployerRequestModel(
       this.f.id.value,
       this.f.nom.value,
@@ -123,9 +125,8 @@ export class AjoutEmployerComponent implements OnInit {
       this.isLoginFailed = true;
   })
 }
-
-
 goTi(){
   this.router.navigate(['/listing-employer'])
 }
+
 }

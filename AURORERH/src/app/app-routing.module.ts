@@ -27,20 +27,26 @@ const routes: Routes = [
     {path: 'ajout-employer', component:AjoutEmployerComponent},
     {path: 'ajout-employer/:id', component:AjoutEmployerComponent},
     {path: 'affich-employer/:id',component:AffichEmployerComponent},
+
     //contrats
     {path: 'listing-contrat', component:ListingContratComponent},
     {path: 'ajout-contrat', component:AjoutContratComponent},
     {path: 'affich-contrat/:id', component:AffichContratComponent},
     {path: 'ajout-contrat/:id', component:AjoutContratComponent},
+
     //sanctions
     {path: 'listing-sanction', component:ListingSanctionComponent},
+
     //conger
     {path: 'listing-conger', component:ListingCongerComponent},
+
     //stagiaire
     {path:'listing-stagiaire', component:ListingStagiaireComponent},
     {path:'affich-stagiaire/:id', component:AffichStagiaireComponent},
+
     //noteProfessionnelle
-    {path:'listing-noteProfessionelle', component:ListingNoteProfessionnelleComponent}
+    {path:'listing-noteProfessionelle', component:ListingNoteProfessionnelleComponent},
+
   ]
 },
 

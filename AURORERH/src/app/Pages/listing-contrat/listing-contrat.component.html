@@ -45,7 +45,7 @@
       <td>{{contrat?.type_contrat}}</td>
       <td>{{contrat?.poste}}</td>
       <td>{{contrat?.date_embauche | date: 'dd/MM/yyyy' }}</td>
-      <td class="badge badge-warning">{{contrat?.statut}}</td>
+      <td >{{contrat?.statut}}</td>
       <td>{{contrat?.salaire_brut}} FCFA</td>
       <td>
         <button  (click)="goToViewId(contrat)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
