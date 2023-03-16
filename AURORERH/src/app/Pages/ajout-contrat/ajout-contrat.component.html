@@ -142,13 +142,34 @@
                 <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                   <option value=""></option>
                   <option  value="VALIDER">Valider</option>
-                  <option class="badge badge-warning" value="EN COURS">En Etude</option>
+                  <option  value="EN EXAMIN">En Examin</option>
                   <option value="SUSPENDU">Supendu</option>
                 </select>
                 <!-- <span *ngIf=" (submitted || formContrat.controls.statut.touched) && formContrat.controls.statut.errors " style="color:red">  le salaire est requis  </span> -->
               </div>
           </div>
         </div>
+        <div class="form-row">
+          <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="" class="">
+                  Liste des Diplomes<span style="color: red;">*</span>
+                </label>
+                <textarea rows="1" class="form-control autosize-input" style="height: 37px;" formControlName="liste_diplo"></textarea>
+                <!-- <span *ngIf=" (submitted || formContrat.controls.salaire_brut.touched) && formContrat.controls.salaire_brut.errors " style="color:red">  le salaire est requis  </span> -->
+              </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="position-relative form-group">
+              <label for="" class="">
+                Documents liés  <span style="color: red;">*</span>
+              </label>
+              <input type="file" class="form-control" formControlName="document">
+              <!-- <span *ngIf=" (submitted || formContrat.controls.statut.touched) && formContrat.controls.statut.errors " style="color:red">  le salaire est requis  </span> -->
+            </div>
+        </div>
+      </div>
         <br>
     <button style="height: 3rem; width: 15%; float: right;  " (click)=" addContrat()" class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement

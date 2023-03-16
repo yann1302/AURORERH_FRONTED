@@ -35,6 +35,7 @@ import { ModalStagiaireComponent } from './Pages/modal-stagiaire/modal-stagiaire
 import { AffichStagiaireComponent } from './Pages/affich-stagiaire/affich-stagiaire.component';
 import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-professionnelle/listing-note-professionnelle.component';
 import { ModalNoteProfessionelleComponent } from './Pages/modal-note-professionelle/modal-note-professionelle.component';
+import { ModalAffichCongerComponent } from './Pages/modal-affich-conger/modal-affich-conger.component';
 
 
 
@@ -62,6 +63,7 @@ import { ModalNoteProfessionelleComponent } from './Pages/modal-note-professione
     AffichStagiaireComponent,
     ListingNoteProfessionnelleComponent,
     ModalNoteProfessionelleComponent,
+    ModalAffichCongerComponent,
   ],
   imports: [
     BrowserModule,

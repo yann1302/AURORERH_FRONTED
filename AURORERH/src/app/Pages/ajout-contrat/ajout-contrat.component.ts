@@ -68,7 +68,9 @@ public initFormContrat(data: any){
     salaire_brut:[data ? data.salaire_brut: ''],
     etat_civil:[data ? data.etat_civil: ''],
     statut:[data ? data.statut: ''],
+    liste_diplo:[data ? data.liste_diplo: ''],
     id_Employer:[data ? data.id_Employer: ''],
+    document:[data ? data.document: ''],
     id:[data ? data.id: null ],
   })
 }
@@ -99,6 +101,8 @@ get f() { return this.formContrat.controls; }
       this.f.salaire_brut.value,
       this.f.etat_civil.value,
       this.f.statut.value,
+      this.f.liste_diplo.value,
+      this.f.document.value,
       this.f.id_Employer.value
       )
       console.log('avant', dto)

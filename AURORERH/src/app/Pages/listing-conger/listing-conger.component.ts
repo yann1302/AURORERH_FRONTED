@@ -79,6 +79,20 @@ public congers: CongerResponseModel[] = [];
     });
   }
 
+  openDialogView(data: any) {
+    const dialogRef = this.dialog.open(ModalCongerComponent , {
+     width: '700px',
+     height: 'auto',
+      disableClose: true,
+     data:data
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   goTi(){
     this.router.navigate(['/listing-contrat'])
   }

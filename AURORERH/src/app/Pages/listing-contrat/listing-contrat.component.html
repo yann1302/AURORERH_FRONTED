@@ -45,7 +45,12 @@
       <td>{{contrat?.type_contrat}}</td>
       <td>{{contrat?.poste}}</td>
       <td>{{contrat?.date_embauche | date: 'dd/MM/yyyy' }}</td>
-      <td >{{contrat?.statut}}</td>
+      <td style="text-align: center;"
+        ><div style="display: inline-block; vertical-align: middle;" [ngClass]="{
+          'valider': contrat?.statut == 'VALIDER',
+          'suspendu': contrat?.statut == 'SUSPENDU',
+          'examin': contrat?.statut == 'EN EXAMINS'
+        }" >{{contrat?.statut}}</div></td>
       <td>{{contrat?.salaire_brut}} FCFA</td>
       <td>
         <button  (click)="goToViewId(contrat)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">

@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ADD_SANCTIONS, LIST_EMPLOYERS, LIST_SANCTIONS, READBYID_SANCTIONS } from 'src/app/shared/_elements/api_constante';
 import { SanctionRequestModel } from 'src/app/shared/_models/requests/sanction-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
@@ -37,35 +38,35 @@ export class ModalSanctionComponent implements OnInit {
     private dialogRef: MatDialogRef<ModalSanctionComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-
+    console.log('data1', this.data)
   }
 
   ngOnInit(): void {
-    this.initFormSanction(null);
+    this.initFormSanction();
     this.getEmployer();
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-    this.editSanction(this.id);
-    console.log('data', this.data)
+    // this.editSanction(this.id);
+    // console.log('data', this.data)
   }
 
-  editSanction(id:number){
-    this.sanctionService.get(`${READBYID_SANCTIONS}/${id}`)
-    .then((response:any)=>{
-      console.log('response', response)
-      this.initFormSanction(response.data)
-    });
-  }
+  // editSanction(id:number){
+  //   this.sanctionService.get(`${READBYID_SANCTIONS}/${id}`)
+  //   .then((response:any)=>{
+  //     console.log('response', response)
+  //     this.initFormSanction(response.data)
+  //   });
+  // }
 
-  public initFormSanction(data: any){
+  public initFormSanction(){
     this.formSanction =this.fb.group({
-    type_sanction:[data ? data.type_sanction: '', Validators.required],
-    debut_sanction:[data ? data.debut_sanction: '', Validators.required],
-    fin_sanction:[data ? data.fin_sanction: '', Validators.required],
-    description:[data ? data.description: '', Validators.required],
-    statut:[data ? data.statut: '', Validators.required],
-    id_Employer:[data ? data.id_Employer: '', Validators.required],
-    id:[data ? data.id: null ],
+    type_sanction:[this.data ? this.data.type_sanction: '', Validators.required],
+    debut_sanction:[this.data ? moment(this.data.debut_sanction, 'yyyy-MM-dd'): moment(), Validators.required],
+    fin_sanction:[this.data ?  moment(this.data.fin_sanction, 'yyyy-MM-dd'): moment(), Validators.required],
+    description:[this.data ? this.data.description: '', Validators.required],
+    statut:[this.data ? this.data.statut: '', Validators.required],
+    id_Employer:[this.data ? this.data.employerResponseDTO.id: '', Validators.required],
+    id:[this.data ? this.data.id: null ],
     });
   }
 

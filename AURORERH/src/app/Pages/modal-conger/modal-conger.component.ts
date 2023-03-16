@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ADD_CONGERS, LIST_CONGERS, LIST_EMPLOYERS } from 'src/app/shared/_elements/api_constante';
 import { CongerRequestModel } from 'src/app/shared/_models/requests/conger-request.model';
 import { CongerResponseModel } from 'src/app/shared/_models/responses/conger-response.model';
@@ -34,28 +35,31 @@ export class ModalCongerComponent implements OnInit {
     private notif: NotificationService,
     private employerService: EmployerService,
     private dialogRef: MatDialogRef<ModalCongerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
 
-  ) { }
+
+  ) {
+    console.log('data1', this.data)
+  }
 
   ngOnInit(): void {
     this.getEmployer();
-    this.initFormConger(null);
-    this.getConger()
+    this.initFormConger();
+
   }
 
-  public initFormConger(data: any){
+  public initFormConger(){
     this.formConger =this.fb.group({
-    type_conger:[data ? data.type_conger: '',Validators.required],
-    date_debut:[data ? data.debut_conger: '',Validators.required],
-    date_fin:[data ? data.fin_conger: '',Validators.required],
-    date_reprise:[data ? data.date_reprise: '',Validators.required],
-    etablissement_conger:[data ? data.etablissement_conger: '',Validators.required],
-    validation:[data ? data.validation: 'en attente'],
-    description:[data ? data.description: '',Validators.required],
-    statut:[data ? data.statut: ''],
-    id_Employer:[data ? data.id_Employer: '',Validators.required],
-    id:[data ? data.id: null ],
+    type_conger:[this.data ? this.data.type_conger: '',Validators.required],
+    date_debut:[this.data ? moment(this.data.debut_conger, '0:yyyy-MM-dd') : '',Validators.required],
+    date_fin:[this.data ? this.data.fin_conger: '',Validators.required],
+    date_reprise:[this.data ? this.data.date_reprise: '',Validators.required],
+    etablissement_conger:[this.data ? this.data.etablissement_conger: '',Validators.required],
+    validation:[this.data ? this.data.validation: 'en attente'],
+    description:[this.data ? this.data.description: '',Validators.required],
+    statut:[this.data ? this.data.statut: ''],
+    id_Employer:[this.data ? this.data.employerResponseDTO.id: '',Validators.required],
+    id:[this.data ? this.data.id: null ],
     });
   }
 

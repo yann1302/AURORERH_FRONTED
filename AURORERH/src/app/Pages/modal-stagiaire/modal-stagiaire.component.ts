@@ -31,29 +31,29 @@ export class ModalStagiaireComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initFormStagiaire(null)
+    this.initFormStagiaire()
   }
 
-  public initFormStagiaire(data: any){
+  public initFormStagiaire(){
     this.formStagiaire = this.fb.group({
-    id:[data ? data.id: null ],
-    nom:[data ? data.nom: '', Validators.required ],
-    prenom:[data ? data.prenom: '' ],
-    photo:[data ? data.photo: '' ],
-    date_naissance:[data ? data.date_naissance: '' ],
-    lieu_naissance:[data ? data.lieu_naissance: '' ],
-    statut_matrimoniale:[data ? data.statut_matrimoniale: '' ],
-    adresse:[data ? data.adresse: '' ],
-    numero:[data ? data.numero: '' ],
-    ecole:[data ? data.ecole: '' ],
-    date_debut:[data ? data.date_debut: '' ],
-    date_fin:[data ? data.date_fin: '' ],
-    annee_academique:[data ? data.annee_academique: '', Validators.required  ],
-    nationalite:[data ? data.nationalite: '' ],
-    matricule:[data ? data.matricule: '' , Validators.required],
-    sexe:[data ? data.sexe: '' ],
-    departement:[data ? data.departement: '', Validators.required ],
-    duree:[data ? data.duree: '', Validators.required ],
+    id:[this.data ? this.data.id: null ],
+    nom:[this.data ? this.data.nom: '', Validators.required ],
+    prenom:[this.data ? this.data.prenom: '' ],
+    photo:[this.data ? this.data.photo: '' ],
+    date_naissance:[this.data ? this.data.date_naissance: '' ],
+    lieu_naissance:[this.data ? this.data.lieu_naissance: '' ],
+    statut_matrimoniale:[this.data ? this.data.statut_matrimoniale: '' ],
+    adresse:[this.data ? this.data.adresse: '' ],
+    numero:[this.data ? this.data.numero: '' ],
+    ecole:[this.data ? this.data.ecole: '' ],
+    date_debut:[this.data ? this.data.date_debut: '' ],
+    date_fin:[this.data ? this.data.date_fin: '' ],
+    annee_academique:[this.data ? this.data.annee_academique: '', Validators.required  ],
+    nationalite:[this.data ? this.data.nationalite: '' ],
+    matricule:[this.data ? this.data.matricule: '' , Validators.required],
+    sexe:[this.data ? this.data.sexe: '' ],
+    departement:[this.data ? this.data.departement: '', Validators.required ],
+    duree:[this.data ? this.data.duree: '', Validators.required ],
 
     });
   }

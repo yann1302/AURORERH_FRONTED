@@ -15,8 +15,6 @@ export class AffichContratComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private contartService: ContratService,
-
-
   ) { }
 
   ngOnInit(): void {
@@ -28,11 +26,20 @@ export class AffichContratComponent implements OnInit {
   viewContrat(id:number){
     this.contartService.get(`${READBYID_CONTRATS}/${id}`)
     .then((response:any)=>{
-      console.log('response', response)
-      this.id = response.data
-      console.log( 'test', this.id)
+      console.log('response', response);
+      this.id = response.data;
+      console.log( 'test', this.id);
     });
   }
 
 
+downloadMyFile(){
+    const link = document.createElement('a');
+     link.setAttribute('target', '_blank');
+     link.setAttribute('href', 'abc.net/files/test.ino');
+    link.setAttribute('download', `contrat.zip`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+}
 }

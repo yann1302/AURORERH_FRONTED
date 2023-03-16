@@ -47,8 +47,8 @@
         <div class="form-row">
           <div class="col-md-6">
           <div class="position-relative form-group card-title">
-            <label  class="card-title" for="">  date de debut de la sanction <span style="color: red;">*</span> </label>
-            <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="debut_sanction">
+            <label class="card-title">  date de debut de la sanction <span style="color: red;">*</span> </label>
+            <input type="date" class="form-control" formControlName="debut_sanction">
             <span *ngIf=" (submitted || formSanction.controls.debut_sanction.touched) && formSanction.controls.debut_sanction.errors "   style="color:red">  cette date est requise  </span>
           </div>
           </div>
