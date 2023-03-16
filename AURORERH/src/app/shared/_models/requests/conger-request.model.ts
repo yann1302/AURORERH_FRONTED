@@ -9,6 +9,7 @@ export class CongerRequestModel{
     public  validation: string,
     public statut: String,
     public  description: String,
+    public jours:number,
     public  id_Employer: number,
   )
 {}

@@ -1,4 +1,5 @@
-<div class="container-fluid"  >
+
+<div  >
   <nav aria-label="breadcrumb" >
     <ol class="breadcrumb" style="width: 100%; " >
       <li class="breadcrumb-item"><a    >Stagiaires</a></li>
@@ -7,7 +8,6 @@
     </ol>
   </nav>
 </div>
-
 <div class="container emp-profile">
   <form method="post">
       <div class="row">
@@ -150,49 +150,50 @@
                               <p>{{id?.sexe }}</p>
                           </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                            <label>Nombre d'enfant</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{id?.nbr_enfant }}</p>
-                        </div>
-                    </div>
+
 
                   </div>
                   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                               <div class="row">
                                   <div class="col-md-6">
-                                      <label>poste</label>
+                                      <label>Année academique</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{id?.poste }}</p>
+                                      <p>{{id?.annee_academique }}</p>
                                   </div>
                               </div>
                               <div class="row">
                                   <div class="col-md-6">
-                                      <label>Profession</label>
+                                      <label>Ecole</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{id?.profession}}</p>
+                                      <p>{{id?.ecole}}</p>
                                   </div>
                               </div>
                               <div class="row">
                                   <div class="col-md-6">
-                                      <label>Type de Contrat</label>
+                                      <label>Département</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{id?.type_contrat}}</p>
+                                      <p>{{id?.departement}}</p>
                                   </div>
                               </div>
                               <div class="row">
                                   <div class="col-md-6">
-                                      <label>Date de debut </label>
+                                      <label>Duree </label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{id?.date_debut | date}}</p>
+                                      <p>{{id?.duree}}</p>
                                   </div>
                               </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <label>Date de debut</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{id?.date_debut | date}}</p>
+                                </div>
+                            </div>
                               <div class="row">
                                   <div class="col-md-6">
                                       <label>Date de fin</label>

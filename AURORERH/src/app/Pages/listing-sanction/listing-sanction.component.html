@@ -29,22 +29,28 @@
       <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
   <thead>
   <tr role="row">
-    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
+    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Date de debut</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Date de fin</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">type de sanction </th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Statut</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
   </thead>
   <tbody>
   <tr role="row" class="odd" *ngFor="let sanction of sanctions ">
 
-      <td tabindex="0" class="sorting_1">{{sanction?.employerResponseDTO?.nom}}</td>
+      <td tabindex="0" class="sorting_1">{{sanction?.employerResponseDTO?.nom}} {{sanction?.employerResponseDTO?.prenom}}</td>
       <td>{{sanction?.debut_sanction | date: 'dd-MM-yyy' }}</td>
       <td>{{sanction?.fin_sanction | date: 'dd-MM-yyy' }}</td>
       <td>{{sanction?.type_sanction}}</td>
+      <td><div style="display: inline-block; vertical-align: middle;" [ngClass]="{
+        'valider': sanction?.statut == 'EN COURS',
+        'suspendu': sanction?.statut == 'TERMINER',
+        'examin': sanction?.statut == 'EN EXAMINS'
+      }" >{{sanction?.statut}}</div></td>
       <td>
-        <button  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+        <button (click)="openDialogView(sanction)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
           <i class="fa-solid fa-eye"></i>
         </button>
         <button (click)="openDialog(sanction)" routerLinkActive="router-link-active"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">

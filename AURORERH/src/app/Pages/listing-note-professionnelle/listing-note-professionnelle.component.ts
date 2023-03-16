@@ -59,7 +59,7 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
       else {
         Swal.fire(
           'Annulé!',
-          'sanction non supprimé.',
+          'note non supprimé.',
           'error'
         )}
     })
@@ -68,7 +68,8 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalNoteProfessionelleComponent, {
      width: '700px',
      height: 'auto',
-     data:data
+     data:data,
+     disableClose:true
     });
 
     dialogRef.afterClosed().subscribe(result => {

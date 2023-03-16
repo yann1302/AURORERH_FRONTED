@@ -5,6 +5,9 @@ import { environment } from 'src/environments/environment';
 //le serveur
 export const SERVEUR = `${environment.apiUrl}`;
 
+//authentification
+export const AUTH = SERVEUR + 'auth/login';
+
 //les employés
 export const EMPLOYERS = SERVEUR + 'employer';
 export const LIST_EMPLOYERS = EMPLOYERS + '/read';
@@ -14,7 +17,6 @@ export const DELETE_EMPLOYER = EMPLOYERS + '/delete';
 export const READ_EMPLOYER = EMPLOYERS + '/read';
 export const READBYID_EMPLOYER = EMPLOYERS + '/read';
 
-export const AUTH = SERVEUR + 'auth/login';
 
 //les contrats
 export const CONTRATS = SERVEUR + 'contrat';

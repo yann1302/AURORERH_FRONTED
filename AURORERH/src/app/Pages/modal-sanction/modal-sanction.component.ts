@@ -61,8 +61,8 @@ export class ModalSanctionComponent implements OnInit {
   public initFormSanction(){
     this.formSanction =this.fb.group({
     type_sanction:[this.data ? this.data.type_sanction: '', Validators.required],
-    debut_sanction:[this.data ? moment(this.data.debut_sanction, 'yyyy-MM-dd'): moment(), Validators.required],
-    fin_sanction:[this.data ?  moment(this.data.fin_sanction, 'yyyy-MM-dd'): moment(), Validators.required],
+    debut_sanction:[this.data ? moment(this.data.debut_sanction, 'yyyy-MM-dd'):  Validators.required],
+    fin_sanction:[this.data ?  moment(this.data.fin_sanction, 'yyyy-MM-dd'):  Validators.required],
     description:[this.data ? this.data.description: '', Validators.required],
     statut:[this.data ? this.data.statut: '', Validators.required],
     id_Employer:[this.data ? this.data.employerResponseDTO.id: '', Validators.required],

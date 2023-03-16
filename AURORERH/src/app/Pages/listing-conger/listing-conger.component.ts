@@ -6,6 +6,7 @@ import { CongerService } from 'src/app/shared/_services/conger.service';
 import Swal from 'sweetalert2';
 import {MatDialog} from '@angular/material/dialog';
 import { ModalCongerComponent } from '../modal-conger/modal-conger.component';
+import { ModalAffichCongerComponent } from '../modal-affich-conger/modal-affich-conger.component';
 
 @Component({
   selector: 'app-listing-conger',
@@ -71,7 +72,8 @@ public congers: CongerResponseModel[] = [];
     const dialogRef = this.dialog.open(ModalCongerComponent, {
      width: '700px',
      height: 'auto',
-     data:data
+     data:data,
+     disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -80,10 +82,9 @@ public congers: CongerResponseModel[] = [];
   }
 
   openDialogView(data: any) {
-    const dialogRef = this.dialog.open(ModalCongerComponent , {
+    const dialogRef = this.dialog.open(ModalAffichCongerComponent , {
      width: '700px',
      height: 'auto',
-      disableClose: true,
      data:data
 
     });
@@ -92,6 +93,8 @@ public congers: CongerResponseModel[] = [];
       console.log(`Dialog result: ${result}`);
     });
   }
+
+
 
   goTi(){
     this.router.navigate(['/listing-contrat'])

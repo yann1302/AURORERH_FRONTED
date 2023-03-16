@@ -22,7 +22,7 @@ export class AjoutEmployerComponent implements OnInit {
   public submitted!: boolean;
   public isLoading!: boolean;
   public id!: any;
- 
+
 
   constructor(
     private employerService: EmployerService,
@@ -88,6 +88,7 @@ export class AjoutEmployerComponent implements OnInit {
     console.log('photo', this.f.photo.value);
     dto = new EmployerRequestModel(
       this.f.id.value,
+      this.f.codeEmployer.value,
       this.f.nom.value,
       this.f.prenom.value,
       this.f.photo.value,

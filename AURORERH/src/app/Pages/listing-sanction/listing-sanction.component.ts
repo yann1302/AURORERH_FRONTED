@@ -7,6 +7,7 @@ import { SanctionService } from 'src/app/shared/_services/sanctionService';
 import Swal from 'sweetalert2';
 import {MatDialog} from '@angular/material/dialog';
 import { ModalSanctionComponent } from '../modal-sanction/modal-sanction.component';
+import { ModalAffichSanctionComponent } from '../modal-affich-sanction/modal-affich-sanction.component';
 
 
 @Component({
@@ -72,7 +73,9 @@ export class ListingSanctionComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalSanctionComponent, {
      width: '700px',
      height: 'auto',
-     data:data
+     data:data,
+     disableClose: true
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -80,7 +83,19 @@ export class ListingSanctionComponent implements OnInit {
     });
   }
 
+  openDialogView(data: any) {
+    const dialogRef = this.dialog.open(ModalAffichSanctionComponent, {
+     width: '700px',
+     height: 'auto',
+     data:data,
+     disableClose: true
 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 
 }

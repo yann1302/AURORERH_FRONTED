@@ -1,7 +1,7 @@
 
 export class EmployerReponseModel{
   constructor (
-
+  public codeEmployer:string,
   public  adresse: string,
   public  date_debut: string,
   public  date_fin: string,

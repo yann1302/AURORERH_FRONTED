@@ -54,12 +54,13 @@ export class ModalCongerComponent implements OnInit {
     date_debut:[this.data ? moment(this.data.debut_conger, '0:yyyy-MM-dd') : '',Validators.required],
     date_fin:[this.data ? this.data.fin_conger: '',Validators.required],
     date_reprise:[this.data ? this.data.date_reprise: '',Validators.required],
-    etablissement_conger:[this.data ? this.data.etablissement_conger: '',Validators.required],
-    validation:[this.data ? this.data.validation: 'en attente'],
+    etablissement_conger:[this.data ? this.data.etablissement_conger: ''],
+    validation:[this.data ? this.data.validation: 'en attente d`une réponse'],
     description:[this.data ? this.data.description: '',Validators.required],
-    statut:[this.data ? this.data.statut: ''],
+    statut:[this.data ? this.data.statut: 'en attente d`une réponse'],
+    jours:[this.data ? this.data.jours: '',Validators.required],
     id_Employer:[this.data ? this.data.employerResponseDTO.id: '',Validators.required],
-    id:[this.data ? this.data.id: null ],
+    id:[this.data ? this.data.id: '' ],
     });
   }
 
@@ -85,6 +86,7 @@ export class ModalCongerComponent implements OnInit {
       this.f.validation.value,
       this.f.statut.value,
       this.f.description.value,
+      this.f.jours.value,
       this.f.id_Employer.value,
 
       )
@@ -95,7 +97,7 @@ export class ModalCongerComponent implements OnInit {
     this.isLoading = !this.isLoading;
     this.notif.success('Ajout avec sucsess ')
     if (this.notif ){
-      window.location.reload();
+       window.location.reload();
   }
     },err => {
       console.log(err)
@@ -113,7 +115,6 @@ getEmployer(){
   }
   )
 }
-
 
 getConger(){
   this.congerService.get(LIST_CONGERS).then((response:any)=>{

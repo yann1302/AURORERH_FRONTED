@@ -50,7 +50,7 @@
         <button (click)="goToViewId(stagiaire)"  routerLink="/affich-employer" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
           <i class="fa-solid fa-eye"></i>
         </button>
-        <button  routerLinkActive="router-link-active"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+        <button (click)="openDialog(stagiaire)" routerLinkActive="router-link-active"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
           <i class="fa-solid fa-pen"></i>
         </button>
         <button (click)="deleteStagiaire(stagiaire)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">

@@ -36,8 +36,8 @@
               <label  class="card-title">Statut<span style="color: red;">*</span></label>
               <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                 <option value=""></option>
-                <option value="en cours">en cours</option>
-                <option value="Terminer">Terminer</option>
+                <option value="EN COURS">en cours</option>
+                <option value="TERMINER">Terminer</option>
               </select>
   <span *ngIf=" (submitted || formSanction.controls.statut.touched) && formSanction.controls.statut.errors "style="color:red">le statut de cette sanction est requis  </span>
             </div>
@@ -91,5 +91,5 @@
   <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)=" addSanction()" class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement
     </button>
-  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Cancel</button>
+  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermé</button>
 </mat-dialog-actions>

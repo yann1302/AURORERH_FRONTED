@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ADD_CONTRATS, LIST_EMPLOYERS, READBYID_CONTRATS } from 'src/app/shared/_elements/api_constante';
+import { ADD_CONTRATS, LIST_EMPLOYERS, READBYID_CONTRATS, UPDATE_CONTRATS } from 'src/app/shared/_elements/api_constante';
 import { ContratRequestModel } from 'src/app/shared/_models/requests/contrat-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { ContratService } from 'src/app/shared/_services/contratService';
@@ -46,6 +46,27 @@ export class AjoutContratComponent implements OnInit {
 
 editContrat(id:number){
   this.contratService.get(`${READBYID_CONTRATS}/${id}`)
+  // let dto;
+  // dto = new ContratRequestModel(
+  //   this.f.id.value,
+  //   this.f.nom.value,
+  //   this.f.prenom.value,
+  //   this.f.lieu_recrutememnt.value,
+  //   this.f.date_embauche.value,
+  //   this.f.periode_essaie.value,
+  //   this.f.debut_periode_essaie.value,
+  //   this.f.fin_periode_essaie.value,
+  //   this.f.type_contrat.value,
+  //   this.f.poste.value,
+  //   this.f.lieu_travail.value,
+  //   this.f.salaire_brut.value,
+  //   this.f.etat_civil.value,
+  //   this.f.statut.value,
+  //   this.f.liste_diplo.value,
+  //   this.f.document.value,
+  //   this.f.id_Employer.value
+  //   )
+  // this.contratService.put(UPDATE_CONTRATS, dto)
   .then((response:any)=>{
     console.log('response', response)
     this.initFormContrat(response.data)
@@ -69,7 +90,7 @@ public initFormContrat(data: any){
     etat_civil:[data ? data.etat_civil: ''],
     statut:[data ? data.statut: ''],
     liste_diplo:[data ? data.liste_diplo: ''],
-    id_Employer:[data ? data.id_Employer: ''],
+    id_Employer:[data ? data.employerResponseDTO.id: ''],
     document:[data ? data.document: ''],
     id:[data ? data.id: null ],
   })

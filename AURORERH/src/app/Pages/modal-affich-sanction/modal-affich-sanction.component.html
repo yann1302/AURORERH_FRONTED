@@ -1,0 +1,58 @@
+<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Détail sur la sanction de {{data?.employerResponseDTO?.nom}} </h2>
+<hr>
+<div class="mat-dialog-content" >
+<div class="main-card " >
+  <div class="card-body">
+      <!-- <form class="mat-typography"  > -->
+        <div  class="form-row">
+              <div class="col-md-12">
+                  <div class="position-relative form-group card-title">
+                    <label  class="card-title" for="">Nom & Prénom<span style="color: red;">*</span></label>
+                     <input type="text" disabled value="{{data?.employerResponseDTO?.nom}} {{data?.employerResponseDTO?.prenom}}" name="" class="form-control" id="">
+                  </div>
+              </div>
+            </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="position-relative form-group card-title">
+                <label  class="card-title">type de Sanction<span style="color: red;">*</span></label>
+                <input type="text" disabled value="{{data?.type_sanction}}" name="" class="form-control" id="">
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative form-group card-title">
+              <label  class="card-title">Statut<span style="color: red;">*</span></label>
+              <input type="text" disabled value="{{data?.statut}} " name="" class="form-control" id="">
+            </div>
+      </div>
+      </div>
+        <div class="form-row">
+          <div class="col-md-6">
+          <div class="position-relative form-group card-title">
+            <label class="card-title">  date de debut de la sanction <span style="color: red;">*</span> </label>
+            <input type="text" disabled value="{{data?.debut_sanction | date}} " name="" class="form-control" id="">
+          </div>
+          </div>
+            <div class="col-md-6">
+                <div  class="card-title">
+                  <label class="card-title" for="">date de fin de la sanction<span style="color: red;">*</span></label>
+                  <input type="text" disabled value="{{data?.fin_sanction | date}} " name="" class="form-control" id="">
+                </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <div  class="card-title">
+              <label for="textarea">Description<span style="color: red;">*</span>
+              </label>
+              <!-- <input type="textarea" name="textarea" style=" height: 8rem; width: 100%;" id="message" placeholder="entrer les details de la sanction ..." class="form-control" formControlName="description"> -->
+              <textarea type="text" class="form-control" disabled value="{{data?.description}}"> </textarea>
+              </div>
+              </div>
+      <!-- </form> -->
+  </div>
+
+</div>
+<mat-dialog-actions align="end">
+  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermé</button>
+</mat-dialog-actions>

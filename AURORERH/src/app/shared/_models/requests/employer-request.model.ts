@@ -2,6 +2,7 @@
 export class EmployerRequestModel{
   constructor (
     public  id:number,
+    public codeEmployer:string,
     public  nom:String,
     public  prenom:String,
     public  photo:String,
