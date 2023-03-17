@@ -33,8 +33,8 @@
     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de contrat</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">poste</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Date de debut</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px;" aria-label="Salary: activate to sort column ascending"> Statut</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20.2px;" aria-label="Age: activate to sort column ascending">Date de debut</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 55.2px;" aria-label="Salary: activate to sort column ascending"> Statut</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Salaire brut</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
@@ -47,9 +47,9 @@
       <td>{{contrat?.date_embauche | date: 'dd/MM/yyyy' }}</td>
       <td style="text-align: center;"
         ><div style="display: inline-block; vertical-align: middle;" [ngClass]="{
-          'valider': contrat?.statut == 'VALIDER',
+          'valider': contrat?.statut == 'EN COURS',
           'suspendu': contrat?.statut == 'SUSPENDU',
-          'examin': contrat?.statut == 'EN EXAMINS'
+          'examen': contrat?.statut == 'TERMINER'
         }" >{{contrat?.statut}}</div></td>
       <td>{{contrat?.salaire_brut}} FCFA</td>
       <td>

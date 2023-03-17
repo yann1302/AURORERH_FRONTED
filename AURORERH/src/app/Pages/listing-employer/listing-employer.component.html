@@ -27,10 +27,10 @@
                 <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
               </label>
             </div>
-      <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
+      <table style="width: 100%; background-color: white; "  id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
   <thead>
   <tr role="row">
-        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Matricule employé</th>
+        <!-- <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Matricule employé</th> -->
     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule CNI</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">poste</th>
@@ -40,8 +40,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr role="row" class="odd" *ngFor="let employer of employers">
-    <td>{{employer?.codeEmployer}}</td>
+  <tr role="row" class="odd" *ngFor="let employer of employers  " >
+    <!-- <td>{{employer?.codeEmployer}}</td> -->
       <td tabindex="0" class="sorting_1">{{employer?.nom}} {{employer?.prenom}}</td>
       <td>{{employer?.matricule}}</td>
       <td>{{employer?.poste}}</td>
@@ -88,6 +88,9 @@
     </a>
   </li>
 </ul>
+
+
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
 </div>
 </div>
 <div class="row">

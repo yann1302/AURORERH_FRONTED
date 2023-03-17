@@ -71,7 +71,7 @@
                 <label for="" class="">
                   Periode d'essaie<span style="color: red;">*</span>
                 </label>
-                <input name="" id="" placeholder="" type="text" class="form-control" formControlName="periode_essaie">
+                <input name="" id="" placeholder="2 mois commençants du .. au .. " type="text" class="form-control" formControlName="periode_essaie">
                 <!-- <span *ngIf=" (submitted || formContrat.controls.periode_essaie.touched) && formContrat.controls.periode_essaie.errors "   style="color:red">  la periode d'essaie de l'employé est requis  </span> -->
               </div>
 
@@ -81,7 +81,7 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label class="">
-                    debut de la periode d'essaie<span style="color: red;">*</span>
+                    Debut du contrat
                   </label>
                   <input type="date" class="form-control"  placeholder="" formControlName="debut_periode_essaie">
                   <!-- <span *ngIf=" (submitted || formContrat.controls.debut_periode_essaie.touched) && formContrat.controls.debut_periode_essaie.errors "   style="color:red">  cette date est requise  </span> -->
@@ -92,7 +92,7 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="" class="">
-                    fin de la periode d'essaie<span style="color: red;">*</span>
+                    fin du contrat
                   </label>
                   <input name="" id="" type="date" class="form-control" placeholder="" formControlName="fin_periode_essaie">
                   <!-- <span *ngIf=" (submitted || formContrat.controls.fin_periode_essaie.touched) && formContrat.controls.fin_periode_essaie.errors "   style="color:red">  cette date est requise  </span> -->
@@ -137,12 +137,12 @@
             <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
-                  Statut  <span style="color: red;">*</span>
+                  Statut  
                 </label>
                 <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                   <option value=""></option>
-                  <option  value="VALIDER">Valider</option>
-                  <option  value="EN EXAMIN">En Examin</option>
+                  <option  value="EN COURS">Valider</option>
+                  <option  value="TERMINER">TERMINER</option>
                   <option value="SUSPENDU">Supendu</option>
                 </select>
                 <!-- <span *ngIf=" (submitted || formContrat.controls.statut.touched) && formContrat.controls.statut.errors " style="color:red">  le salaire est requis  </span> -->

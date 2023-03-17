@@ -30,6 +30,7 @@
       <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
   <thead>
   <tr role="row">
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule Stagiaire</th>
     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Département</th>
@@ -40,7 +41,7 @@
   </thead>
   <tbody>
   <tr role="row" class="odd" *ngFor="let stagiaire of stagiaires ">
-
+      <td>{{stagiaire?.codeStage}}</td>
       <td tabindex="0" class="sorting_1">{{stagiaire?.nom}}</td>
       <td>{{stagiaire?.matricule}}</td>
       <td>{{stagiaire?.departement}}</td>

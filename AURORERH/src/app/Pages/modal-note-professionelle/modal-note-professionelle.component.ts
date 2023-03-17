@@ -30,16 +30,16 @@ export class ModalNoteProfessionelleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initFormNP(null);
+    this.initFormNP();
   }
 
-  public initFormNP(data: any) {
+  public initFormNP() {
     this.formNP = this.fb.group({
-        theme: [data ? data.theme :  '', Validators.required],
-        description: [data ? data.matricule: '', Validators.required],
-        date_publication:[data ? data.date_publication: '', Validators.required],
-        photo:[data ? data.photo: ''],
-        id:[data ? data.id: null],
+        theme: [this.data ? this.data.theme :  '', Validators.required],
+        description: [this.data ? this.data.description: '', Validators.required],
+        date_publication:[this.data ? this.data.date_publication: '', Validators.required],
+        photo:[this.data ? this.data.photo: ''],
+        id:[this.data ? this.data.id: null],
     });
 }
 

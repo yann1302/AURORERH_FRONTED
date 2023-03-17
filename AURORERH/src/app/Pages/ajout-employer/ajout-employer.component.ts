@@ -51,6 +51,7 @@ export class AjoutEmployerComponent implements OnInit {
 
   public initFormEmployer(data: any) {
     this.formEmployer = this.fb.group({
+      codeEmployer: [data ? data.codeEmployer :  ''],
         nom: [data ? data.nom :  '', Validators.required],
         matricule: [data ? data.matricule: '', Validators.required],
         adresse:[data ? data.adresse: ''],
@@ -70,8 +71,8 @@ export class AjoutEmployerComponent implements OnInit {
         statut_matrimoniale:[data ? data.statut_matrimoniale: ''],
         ville_exertion:[data ? data.ville_exertion: '', Validators.required],
         type_contrat:[data ? data.type_contrat: ''],
-        username:[data ? data.username: '', Validators.required],
-        password:[data ? data.password: '', Validators.required]
+        username:[data ? data.username: ''],
+        password:[data ? data.password: '']
 
     });
 }

@@ -33,7 +33,7 @@
     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de conger ou permission</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de jours</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">validation</th>
+    <!-- <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">validation</th> -->
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Statut</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
@@ -43,19 +43,19 @@
       <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}}</td>
       <td>{{conger?.type_conger}}</td>
       <td>{{conger?.jours}} jours</td>
-      <td style="text-align: center;">
+      <!-- <td style="text-align: center;">
          <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': conger?.validation == 'VALIDER',
         'suspendu': conger?.validation == 'REFUSER',
-        'examin': conger?.validation == 'EN EXAMIN'
-      }" >{{conger?.validation}}</div></td>
+        'examen': conger?.validation == 'EN EXAMEN'
+      }" >{{conger?.validation}}</div></td> -->
 
 
       <td style="text-align: center;">
         <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': conger?.statut == 'EN COURS',
         'suspendu': conger?.statut == 'SUSPENDU',
-        'examin': conger?.statut == 'TERMINER'
+        'examen': conger?.statut == 'TERMINER'
       }" >{{conger?.statut}}</div></td>
       <td>
         <button (click)="openDialogView(conger)"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">

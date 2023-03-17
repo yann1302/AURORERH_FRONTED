@@ -47,7 +47,7 @@
       <td><div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': sanction?.statut == 'EN COURS',
         'suspendu': sanction?.statut == 'TERMINER',
-        'examin': sanction?.statut == 'EN EXAMINS'
+        'examen': sanction?.statut == 'EN EXAMENS'
       }" >{{sanction?.statut}}</div></td>
       <td>
         <button (click)="openDialogView(sanction)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">

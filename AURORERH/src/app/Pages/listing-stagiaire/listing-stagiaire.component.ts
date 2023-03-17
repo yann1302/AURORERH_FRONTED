@@ -85,7 +85,8 @@ export class ListingStagiaireComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalStagiaireComponent, {
      width: '1000px',
      height: 'auto',
-     data:data
+     data:data,
+     disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -37,7 +37,7 @@ import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-profes
 import { ModalNoteProfessionelleComponent } from './Pages/modal-note-professionelle/modal-note-professionelle.component';
 import { ModalAffichCongerComponent } from './Pages/modal-affich-conger/modal-affich-conger.component';
 import { ModalAffichSanctionComponent } from './Pages/modal-affich-sanction/modal-affich-sanction.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -76,7 +76,9 @@ import { ModalAffichSanctionComponent } from './Pages/modal-affich-sanction/moda
     HttpClientModule,
     SharedModule,
     ToastrModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    BrowserModule,
+  NgxPaginationModule
 
 
   ],

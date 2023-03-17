@@ -54,10 +54,9 @@ export class ModalStagiaireComponent implements OnInit {
     sexe:[this.data ? this.data.sexe: '' ],
     departement:[this.data ? this.data.departement: '', Validators.required ],
     duree:[this.data ? this.data.duree: '', Validators.required ],
-
+    codeStage:[this.data ? this.data.codeStage: '' ],
     });
   }
-
 
   get f() { return this.formStagiaire.controls; }
   addStagiaire(){
@@ -72,6 +71,7 @@ export class ModalStagiaireComponent implements OnInit {
     let dto;
     dto = new StagiaireRequestModel(
       this.f.id.value,
+      this.f.codeStage.value,
       this.f.nom.value,
       this.f.prenom.value,
       this.f.photo.value,

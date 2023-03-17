@@ -5,9 +5,7 @@ import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-
 import { EmployerService } from 'src/app/shared/_services/employerService';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2'
-import { AjoutEmployerComponent } from '../ajout-employer/ajout-employer.component';
-
-import { AffichEmployerComponent } from '../affich-employer/affich-employer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-listing-employer',
@@ -20,12 +18,15 @@ export class ListingEmployerComponent implements OnInit {
   public isLoginFailed = false;
   public employers: EmployerReponseModel[] = [];
   public id!: any;
+  public p: number = 1;
+  public collection: any[] = [];
 
   constructor(
     private employerService: EmployerService,
     private notif: NotificationService,
     private router: Router,
     private route: ActivatedRoute,
+
 
 
   ) { }
@@ -71,7 +72,11 @@ export class ListingEmployerComponent implements OnInit {
           this.notif.danger('Echec lors de la suppresion, il ya des instances en cours ');
           this.isLoading = !this.isLoading;
           this.isLoginFailed = true;
-
+          Swal.fire(
+            'Annulé!',
+            'Employer non supprimé.',
+            'error'
+          )
       })
       }
       else {

@@ -48,7 +48,7 @@ public congers: CongerResponseModel[] = [];
       if (result.isConfirmed) {
         Swal.fire(
           'Supprimé!',
-          'Conger supprimé',
+          'congé ou permission supprimé',
           'success'
         )
         this.congerService.delete(`${DELETE_CONGERS}/${item.id}`)
@@ -62,7 +62,7 @@ public congers: CongerResponseModel[] = [];
       else {
         Swal.fire(
           'Annulé!',
-          'Contrat non supprimé.',
+          'congé ou permission non supprimé',
           'error'
         )}
     })

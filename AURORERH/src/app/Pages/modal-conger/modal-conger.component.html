@@ -1,4 +1,4 @@
-<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Edition d'un conger ou permission</h2>
+<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Edition d'un congé ou une  permission</h2>
 <hr>
 <div class="mat-dialog-content" [formGroup]="formConger" >
 <div class="main-card " >
@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="form-row">
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <div  class="card-title">
                   <label>
                     validation
@@ -88,12 +88,12 @@
                   <select  class="form-control" formControlName="validation" >
                     <option value=""></option>
                     <option  value="VALIDER">Valider</option>
-                    <option  value="EN EXAMIN">En Examin</option>
+                    <option  value="EN EXAMEN">En Examen</option>
                     <option value="REFUSER">Réfuser</option>
                   </select>
                 </div>
-          </div>
-          <div class="col-md-6">
+          </div> -->
+          <div class="col-md-12">
             <div  class="card-title">
               <label>
                 Statut
@@ -125,7 +125,7 @@
   <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)=" addConger()" class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement
     </button>
-  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermé</button>
+  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermeture</button>
 </mat-dialog-actions>
 
 
