@@ -71,3 +71,22 @@ export const UPDATE_FORMATIONS = FORMATIONS + '/update';
 export const DELETE_FORMATIONS = FORMATIONS + '/delete';
 export const READ_FORMATIONS= FORMATIONS + '/read';
 export const READBYID_FORMATIONS = FORMATIONS + '/read';
+
+//les Sessions de formation
+export const SESSIONFORMATIONS = SERVEUR + 'employerFormation';
+export const LIST_SESSIONFORMATIONS = SESSIONFORMATIONS + '/read';
+export const ADD_SESSIONFORMATIONS = SESSIONFORMATIONS + '/create';
+export const UPDATE_SESSIONFORMATIONS = SESSIONFORMATIONS + '/update';
+export const DELETE_SESSIONFORMATIONS = SESSIONFORMATIONS + '/delete';
+export const READ_SESSIONFORMATIONS= SESSIONFORMATIONS + '/read';
+export const READBYID_SESSIONFORMATIONS = SESSIONFORMATIONS + '/read';
+
+
+//les Demandes de formation
+export const DEMANDEFORMATION = SERVEUR + 'DemandeFormation';
+export const LIST_DEMANDEFORMATION = DEMANDEFORMATION + '/read';
+export const ADD_DEMANDEFORMATION = DEMANDEFORMATION + '/create';
+export const UPDATE_DEMANDEFORMATION = DEMANDEFORMATION + '/update';
+export const DELETE_DEMANDEFORMATION = DEMANDEFORMATION + '/delete';
+export const READ_DEMANDEFORMATION= DEMANDEFORMATION + '/read';
+export const READBYID_DEMANDEFORMATION = DEMANDEFORMATION + '/read';

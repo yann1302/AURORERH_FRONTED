@@ -3,7 +3,6 @@ import { EmployerReponseModel } from "./employer-response.model";
 export class ContratResponseModel{
   constructor(
     public id: number,
-
     public nom: String,
     public  prenom: String,
     public lieu_recrutememnt: String,

@@ -24,10 +24,10 @@ export class ListingFormationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getNoteFormation()
+    this.getFormation()
   }
 
-  getNoteFormation(){
+  getFormation(){
     this.formationService.get(LIST_FORMATIONS).then((response:any)=>{
       this.formations = response.data;
       console.log(this.formations)
@@ -69,7 +69,7 @@ export class ListingFormationComponent implements OnInit {
         this.formationService.delete(`${DELETE_FORMATIONS}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getNoteFormation();
+        this.getFormation();
       })
       }
       else {

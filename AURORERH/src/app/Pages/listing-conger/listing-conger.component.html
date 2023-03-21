@@ -43,14 +43,6 @@
       <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}}</td>
       <td>{{conger?.type_conger}}</td>
       <td>{{conger?.jours}} jours</td>
-      <!-- <td style="text-align: center;">
-         <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
-        'valider': conger?.validation == 'VALIDER',
-        'suspendu': conger?.validation == 'REFUSER',
-        'examen': conger?.validation == 'EN EXAMEN'
-      }" >{{conger?.validation}}</div></td> -->
-
-
       <td style="text-align: center;">
         <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': conger?.statut == 'EN COURS',

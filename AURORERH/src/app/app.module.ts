@@ -40,6 +40,9 @@ import { ModalAffichSanctionComponent } from './Pages/modal-affich-sanction/moda
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ListingFormationComponent } from './Pages/listing-formation/listing-formation.component';
 import { ModalFormationComponent } from './Pages/modal-formation/modal-formation.component';
+import { ListingSessionFormationComponent } from './Pages/listing-session-formation/listing-session-formation.component';
+import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listing-demande-form.component';
+import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-demande-form.component';
 
 
 @NgModule({
@@ -70,6 +73,9 @@ import { ModalFormationComponent } from './Pages/modal-formation/modal-formation
     ModalAffichSanctionComponent,
     ListingFormationComponent,
     ModalFormationComponent,
+    ListingSessionFormationComponent,
+    ListingDemandeFormComponent,
+    ModalDemandeFormComponent,
   ],
   imports: [
     BrowserModule,

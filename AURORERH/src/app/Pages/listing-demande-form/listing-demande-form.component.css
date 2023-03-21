@@ -1,0 +1,24 @@
+
+.valider{
+  background-color: rgb(1, 255, 1);
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+  width: 70%;
+}
+
+.suspendu{
+  background-color: red;
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+  width: 70%;
+}
+
+.examen{
+  background-color: yellow;
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+  width: 80%;
+}
