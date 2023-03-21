@@ -10,6 +10,7 @@ import { AjoutEmployerComponent } from './Pages/ajout-employer/ajout-employer.co
 import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.component';
 import { ListingContratComponent } from './Pages/listing-contrat/listing-contrat.component';
 import { ListingEmployerComponent } from './Pages/listing-employer/listing-employer.component';
+import { ListingFormationComponent } from './Pages/listing-formation/listing-formation.component';
 import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-professionnelle/listing-note-professionnelle.component';
 import { ListingSanctionComponent } from './Pages/listing-sanction/listing-sanction.component';
 import { ListingStagiaireComponent } from './Pages/listing-stagiaire/listing-stagiaire.component';
@@ -46,6 +47,9 @@ const routes: Routes = [
 
     //noteProfessionnelle
     {path:'listing-noteProfessionelle', component:ListingNoteProfessionnelleComponent},
+
+    //formation
+    {path:'listing-formation', component:ListingFormationComponent},
 
   ]
 },

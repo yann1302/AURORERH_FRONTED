@@ -1,0 +1,59 @@
+<h3 style="margin-left: 3rem;color: blue;"><b>Liste des Formations</b> </h3>
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a  routerLink="listing-employer" routerLinkActive="router-link-active"> Formations </a></li>
+      <li class="breadcrumb-item"><a  style="color: blue;">Liste des formations </a></li>
+    </ol>
+  </nav>
+</div>
+
+<button style="float: right;" (click)="openDialog(null)" class="mb-2 mr-2 btn-icon btn btn-success"> <i class="fa-solid fa-plus"></i>
+  Ajouter </button>
+  <label > Recherche:
+    <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
+  </label>
+
+  <br>   <br>
+
+<section>
+  <div class="container">
+  <div class="row" >
+ <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let items of formations" ><div class="card text-white card-has-bg click-col" style="background-image:url('https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png');">
+         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+        <div class="card-img-overlay d-flex flex-column">
+         <div class="card-body">
+            <h2 class="card-meta mb-2" style="color: rgb(2, 2, 175);">{{items?.theme_form}}</h2>
+            <h4 class="card-title mt-0 "><a class="text-white" style="font: 1em sans-serif;" herf="#">{{items?.description}}</a></h4>
+           <h5><i class="far fa-clock"></i> {{items?.duree}}</h5>
+          </div>
+          <p class="card-text">
+            Mise en ligne le {{items?.date_publication | date: 'dd/MM/yy'}}
+          </p>
+          <div class="card-footer">
+              <button style="margin-left:6rem" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button (click)="openDialog(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button (click)="deleteFormation(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+           <div class="media">
+
+  <!-- <div class="mr-3 rounded-circle"> <i class="fa-solid fa-person"></i></div>
+  <div class="media-body">
+    <h6 class="my-0 text-white d-block">Oz Coruhlu</h6>
+     <small>Director of UI/UX</small>
+  </div> -->
+</div>
+          </div>
+        </div>
+      </div></div>
+
+
+</div>
+
+</div>
+</section>

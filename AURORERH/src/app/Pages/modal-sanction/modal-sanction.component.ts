@@ -50,7 +50,7 @@ export class ModalSanctionComponent implements OnInit {
     // console.log('data', this.data)
   }
 
-  // editSanction(id:number){
+  //editSanction(id:number){
   //   this.sanctionService.get(`${READBYID_SANCTIONS}/${id}`)
   //   .then((response:any)=>{
   //     console.log('response', response)

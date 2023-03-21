@@ -38,6 +38,8 @@ import { ModalNoteProfessionelleComponent } from './Pages/modal-note-professione
 import { ModalAffichCongerComponent } from './Pages/modal-affich-conger/modal-affich-conger.component';
 import { ModalAffichSanctionComponent } from './Pages/modal-affich-sanction/modal-affich-sanction.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ListingFormationComponent } from './Pages/listing-formation/listing-formation.component';
+import { ModalFormationComponent } from './Pages/modal-formation/modal-formation.component';
 
 
 @NgModule({
@@ -66,6 +68,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ModalNoteProfessionelleComponent,
     ModalAffichCongerComponent,
     ModalAffichSanctionComponent,
+    ListingFormationComponent,
+    ModalFormationComponent,
   ],
   imports: [
     BrowserModule,

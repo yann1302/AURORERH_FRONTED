@@ -1,0 +1,56 @@
+<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Ajout d'une Formation</h2>
+<hr>
+<div class="mat-dialog-content"  [formGroup]="formFormation" >
+
+<div class="main-card " >
+      <!-- <form class="mat-typography"  > -->
+        <div class="form-row">
+              <div class="col-md-9">
+                  <div class="position-relative form-group card-title">
+                    <label  class="card-title" for="">Thème<span style="color: red;">*</span></label>
+                    <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="theme_form">
+                  <span *ngIf=" (submitted || formFormation.controls.theme_form.touched) && formFormation.controls.theme_form.errors "style="color:red">le thème est requis </span>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                <div class="position-relative form-group card-title">
+                  <label  class="card-title" for="">Durée<span style="color: red;">*</span></label>
+                  <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="duree">
+                <span *ngIf=" (submitted || formFormation.controls.duree.touched) && formFormation.controls.duree.errors "style="color:red">la durée est requise </span>
+                </div>
+            </div>
+
+            </div>
+            <div  class="form-row">
+            <div class="col-md-12">
+              <div class="position-relative form-group card-title">
+                <label  class="card-title">Description<span style="color: red;">*</span></label>
+                 <span *ngIf=" (submitted || formFormation.controls.description.touched) && formFormation.controls.description.errors "style="color:red">la description est requise</span>
+                 <textarea rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
+              </div>
+          </div>
+        </div>
+  <div class="form-row">
+          <div class="col-md-6">
+            <div class="position-relative form-group card-title">
+              <label  class="card-title">Photo ou Document</label>
+              <input  name="" id="" placeholder="" type="file" class="form-control" formControlName="photo">
+  <!-- <span *ngIf=" (submitted || formFormation.controls.photo.touched) && formFormation.controls.photo.errors "style="color:red">le statut de cette sanction est requis  </span> -->
+            </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="position-relative form-group card-title">
+          <label  class="card-title">Date de publication<span style="color: red;">*</span></label>
+          <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="date_publication">
+<span *ngIf=" (submitted || formFormation.controls.date_publication.touched) && formFormation.controls.date_publication.errors "style="color:red">la date de publication est requise </span>
+        </div>
+  </div>
+      </div>
+</div>
+<mat-dialog-actions align="end">
+  <button  mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)="addFormation()"   class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
+    Enregistrement
+    </button>
+  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

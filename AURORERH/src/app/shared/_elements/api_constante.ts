@@ -62,3 +62,12 @@ export const UPDATE_NOTEPROFESSIONNELLES = NOTEPROFESSIONNELLES + '/update';
 export const DELETE_NOTEPROFESSIONNELLES = NOTEPROFESSIONNELLES + '/delete';
 export const READ_NOTEPROFESSIONNELLES= NOTEPROFESSIONNELLES + '/read';
 export const READBYID_NOTEPROFESSIONNELLES = NOTEPROFESSIONNELLES + '/read';
+
+//les formations
+export const FORMATIONS = SERVEUR + 'formation';
+export const LIST_FORMATIONS = FORMATIONS + '/read';
+export const ADD_FORMATIONS= FORMATIONS + '/create';
+export const UPDATE_FORMATIONS = FORMATIONS + '/update';
+export const DELETE_FORMATIONS = FORMATIONS + '/delete';
+export const READ_FORMATIONS= FORMATIONS + '/read';
+export const READBYID_FORMATIONS = FORMATIONS + '/read';
