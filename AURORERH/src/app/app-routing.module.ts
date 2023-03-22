@@ -14,6 +14,7 @@ import { ListingEmployerComponent } from './Pages/listing-employer/listing-emplo
 import { ListingFormationComponent } from './Pages/listing-formation/listing-formation.component';
 import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-professionnelle/listing-note-professionnelle.component';
 import { ListingSanctionComponent } from './Pages/listing-sanction/listing-sanction.component';
+import { ListingSessionFormationComponent } from './Pages/listing-session-formation/listing-session-formation.component';
 import { ListingStagiaireComponent } from './Pages/listing-stagiaire/listing-stagiaire.component';
 import { LoginComponent } from './session/login/login.component';
 import { UserGuardService } from './shared/_helpers/user-guard.service';
@@ -54,6 +55,9 @@ const routes: Routes = [
 
     //les demandes de formation
     {path:'listing-demandeForm', component:ListingDemandeFormComponent},
+
+    //les sessions de formations
+    {path: 'listing-session', component:ListingSessionFormationComponent}
 
   ]
 },

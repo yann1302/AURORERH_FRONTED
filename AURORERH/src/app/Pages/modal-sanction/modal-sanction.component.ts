@@ -46,17 +46,8 @@ export class ModalSanctionComponent implements OnInit {
     this.getEmployer();
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-    // this.editSanction(this.id);
-    // console.log('data', this.data)
-  }
 
-  //editSanction(id:number){
-  //   this.sanctionService.get(`${READBYID_SANCTIONS}/${id}`)
-  //   .then((response:any)=>{
-  //     console.log('response', response)
-  //     this.initFormSanction(response.data)
-  //   });
-  // }
+  }
 
   public initFormSanction(){
     this.formSanction =this.fb.group({

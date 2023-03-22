@@ -40,7 +40,7 @@ export class ModalFormationComponent implements OnInit {
         description: [this.data ? this.data.description: '', Validators.required],
         duree:[this.data ? this.data.duree: '', Validators.required],
         photo:[this.data ? this.data.photo: ''],
-        date_publication:[this.data? this.data.date_publication: '', Validators.required],
+        date_publication:[this.data? this.data.date_publication:  new Date()],
         id:[this.data ? this.data.id: null],
     });
 }

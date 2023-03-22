@@ -53,7 +53,7 @@ export class ListingFormationComponent implements OnInit {
   deleteFormation(item: any){
     Swal.fire({
       title: 'Êtes-vous sure?',
-      text: "Vous ne pourrez pas revenir en arrière !",
+      text: "Vous ne pourrez pas revenir en arrière ! la formation, la liste des demandes de la formation et les sessions de cette formatioon seront suprimées",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: 'green',
@@ -63,7 +63,7 @@ export class ListingFormationComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Supprimé!',
-          'Sanction supprimé ',
+          'formation, la liste des demandes de la formation et les sessions de cette formatioon ont été suprimées ',
           'success'
         )
         this.formationService.delete(`${DELETE_FORMATIONS}/${item.id}`)

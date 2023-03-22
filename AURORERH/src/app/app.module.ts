@@ -43,6 +43,7 @@ import { ModalFormationComponent } from './Pages/modal-formation/modal-formation
 import { ListingSessionFormationComponent } from './Pages/listing-session-formation/listing-session-formation.component';
 import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listing-demande-form.component';
 import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-demande-form.component';
+import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-session-form.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-dema
     ListingSessionFormationComponent,
     ListingDemandeFormComponent,
     ModalDemandeFormComponent,
+    ModalSessionFormComponent,
   ],
   imports: [
     BrowserModule,
