@@ -17,6 +17,7 @@ import { ModalAffichSanctionComponent } from '../modal-affich-sanction/modal-aff
 })
 export class ListingSanctionComponent implements OnInit {
 
+  public token = '';
   public sanctions: SanctionResponseModel[] = [];
   constructor(
     private sanctionService: SanctionService,
@@ -27,13 +28,17 @@ export class ListingSanctionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getSanction();
+    this.getSanction(this.token);
 
   }
 
-  getSanction(){
-    this.sanctionService.get(LIST_SANCTIONS).then((response:any)=>{
-      this.sanctions = response.data;
+  updateSanction(event: any){
+    console.log(event.target.value);
+    this.getSanction(event.target.value);
+  }
+  getSanction(token: any){
+    this.sanctionService.get(`${LIST_SANCTIONS}?token=${token}`).then((response:any)=>{
+      this.sanctions = response.data.content;
       console.log(this.sanctions)
     }
     )
@@ -58,7 +63,7 @@ export class ListingSanctionComponent implements OnInit {
         this.sanctionService.delete(`${DELETE_SANCTIONS}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getSanction();
+        this.getSanction(this.token);
       })
       }
       else {

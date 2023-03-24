@@ -85,7 +85,8 @@ public congers: CongerResponseModel[] = [];
     const dialogRef = this.dialog.open(ModalAffichCongerComponent , {
      width: '700px',
      height: 'auto',
-     data:data
+     data:data,
+     disableClose: true
 
     });
 

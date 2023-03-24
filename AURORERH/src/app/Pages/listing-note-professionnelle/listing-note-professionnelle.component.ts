@@ -47,7 +47,7 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Supprimé!',
-          'Sanction supprimé ',
+          'note supprimée ',
           'success'
         )
         this.noteProfessionnelleService.delete(`${DELETE_NOTEPROFESSIONNELLES}/${item.id}`)

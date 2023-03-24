@@ -52,7 +52,7 @@ export class ListingStagiaireComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Supprimé!',
-          'Stagaire supprimé.',
+          'Stagiaire supprimé.',
           'success'
         )
         this.stagiaireService.delete(`${DELETE_STAGIAIRE}/${item.id}`)
@@ -74,7 +74,7 @@ export class ListingStagiaireComponent implements OnInit {
       else {
         Swal.fire(
           'Annulé!',
-          'Employer non supprimé.',
+          'Stagiaire non supprimé.',
           'error'
         )}
     })

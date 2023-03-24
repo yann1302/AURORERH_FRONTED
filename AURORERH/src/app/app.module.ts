@@ -44,7 +44,7 @@ import { ListingSessionFormationComponent } from './Pages/listing-session-format
 import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listing-demande-form.component';
 import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-demande-form.component';
 import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-session-form.component';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -89,10 +89,8 @@ import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-sess
     SharedModule,
     ToastrModule.forRoot(),
     MatDialogModule,
-    BrowserModule,
-  NgxPaginationModule
-
-
+    NgxPaginationModule,
+    MatAutocompleteModule
   ],
   providers: [
     UserGuardService,

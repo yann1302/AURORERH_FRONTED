@@ -1,4 +1,5 @@
 import { FormationResponseModel } from "./formation-response.model";
+import { EmployerReponseModel } from "./employer-response.model";
 
 export class SessionFormationResponseModel{
   constructor(
@@ -7,8 +8,8 @@ export class SessionFormationResponseModel{
     public  fin_form:Date,
     public  formateur:string,
     public  description:string,
-    public  employers:any,
-    public  formation: FormationResponseModel,
+    public  employerResponseDTO:any,
+    public  formationResponseDTO: FormationResponseModel,
     public  reference:string,
     public  themeForm:string,
 

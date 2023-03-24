@@ -102,7 +102,7 @@ export class ModalSanctionComponent implements OnInit {
 public sanctions: SanctionResponseModel[] = [];
 getSanction(){
   this.sanctionService.get(LIST_SANCTIONS).then((response:any)=>{
-    this.sanctions = response.data;
+    this.sanctions = response.data.content;
     console.log(this.sanctions)
   }
   )
@@ -110,7 +110,7 @@ getSanction(){
 
 getEmployer(){
   this.employerService.get(LIST_EMPLOYERS).then((response:any)=>{
-    this.employers = response.data;
+    this.employers = response.data.content;
     console.log(this.employers)
   }
   )

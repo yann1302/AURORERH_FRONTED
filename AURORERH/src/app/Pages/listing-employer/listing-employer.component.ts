@@ -5,7 +5,7 @@ import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-
 import { EmployerService } from 'src/app/shared/_services/employerService';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2'
-import {NgxPaginationModule} from 'ngx-pagination';
+export {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-listing-employer',
@@ -20,27 +20,41 @@ export class ListingEmployerComponent implements OnInit {
   public id!: any;
   public p: number = 1;
   public collection: any[] = [];
+  public token = '';
+  public page = 0;
+  public size = 10;
+  public totalElements!: number;
 
   constructor(
     private employerService: EmployerService,
     private notif: NotificationService,
     private router: Router,
     private route: ActivatedRoute,
-
-
-
   ) { }
 
   ngOnInit(): void {
-    this.getEmployer();
+    this.getEmployer(this.token);
   }
 
-  getEmployer(){
-    this.employerService.get(LIST_EMPLOYERS).then((response:any)=>{
-      this.employers = response.data;
-      console.log(this.employers)
+  search(event: any){
+    console.log(event.target.value);
+    this.getEmployer(event.target.value);
+  }
+
+
+  getEmployer(token: any){
+    this.employerService.get(`${LIST_EMPLOYERS}?token=${token}&page=${this.page}&size=${this.size}` ).then((response:any)=>{
+      this.employers = response.data.content;
+      this.totalElements = response.totalElements;
+      console.log(response);
+      console.log(this.employers);
     }
     )
+  }
+
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getEmployer(this.token);
   }
 
   deleteEmployer(item: any){
@@ -65,7 +79,7 @@ export class ListingEmployerComponent implements OnInit {
         this.notif.success('Ajout avec sucsess ')
 
         if (this.notif ){
-          this.getEmployer();
+          this.getEmployer(this.token);
       }
         },err => {
           console.log(err)
