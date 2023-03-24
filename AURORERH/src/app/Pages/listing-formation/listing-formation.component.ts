@@ -15,6 +15,10 @@ import { ModalFormationComponent } from '../modal-formation/modal-formation.comp
 export class ListingFormationComponent implements OnInit {
 
   formations: FormationResponseModel[] = [];
+  public token = '';
+  public page = 0;
+  public size = 6;
+  public totalElements!: any;
 
   constructor(
     private router: Router,
@@ -24,12 +28,30 @@ export class ListingFormationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getFormation()
+    this.getFormation(this.token)
   }
 
-  getFormation(){
-    this.formationService.get(LIST_FORMATIONS).then((response:any)=>{
-      this.formations = response.data;
+  search(event: any){
+    console.log(event.target.value);
+    this.getFormation(event.target.value);
+  }
+
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getFormation(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getFormation(this.token);
+  }
+
+  getFormation(token: any){
+    this.formationService.get(`${LIST_FORMATIONS}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
+      this.formations = response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.formations)
     }
     )
@@ -69,7 +91,7 @@ export class ListingFormationComponent implements OnInit {
         this.formationService.delete(`${DELETE_FORMATIONS}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getFormation();
+        this.getFormation(this.token);
       })
       }
       else {

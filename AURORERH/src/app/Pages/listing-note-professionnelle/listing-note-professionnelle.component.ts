@@ -15,6 +15,11 @@ import { ModalNoteProfessionelleComponent } from '../modal-note-professionelle/m
 export class ListingNoteProfessionnelleComponent implements OnInit {
 
   notesProfessionnelles: NoteProfessionnellesResponseModel[] = [];
+  public token = '';
+  public page = 0;
+  public size = 5;
+  public totalElements!: any;
+
   constructor(
     private noteProfessionnelleService: NoteProfessionnelleService,
     private router: Router,
@@ -22,13 +27,30 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getNoteProfessionnelle()
+    this.getNoteProfessionnelle(this.token)
 
   }
+  search(event: any){
+    console.log(event.target.value);
+    this.getNoteProfessionnelle(event.target.value);
+  }
 
-  getNoteProfessionnelle(){
-    this.noteProfessionnelleService.get(LIST_NOTEPROFESSIONNELLES).then((response:any)=>{
-      this.notesProfessionnelles = response.data;
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getNoteProfessionnelle(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getNoteProfessionnelle(this.token);
+  }
+  
+  getNoteProfessionnelle(token: any){
+    this.noteProfessionnelleService.get(`${LIST_NOTEPROFESSIONNELLES}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
+      this.notesProfessionnelles = response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.notesProfessionnelles)
     }
     )
@@ -53,7 +75,7 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
         this.noteProfessionnelleService.delete(`${DELETE_NOTEPROFESSIONNELLES}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getNoteProfessionnelle();
+        this.getNoteProfessionnelle(this.token);
       })
       }
       else {

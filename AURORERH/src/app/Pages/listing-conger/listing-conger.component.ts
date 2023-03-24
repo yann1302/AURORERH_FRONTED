@@ -16,6 +16,10 @@ import { ModalAffichCongerComponent } from '../modal-affich-conger/modal-affich-
 export class ListingCongerComponent implements OnInit {
 
 public congers: CongerResponseModel[] = [];
+public token = '';
+  public page = 0;
+  public size = 5;
+  public totalElements!: any;
 
   constructor(
    private router: Router,
@@ -24,12 +28,31 @@ public congers: CongerResponseModel[] = [];
   ) { }
 
   ngOnInit(): void {
-    this.getConger();
+    this.getConger(this.token);
   }
 
-  getConger(){
-    this.congerService.get(LIST_CONGERS).then((response:any)=>{
-      this.congers = response.data;
+  search(event: any){
+    console.log(event.target.value);
+    this.getConger(event.target.value);
+  }
+
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getConger(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getConger(this.token);
+  }
+
+
+  getConger(token: any){
+    this.congerService.get(`${LIST_CONGERS}?token=${token}&page=${this.page}&size=${this.size}` ).then((response:any)=>{
+      this.congers =response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.congers)
     }
     )
@@ -54,7 +77,7 @@ public congers: CongerResponseModel[] = [];
         this.congerService.delete(`${DELETE_CONGERS}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getConger();
+        this.getConger(this.token);
 
 
       })
@@ -94,8 +117,6 @@ public congers: CongerResponseModel[] = [];
       console.log(`Dialog result: ${result}`);
     });
   }
-
-
 
   goTi(){
     this.router.navigate(['/listing-contrat'])

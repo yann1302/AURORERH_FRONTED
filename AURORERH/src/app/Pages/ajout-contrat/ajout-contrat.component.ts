@@ -145,7 +145,7 @@ get f() { return this.formContrat.controls; }
 
 getEmployer(){
   this.employerService.get(LIST_EMPLOYERS).then((response:any)=>{
-    this.employers = response.data;
+    this.employers = response.data.content;
     console.log(this.employers)
   }
   )

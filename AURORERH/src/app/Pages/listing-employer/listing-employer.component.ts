@@ -5,7 +5,7 @@ import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-
 import { EmployerService } from 'src/app/shared/_services/employerService';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2'
-export {NgxPaginationModule} from 'ngx-pagination';
+
 
 @Component({
   selector: 'app-listing-employer',
@@ -17,13 +17,12 @@ export class ListingEmployerComponent implements OnInit {
   public isLoading!: boolean;
   public isLoginFailed = false;
   public employers: EmployerReponseModel[] = [];
-  public id!: any;
-  public p: number = 1;
+  public id!: any
   public collection: any[] = [];
   public token = '';
   public page = 0;
-  public size = 10;
-  public totalElements!: number;
+  public size = 5;
+  public totalElements!: any;
 
   constructor(
     private employerService: EmployerService,
@@ -41,20 +40,25 @@ export class ListingEmployerComponent implements OnInit {
     this.getEmployer(event.target.value);
   }
 
-
-  getEmployer(token: any){
-    this.employerService.get(`${LIST_EMPLOYERS}?token=${token}&page=${this.page}&size=${this.size}` ).then((response:any)=>{
-      this.employers = response.data.content;
-      this.totalElements = response.totalElements;
-      console.log(response);
-      console.log(this.employers);
-    }
-    )
-  }
-
   onChangePageEmployer(event: any) {
     this.page = event - 1;
     this.getEmployer(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getEmployer(this.token);
+  }
+
+  getEmployer(token: any){
+    this.employerService.get(`${LIST_EMPLOYERS}?token=${token}&page=${this.page}&size=${this.size}` ).then((response:any)=>{
+    this.employers = response.data.content;
+    this.totalElements = response.data.totalElements;
+    console.log(response);
+    console.log(this.employers);
+    }
+    )
   }
 
   deleteEmployer(item: any){
@@ -70,7 +74,7 @@ export class ListingEmployerComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Supprimé!',
-          'Employer supprimé.',
+          'Employé supprimé.',
           'success'
         )
         this.employerService.delete(`${DELETE_EMPLOYER}/${item.id}`)
@@ -88,7 +92,7 @@ export class ListingEmployerComponent implements OnInit {
           this.isLoginFailed = true;
           Swal.fire(
             'Annulé!',
-            'Employer non supprimé.',
+            'Employé non supprimé.',
             'error'
           )
       })
@@ -96,7 +100,7 @@ export class ListingEmployerComponent implements OnInit {
       else {
         Swal.fire(
           'Annulé!',
-          'Employer non supprimé.',
+          'Employé non supprimé.',
           'error'
         )}
     })

@@ -51,7 +51,7 @@ export class ModalSessionFormComponent implements OnInit {
 
   getEmployer(){
     this.employerService.get(LIST_EMPLOYERS).then((response:any)=>{
-      this.employers = response.data;
+      this.employers = response.data.content;
       console.log(this.employers)
     }
     )
@@ -59,7 +59,7 @@ export class ModalSessionFormComponent implements OnInit {
 
   getFormation(){
     this.formationService.get(LIST_FORMATIONS).then((response:any)=>{
-      this.formations = response.data;
+      this.formations = response.data.content;
       console.log(this.formations)
     }
     )

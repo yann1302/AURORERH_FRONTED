@@ -16,6 +16,10 @@ import { ModalDemandeFormComponent } from '../modal-demande-form/modal-demande-f
 export class ListingDemandeFormComponent implements OnInit {
 
   public demandes: DemandeFormrResponseModel[] = [];
+  public token = '';
+  public page = 0;
+  public size = 5;
+  public totalElements!: any;
 
   constructor(
     private demandeFormservice: DemandeFormService,
@@ -26,12 +30,30 @@ export class ListingDemandeFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDemande();
+    this.getDemande(this.token);
   }
 
-  getDemande(){
-    this.demandeFormservice.get(LIST_DEMANDEFORMATION).then((response:any)=>{
-      this.demandes = response.data;
+  search(event: any){
+    console.log(event.target.value);
+    this.getDemande(event.target.value);
+  }
+
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getDemande(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getDemande(this.token);
+  }
+
+  getDemande(token: any){
+    this.demandeFormservice.get(`${LIST_DEMANDEFORMATION}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
+      this.demandes =  response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.demandes)
     }
     )
@@ -56,9 +78,7 @@ export class ListingDemandeFormComponent implements OnInit {
         this.demandeFormservice.delete(`${DELETE_DEMANDEFORMATION}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getDemande();
-
-
+        this.getDemande(this.token);
       })
       }
       else {

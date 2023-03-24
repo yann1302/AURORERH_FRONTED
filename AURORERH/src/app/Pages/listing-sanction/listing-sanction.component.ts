@@ -16,8 +16,10 @@ import { ModalAffichSanctionComponent } from '../modal-affich-sanction/modal-aff
   styleUrls: ['./listing-sanction.component.css']
 })
 export class ListingSanctionComponent implements OnInit {
-
   public token = '';
+  public page = 0;
+  public size =5;
+  public totalElements!: any;
   public sanctions: SanctionResponseModel[] = [];
   constructor(
     private sanctionService: SanctionService,
@@ -36,9 +38,24 @@ export class ListingSanctionComponent implements OnInit {
     console.log(event.target.value);
     this.getSanction(event.target.value);
   }
+  search(event: any){
+    console.log(event.target.value);
+    this.getSanction(event.target.value);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getSanction(this.token);
+  }
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getSanction(this.token);
+  }
   getSanction(token: any){
-    this.sanctionService.get(`${LIST_SANCTIONS}?token=${token}`).then((response:any)=>{
+    this.sanctionService.get(`${LIST_SANCTIONS}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
       this.sanctions = response.data.content;
+      this.totalElements = response.data.totalElements;
       console.log(this.sanctions)
     }
     )

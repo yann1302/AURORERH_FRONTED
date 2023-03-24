@@ -18,8 +18,9 @@
     <br> <br>
     <div>
       <label style="margin-top:1.2rem ;"> Montrer
-        <select name="example_length" aria-controls="example" style="width: 5rem;"
+        <select (change)="onChange($event)" name="example_length" aria-controls="example" style="width: 5rem;"
           class="custom-select custom-select-sm form-control form-control-sm">
+          <option value="5">5</option>
           <option value="10">10</option>
           <option value="25">25</option>
           <option value="50">50</option>
@@ -53,7 +54,7 @@
       </thead>
       <tbody>
         <tr role="row" class="odd" *ngFor="let employer of employers | paginate:
-        { id: 'employer', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index">
+        { id: 'employer', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index ">
           <td>{{employer?.codeEmployer}}</td>
           <td tabindex="0" class="sorting_1">{{employer?.nom}} {{employer?.prenom}}</td>
           <td>{{employer?.matricule}}</td>
@@ -75,11 +76,14 @@
           </td>
         </tr>
     </table>
-    <pagination-controls id="employer" (pageChange)="onChangePageEmployer($event)" maxSize="10" directionLinks="true"
-      autoHide="true" responsive="true" previousLabel="Précédent" nextLabel="Suivant">
-    </pagination-controls>
 
-    <!-- <pgination-controls (pageChange)="p = $event"></pagination-controls> -->
+<pagination-controls class="pagination" style="float: right;" id="employer" (pageChange)="onChangePageEmployer($event)"
+    [maxSize]="10" [directionLinks]="true"
+    [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >
+</pagination-controls>
+
+
+
   </div>
 </div>
 <div class="row">

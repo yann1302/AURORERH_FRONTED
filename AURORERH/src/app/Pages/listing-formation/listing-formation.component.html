@@ -8,18 +8,33 @@
   </nav>
 </div>
 
-<button style="float: right;" (click)="openDialog(null)" class="mb-2 mr-2 btn-icon btn btn-success"> <i class="fa-solid fa-plus"></i>
-  Ajouter </button>
-  <label > Recherche:
-    <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
-  </label>
+<button  style="float: right;" (click)="openDialog(null)" class="mb-2 mr-2 btn-icon btn btn-success"> <i class="fa-solid fa-plus"></i>
+  Ajouter
+</button>
+<br>
+<div>
+<label style="margin-top:1.2rem ;margin-top: 3rem;"> Montrer
+  <select (change)="onChange($event)" name="example_length" aria-controls="example" style="width: 5rem;"
+    class="custom-select custom-select-sm form-control form-control-sm">
+    <option value="6">6</option>
+    <option value="10">10</option>
+    <option value="25">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+  </select> Formations </label>
 
-  <br>   <br>
+  <label style="float: right; margin-top: 2rem; margin-right: -5rem; "  >
+    Recherche:
+    <input  (keyup)="search($event)" type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
+  </label>
+</div>
+<br> <br>
 
 <section>
   <div class="container">
   <div class="row" >
- <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let items of formations" ><div class="card text-white card-has-bg click-col" style="background-image:url('https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png');">
+ <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let items of formations  | paginate:
+ { id: 'items', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index" ><div class="card text-white card-has-bg click-col" style="background-image:url('https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png');">
          <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body">
@@ -50,10 +65,12 @@
 </div>
           </div>
         </div>
-      </div></div>
-
-
+      </div>
+    </div>
 </div>
-
+<pagination-controls class="pagination" style="float: right;" id="items" (pageChange)="onChangePageEmployer($event)"
+    [maxSize]="10" [directionLinks]="true"
+    [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >
+</pagination-controls>
 </div>
 </section>

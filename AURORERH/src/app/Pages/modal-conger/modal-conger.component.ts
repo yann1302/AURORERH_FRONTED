@@ -55,7 +55,7 @@ export class ModalCongerComponent implements OnInit {
     date_fin:[this.data ? this.data.fin_conger: '',Validators.required],
     date_reprise:[this.data ? this.data.date_reprise: '',Validators.required],
     etablissement_conger:[this.data ? this.data.etablissement_conger: ''],
-    validation:[this.data ? this.data.validation: 'en attente d`une réponse'],
+    validation:[this.data ? this.data.validation: 'en attente d\'une réponse'],
     description:[this.data ? this.data.description: '',Validators.required],
     statut:[this.data ? this.data.statut: 'en attente d`une réponse'],
     jours:[this.data ? this.data.jours: '',Validators.required],
@@ -110,7 +110,7 @@ export class ModalCongerComponent implements OnInit {
 
 getEmployer(){
   this.employerService.get(LIST_EMPLOYERS).then((response:any) =>{
-    this.employers = response.data;
+    this.employers = response.data.content;
     console.log(this.employers)
   }
   )
@@ -118,7 +118,7 @@ getEmployer(){
 
 getConger(){
   this.congerService.get(LIST_CONGERS).then((response:any)=>{
-    this.congers = response.data;
+    this.congers = response.data.content;
     console.log(this.congers)
   }
   )

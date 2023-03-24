@@ -17,6 +17,10 @@ import { AffichContratComponent } from '../affich-contrat/affich-contrat.compone
 export class ListingContratComponent implements OnInit {
 
   public contrats: ContratResponseModel[] = [];
+  public token = '';
+  public page = 0;
+  public size = 5;
+  public totalElements!: any;
 
   constructor(
     private contratService: ContratService,
@@ -26,16 +30,31 @@ export class ListingContratComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getContrat();
+    this.getContrat(this.token);
 
   }
+  search(event: any){
+    console.log(event.target.value);
+    this.getContrat(event.target.value);
+  }
 
-  getContrat(){
-    this.contratService.get(LIST_CONTRATS).then((response:any)=>{
-      this.contrats = response.data;
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getContrat(this.token);
+  }
+  getContrat(token: any){
+    this.contratService.get(`${LIST_CONTRATS}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
+      this.contrats = response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.contrats)
     }
     )
+  }
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getContrat(this.token);
   }
 
   deleteContrat(item: any){
@@ -57,7 +76,7 @@ export class ListingContratComponent implements OnInit {
         this.contratService.delete(`${DELETE_CONTRATS}/${item.id}`)
         .then((response:any)=>{
         console.log('response', response)
-        this.getContrat();
+        this.getContrat(this.token);
 
 
       })

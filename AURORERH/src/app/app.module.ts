@@ -37,7 +37,7 @@ import { ListingNoteProfessionnelleComponent } from './Pages/listing-note-profes
 import { ModalNoteProfessionelleComponent } from './Pages/modal-note-professionelle/modal-note-professionelle.component';
 import { ModalAffichCongerComponent } from './Pages/modal-affich-conger/modal-affich-conger.component';
 import { ModalAffichSanctionComponent } from './Pages/modal-affich-sanction/modal-affich-sanction.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ListingFormationComponent } from './Pages/listing-formation/listing-formation.component';
 import { ModalFormationComponent } from './Pages/modal-formation/modal-formation.component';
 import { ListingSessionFormationComponent } from './Pages/listing-session-formation/listing-session-formation.component';
@@ -45,6 +45,7 @@ import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listin
 import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-demande-form.component';
 import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-session-form.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ListingDemandeFormComponent,
     ModalDemandeFormComponent,
     ModalSessionFormComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -89,8 +91,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     SharedModule,
     ToastrModule.forRoot(),
     MatDialogModule,
+    MatAutocompleteModule,
     NgxPaginationModule,
-    MatAutocompleteModule
+    MatPaginatorModule
   ],
   providers: [
     UserGuardService,

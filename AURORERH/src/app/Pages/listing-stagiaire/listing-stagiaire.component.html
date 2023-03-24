@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a  routerLink="listing-employer" >Stagiaires</a></li>
+        <li class="breadcrumb-item"><a   >Stagiaires</a></li>
         <li class="breadcrumb-item"><a  style="color: blue;">Liste des Stagiaires </a></li>
       </ol>
     </nav>
@@ -16,7 +16,8 @@
           <br>  <br>
           <div >
             <label style="margin-top:1.2rem ;"> Montrer
-               <select name="example_length" aria-controls="example" style="width: 5rem;" class="custom-select custom-select-sm form-control form-control-sm">
+               <select (change)="onChange($event)" name="example_length" aria-controls="example" style="width: 5rem;" class="custom-select custom-select-sm form-control form-control-sm">
+                <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
@@ -24,14 +25,14 @@
               </select> entrées</label>
 
               <label style="float: right;"> Recherche:
-                <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
+                <input type="search" (keyup)="search($event)" class="form-control form-control-sm" placeholder="" aria-controls="example">
               </label>
             </div>
       <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
   <thead>
   <tr role="row">
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule Stagiaire</th>
-    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
+    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Département</th>
     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Ecole</th>
@@ -40,9 +41,10 @@
   </tr>
   </thead>
   <tbody>
-  <tr role="row" class="odd" *ngFor="let stagiaire of stagiaires ">
+  <tr role="row" class="odd" *ngFor="let stagiaire of stagiaires  | paginate:
+  { id: 'stagiaire', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index ">
       <td>{{stagiaire?.codeStage}}</td>
-      <td tabindex="0" class="sorting_1">{{stagiaire?.nom}}</td>
+      <td tabindex="0" class="sorting_1">{{stagiaire?.nom}} {{stagiaire?.prenom}}</td>
       <td>{{stagiaire?.matricule}}</td>
       <td>{{stagiaire?.departement}}</td>
       <td>{{stagiaire?.ecole}}</td>
@@ -71,23 +73,10 @@
   </tr>
   </tfoot> -->
 </table>
-<ul class="pagination" style="float: right;">
-  <li class="paginate_button page-item previous disabled" id="example_previous">
-    <a href="#" aria-controls="example" data-dt-idx="0" tabindex="0" class="page-link">
-      Précedent
-    </a>
-  </li>
-  <li class="paginate_button page-item active">
-    <a href="#" aria-controls="example" data-dt-idx="1" tabindex="0" class="page-link">
-      1
-    </a>
-  </li>
-  <li class="paginate_button page-item next disabled" id="example_next">
-    <a href="#" aria-controls="example" data-dt-idx="2" tabindex="0" class="page-link">
-      Suivant
-    </a>
-  </li>
-</ul>
+<pagination-controls class="pagination" style="float: right;" id="stagiaire" (pageChange)="onChangePageEmployer($event)"
+    [maxSize]="10" [directionLinks]="true"
+    [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >
+</pagination-controls>
 </div>
 </div>
 <div class="row">

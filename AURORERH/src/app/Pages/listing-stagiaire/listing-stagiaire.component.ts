@@ -18,6 +18,10 @@ export class ListingStagiaireComponent implements OnInit {
   public isLoading!: boolean;
   public isLoginFailed = false;
   public stagiaires: StagiaireResponseModel[]=[];
+  public token = '';
+  public page = 0;
+  public size = 5;
+  public totalElements!: any;
 
   constructor(
    private stagiaireService: StagiaireService,
@@ -28,12 +32,30 @@ export class ListingStagiaireComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getStagiaire()
+    this.getStagiaire(this.token)
   }
 
-  getStagiaire(){
-    this.stagiaireService.get(LIST_STAGIAIRE).then((response:any)=>{
-      this.stagiaires = response.data;
+  search(event: any){
+    console.log(event.target.value);
+    this.getStagiaire(event.target.value);
+  }
+
+  onChangePageEmployer(event: any) {
+    this.page = event - 1;
+    this.getStagiaire(this.token);
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.size = event.target.value;
+    this.getStagiaire(this.token);
+  }
+
+  getStagiaire(token: any){
+    this.stagiaireService.get(`${LIST_STAGIAIRE}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
+      this.stagiaires = response.data.content;
+      this.totalElements = response.data.totalElements;
+      console.log(response);
       console.log(this.stagiaires)
     }
     )
@@ -61,7 +83,7 @@ export class ListingStagiaireComponent implements OnInit {
         this.notif.success('Suppresion avec sucsess ')
 
         if (this.notif ){
-          this.getStagiaire();
+          this.getStagiaire(this.token);
       }
         },err => {
           console.log(err)

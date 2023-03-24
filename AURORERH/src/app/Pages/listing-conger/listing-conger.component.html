@@ -15,7 +15,8 @@
           <br>  <br>
           <div >
           <label style="margin-top:1.2rem ;"> Montrer
-             <select name="example_length" aria-controls="example" style="width: 5rem;" class="custom-select custom-select-sm form-control form-control-sm">
+             <select (change)="onChange($event)" name="example_length" aria-controls="example" style="width: 5rem;" class="custom-select custom-select-sm form-control form-control-sm">
+              <option value="5">5</option>
               <option value="10">10</option>
               <option value="25">25</option>
               <option value="50">50</option>
@@ -23,7 +24,7 @@
             </select> entrées</label>
 
             <label style="float: right;" > Recherche:
-              <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
+              <input (keyup)="search($event)" type="search" class="form-control form-control-sm" placeholder="" aria-controls="example">
             </label>
           </div>
       <table style="width: 100%; background-color: white;" id="" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
@@ -39,7 +40,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr role="row" class="odd" *ngFor="let conger of congers  ">
+  <tr role="row" class="odd" *ngFor="let conger of congers   | paginate:
+  { id: 'conger', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index  ">
       <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}}</td>
       <td>{{conger?.type_conger}}</td>
       <td>{{conger?.jours}} jours</td>
@@ -63,32 +65,21 @@
   </tr>
 </tbody>
   <!-- <tfoot  >
-  <tr><th rowspan="1" colspan="1">Nom</th>
-    <th rowspan="1" colspan="1">Type de contrat</th>
-    <th rowspan="1" colspan="1">poste</th>
-    <th rowspan="1" colspan="1">Date de debut</th>
-    <th rowspan="1" colspan="1">Salaire brut</th>
-    <th rowspan="1" colspan="1">Action</th>
+  <tr >
+    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de conger ou permission</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de jours</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Statut</th>
+    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
   </tfoot> -->
 </table>
-<ul class="pagination" style="float: right;">
-  <li class="paginate_button page-item previous disabled" id="example_previous">
-    <a href="#" aria-controls="example" data-dt-idx="0" tabindex="0" class="page-link">
-      Précedent
-    </a>
-  </li>
-  <li class="paginate_button page-item active">
-    <a href="#" aria-controls="example" data-dt-idx="1" tabindex="0" class="page-link">
-      1
-    </a>
-  </li>
-  <li class="paginate_button page-item next disabled" id="example_next">
-    <a href="#" aria-controls="example" data-dt-idx="2" tabindex="0" class="page-link">
-      Suivant
-    </a>
-  </li>
-</ul>
+
+<pagination-controls class="pagination" style="float: right;" id="conger" (pageChange)="onChangePageEmployer($event)"
+    [maxSize]="10" [directionLinks]="true"
+    [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >
+</pagination-controls>
+
 </div>
 </div>
 <div class="row">
