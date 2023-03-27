@@ -1,10 +1,10 @@
 <div class="row">
-  <h3 style="margin-left: 3rem;color: blue;"><b>Liste des Congés et permissions</b> </h3>
+  <h3 style="margin-left: 3rem; color: rgb(43, 113, 252); "><b>Liste des Congés et permissions</b> </h3>
   <div class="container-fluid">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a  >Congés et permissions</a></li>
-        <li class="breadcrumb-item"><a (click)="goTi()" style="color: blue;">Liste des Congés et permissions </a></li>
+        <li class="breadcrumb-item"><a (click)="goTi()" style="color: rgb(43, 113, 252);">Liste des Congés et permissions </a></li>
       </ol>
     </nav>
   </div>
@@ -31,18 +31,20 @@
 
   <thead>
   <tr role="row">
-    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de conger ou permission</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de jours</th>
-    <!-- <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">validation</th> -->
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Statut</th>
-    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Matricule Employé</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de conger ou permission</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de jours</th>
+    <!-- <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">validation</th> -->
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Statut</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
   </thead>
   <tbody>
   <tr role="row" class="odd" *ngFor="let conger of congers   | paginate:
   { id: 'conger', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index  ">
-      <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}}</td>
+      <td>{{conger?.employerResponseDTO?.codeEmployer}}</td>
+      <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}} {{conger?.employerResponseDTO?.prenom}}</td>
       <td>{{conger?.type_conger}}</td>
       <td>{{conger?.jours}} jours</td>
       <td style="text-align: center;">

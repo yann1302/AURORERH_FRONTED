@@ -1,11 +1,11 @@
 
-export class FormationResponseModel{
+export class FormationResponseModel {
   constructor(
-    public  id:number,
-    public  theme_form:string,
-    public  description:string,
-    public  duree:string,
-    public  date_publication:Date,
-    public  photo:String
-  ){}
+    public id: number,
+    public theme_form: string,
+    public description: string,
+    public duree: number,
+    public date_publication: string,
+    public photo: string
+  ) { }
 }

@@ -1,22 +1,22 @@
-export class ContratRequestModel{
+export class ContratRequestModel {
   constructor(
     public id: number,
-    public nom: String,
-    public prenom: String,
-    public lieu_recrutememnt: String,
-    public date_embauche: Date,
-    public periode_essaie: String,
-    public debut_periode_essaie: Date,
-    public fin_periode_essaie: Date,
-    public type_contrat: String,
-    public poste: String,
-    public lieu_travail: String,
-    public salaire_brut: String,
-    public etat_civil: String,
-    public statut: String,
-    public  liste_diplo:String,
-    public  document:String,
+    public nom: string,
+    public prenom: string,
+    public lieu_recrutememnt: string,
+    public date_embauche: string,
+    public periode_essaie: string,
+    public debut_periode_essaie: string,
+    public fin_periode_essaie: string,
+    public type_contrat: string,
+    public poste: string,
+    public lieu_travail: string,
+    public salaire_brut: string,
+    public etat_civil: string,
+    public statut: string,
+    public liste_diplo: string,
+    public document: string,
     public id_Employer: number,
 
-  ){}
+  ) { }
 }

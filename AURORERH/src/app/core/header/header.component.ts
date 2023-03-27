@@ -22,8 +22,6 @@ export class HeaderComponent implements OnInit {
 
   getUser(){
     this.currentUser = this.tokenStorage.getUser()
-    
-
   }
 
 }

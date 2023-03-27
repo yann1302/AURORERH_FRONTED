@@ -6,6 +6,7 @@ import { ADD_FORMATIONS } from 'src/app/shared/_elements/api_constante';
 import { FormationRequestModel } from 'src/app/shared/_models/requests/formation-request.model';
 import { FormationService } from 'src/app/shared/_services/formation.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-modal-formation',

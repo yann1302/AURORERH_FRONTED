@@ -20,7 +20,7 @@ export class ListingStagiaireComponent implements OnInit {
   public stagiaires: StagiaireResponseModel[]=[];
   public token = '';
   public page = 0;
-  public size = 5;
+public size = 5;
   public totalElements!: any;
 
   constructor(
@@ -48,6 +48,7 @@ export class ListingStagiaireComponent implements OnInit {
   onChange(event: any) {
     console.log(event);
     this.size = event.target.value;
+    this.page = 0;
     this.getStagiaire(this.token);
   }
 

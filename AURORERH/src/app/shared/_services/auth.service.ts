@@ -21,11 +21,11 @@ export class AuthService {
 
   public login(credentials: UserRequestModel): Observable<any> {
     return this.http.post(`${AUTH}`,
-        new UserRequestModel( credentials.username, credentials.password), httpOptions);
+        new UserRequestModel( credentials.username, credentials.password, credentials.email), httpOptions);
   }
 
   getCurrentUser(): Observable<any> {
-    return this.http.get(AUTH + 'user', httpOptions);
+    return this.http.get(AUTH + 'user' + 'email', httpOptions);
   }
 
 }

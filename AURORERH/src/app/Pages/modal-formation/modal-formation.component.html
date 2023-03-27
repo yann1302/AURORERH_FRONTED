@@ -15,7 +15,7 @@
               <div class="col-md-3">
                 <div class="position-relative form-group card-title">
                   <label  class="card-title" for="">Durée<span style="color: red;">*</span></label>
-                  <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="duree">
+                  <input  name="" id="" placeholder="" type="number" class="form-control" formControlName="duree">
                 <span *ngIf=" (submitted || formFormation.controls.duree.touched) && formFormation.controls.duree.errors "style="color:red">la durée est requise </span>
                 </div>
             </div>
@@ -26,7 +26,9 @@
               <div class="position-relative form-group card-title">
                 <label  class="card-title">Description<span style="color: red;">*</span></label>
                  <span *ngIf=" (submitted || formFormation.controls.description.touched) && formFormation.controls.description.errors "style="color:red">la description est requise</span>
-                 <textarea rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
+                 <textarea id="myTextarea" maxlength="100" appCharacterCounter rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
+                 <!-- <textarea id="myTextarea" maxlength="50" appCharacterCounter></textarea> -->
+
               </div>
           </div>
         </div>

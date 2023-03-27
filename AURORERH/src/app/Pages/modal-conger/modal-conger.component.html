@@ -1,14 +1,15 @@
-<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Edition d'un congé ou une  permission</h2>
+<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(125, 125, 238); "  > Edition d'un congé ou une  permission</h2>
 <hr>
 <div class="mat-dialog-content" [formGroup]="formConger" >
 <div class="main-card " >
         <div  class="form-row">
               <div class="col-md-12">
-                  <div class="position-relative form-group card-title">
-                    <label  class="card-title" for="">Nom & Prénom<span style="color: red;">*</span></label>
+                  <div class="position-relative form-group ">
+                    <label  for=""> Nom & Prénom<span style="color: red;">*</span></label>
                     <select name="select" id="exampleSelect" class="" formControlName="id_Employer" style="width: 100%; height: 2.2rem; border-color: rgb(218, 215, 215); border-radius: 5px;"  >
                       <option value= {{item?.id}} *ngFor="let item of employers" > {{item?.nom}} {{item?.prenom}}</option>
                   </select>
+                  <!-- <input type="text" > {{currentUser?.username}} -->
                   <span *ngIf=" (submitted || formConger.controls.id_Employer.touched) && formConger.controls.id_Employer.errors "style="color:red">le nom l'employé est requis  </span>
                   </div>
               </div>
@@ -16,8 +17,8 @@
 
           <div class="form-row">
             <div class="col-md-6">
-              <div class="position-relative form-group card-title">
-                <label  class="card-title">Type<span style="color: red;">*</span></label>
+              <div class="position-relative form-group ">
+                <label  class="">Type<span style="color: red;">*</span></label>
                 <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="type_conger" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                   <option value=""></option>
                   <option value="congés payés annuels">congés payés annuels</option>
@@ -34,8 +35,8 @@
               </div>
             </div>
               <div class="col-md-6">
-                <div class="position-relative form-group card-title">
-                  <label  class="card-title" >Jours <span style="color: red;">*</span> </label>
+                <div class="position-relative form-group ">
+                  <label  class="" >Jours <span style="color: red;">*</span> </label>
                   <input  type="number" class="form-control" formControlName="jours">
                   <!-- <span *ngIf=" (submitted || formConger.controls.jours.touched) && formConger.controls.jours.errors "   style="color:red">  cette date est requise  </span> -->
                 </div>
@@ -44,24 +45,24 @@
 
         <div class="form-row">
           <div class="col-md-6">
-          <div class="position-relative form-group card-title">
-            <label  class="card-title" for="">Jour de debut <span style="color: red;">*</span> </label>
+          <div class="position-relative form-group ">
+            <label  class="" for="">Jour de debut <span style="color: red;">*</span> </label>
             <input   type="date" class="form-control" formControlName="date_debut">
             <span *ngIf=" (submitted || formConger.controls.date_debut.touched) && formConger.controls.date_debut.errors "   style="color:red">  cette date est requise  </span>
           </div>
           </div>
 
             <div class="col-md-3">
-                <div  class="card-title">
-                  <label class="card-title" for="">Jour de fin <span style="color: red;">*</span></label>
+                <div  class="">
+                  <label class="" for="">Jour de fin <span style="color: red;">*</span></label>
                   <input type="date" class="form-control"  placeholder="" formControlName="date_fin">
                   <span *ngIf=" (submitted || formConger.controls.date_fin.touched) && formConger.controls.date_fin.errors "   style="color:red">  cette date est requise  </span>
                 </div>
             </div>
 
             <div class="col-md-3">
-              <div  class="card-title">
-                <label class="card-title" for="">Date de reprise <span style="color: red;">*</span></label>
+              <div  class="">
+                <label class="" for="">Date de reprise <span style="color: red;">*</span></label>
                 <input type="date" class="form-control"  placeholder="" formControlName="date_reprise">
                 <span *ngIf=" (submitted || formConger.controls.date_reprise.touched) && formConger.controls.date_reprise.errors "   style="color:red">  cette date est requise  </span>
               </div>
@@ -69,17 +70,17 @@
           </div>
           <div class="form-row">
             <div class="col-md-12">
-              <div  class="card-title">
+              <div  class="">
               <label for="textarea">Description<span style="color: red;">*</span>
               </label>
-                <textarea rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
+                <textarea id="myTextarea" maxlength="200" appCharacterCounter rows="1" rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
                    <span *ngIf=" (submitted || formConger.controls.description.touched) && formConger.controls.description.errors " style="color:red"> la description est requise</span>
               </div>
               </div>
             </div>
             <div class="form-row">
               <!-- <div class="col-md-6">
-                <div  class="card-title">
+                <div  class="">
                   <label>
                     validation
                   </label>
@@ -92,7 +93,7 @@
                 </div>
           </div> -->
           <div class="col-md-12">
-            <div  class="card-title">
+            <div  class="">
               <label>
                 Statut
               </label>

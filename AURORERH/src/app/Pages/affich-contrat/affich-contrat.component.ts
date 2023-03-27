@@ -23,23 +23,23 @@ export class AffichContratComponent implements OnInit {
     this.viewContrat(this.id);
   }
 
-  viewContrat(id:number){
+  viewContrat(id: number) {
     this.contartService.get(`${READBYID_CONTRATS}/${id}`)
-    .then((response:any)=>{
-      console.log('response', response);
-      this.id = response.data;
-      console.log( 'test', this.id);
-    });
+      .then((response: any) => {
+        console.log('response', response);
+        this.id = response.data;
+        console.log('test', this.id);
+      });
   }
 
 
-downloadMyFile(){
+  downloadMyFile() {
     const link = document.createElement('a');
-     link.setAttribute('target', '_blank');
-     link.setAttribute('href', 'abc.net/files/test.ino');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'abc.net/files/test.ino');
     link.setAttribute('download', `contrat.zip`);
     document.body.appendChild(link);
     link.click();
     link.remove();
-}
+  }
 }

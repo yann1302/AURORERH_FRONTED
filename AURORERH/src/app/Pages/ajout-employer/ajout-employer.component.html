@@ -2,14 +2,14 @@
   <nav aria-label="breadcrumb" style="margin-right: 2rem; width: 91%;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a  >Employés</a></li>
-      <li class="breadcrumb-item"><a  style="color: blue;" (click)="goTi()" >Liste des employés </a></li>
-      <li class="breadcrumb-item"><a  style="color: blue;">Enregistrement </a></li>
+      <li class="breadcrumb-item"><a  style="color:rgb(43, 113, 252);" (click)="goTi()" >Liste des employés </a></li>
+      <li class="breadcrumb-item"><a  style="color: rgb(43, 113, 252);">Enregistrement </a></li>
     </ol>
   </nav>
 </div>
 <div class="main-card mb-3 card" style="height: 90%;">
   <div class="card-body"  >
-    <div ><h1 class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); " >Enregistrement des informations  d'un employé</h1></div>
+    <div ><h1 class="" style="font-size: 200%; color: rgb(81, 81, 230); " > <b>Enregistrement des informations  d'un employé</b> </h1></div>
 
     <br>
     <h3 class="card-title">Informations Personnelles</h3>
@@ -36,7 +36,7 @@
                   <label  class="">
                     Matricule CNI<span style="color: red;">*</span>
                   </label>
-                  <input name="zip"  type="text" class="form-control" formControlName="matricule"></div>
+                  <input name="zip" placeholder="ecrire le matricule present sur la CNI" type="text" class="form-control" formControlName="matricule"></div>
                   <span *ngIf=" (submitted || formEmployer.controls.matricule.touched) && formEmployer.controls.matricule.errors "   style="color:red">  le matricule est requis   </span>
             </div>
           </div>
@@ -77,8 +77,6 @@
                   <option value=""></option>
                   <option value="M">M</option>
                   <option value="F">F</option>
-                  <option value="Autres">Autres</option>
-
                 </select>
 
               </div>
@@ -91,7 +89,7 @@
                   <label class="">
                     Date de naissance
                   </label>
-                  <input type="date" class="form-control" data-toggle="datepicker-year" placeholder="" formControlName="date_naissance"></div>
+                  <input type="date" class="form-control"  placeholder="" formControlName="date_naissance | date"></div>
             </div>
 
             <div class="col-md-6">
@@ -130,7 +128,7 @@
                   <label for="" class="">
                Poste<span style="color: red;">*</span>
                   </label>
-                  <input name="" id="" placeholder="" type="" class="form-control" formControlName="poste">
+                  <input name="" id="" placeholder="poste que occupe l'employé présentement au sein de l'entreprise" type="" class="form-control" formControlName="poste">
                   <span *ngIf=" (submitted || formEmployer.controls.poste.touched) && formEmployer.controls.poste.errors "   style="color:red">  le poste est requis   </span>
                 </div>
             </div>
@@ -142,7 +140,7 @@
                 <label for="" class="">
              Profession<span style="color: red;">*</span>
                 </label>
-                <input name="" id="" placeholder="" type="" class="form-control" formControlName="profession">
+                <input placeholder="profession premeiere de l'employé " type="" class="form-control" formControlName="profession">
                 <span *ngIf=" (submitted || formEmployer.controls.profession.touched) && formEmployer.controls.profession.errors "   style="color:red">  la profession est requise   </span>
               </div>
           </div>
@@ -162,7 +160,7 @@
               <label class="">
                 Date de début
               </label>
-              <input type="date" class="form-control"  placeholder="" formControlName="date_debut"></div>
+              <input type="date" class="form-control"  placeholder="" formControlName="date_debut "></div>
         </div>
 
         <div class="col-md-3">
@@ -170,7 +168,7 @@
             <label class="">
               Date de fin
             </label>
-            <input type="date" class="form-control"  placeholder="" formControlName="date_fin"></div>
+            <input type="date" class="form-control"  placeholder="" formControlName="date_fin "></div>
       </div>
       <div class="col-md-3">
         <div class="position-relative form-group">
@@ -191,17 +189,27 @@
             <label for="" class="">
          pseudo
             </label>
-            <input name="" id="" placeholder="" type="" class="form-control" formControlName="username">
+            <input name="" id="" placeholder="nom ou surnom" type="" class="form-control" formControlName="username">
             <!-- <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le poste est requis   </span> -->
           </div>
       </div>
 
       <div class="col-md-6">
+        <div  class="position-relative form-group">
+          <label for="" class="">
+       Email
+          </label>
+          <input type="email" placeholder="....@gmail.com" class="form-control" formControlName="email">
+          <!-- <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le poste est requis   </span> -->
+        </div>
+    </div>
+
+      <div class="col-md-12">
         <div class="position-relative form-group">
           <label for="" class="">
        Mot de passe
           </label>
-          <input name="" id="" placeholder="" type="" class="form-control" formControlName="password">
+          <input placeholder="plus de 8 characteres" type="" class="form-control" formControlName="password">
           <!-- <span *ngIf=" (submitted || formEmployer.controls.password.touched) && formEmployer.controls.password.errors "   style="color:red">  le poste est requis   </span> -->
         </div>
     </div>

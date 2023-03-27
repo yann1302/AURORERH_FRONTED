@@ -25,7 +25,7 @@ import { AjoutContratComponent } from './Pages/ajout-contrat/ajout-contrat.compo
 import { AffichContratComponent } from './Pages/affich-contrat/affich-contrat.component';
 import { ListingSanctionComponent } from './Pages/listing-sanction/listing-sanction.component';
 import { ModalSanctionComponent } from './Pages/modal-sanction/modal-sanction.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.component';
@@ -44,8 +44,9 @@ import { ListingSessionFormationComponent } from './Pages/listing-session-format
 import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listing-demande-form.component';
 import { ModalDemandeFormComponent } from './Pages/modal-demande-form/modal-demande-form.component';
 import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-session-form.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CharacterCounterDirective } from './Pages/modal-formation/character-counter';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ListingDemandeFormComponent,
     ModalDemandeFormComponent,
     ModalSessionFormComponent,
+    CharacterCounterDirective
 
   ],
   imports: [
@@ -99,13 +101,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     UserGuardService,
     authInterceptorProviders,
     AjoutEmployerComponent,
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR' }
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-   constructor() {
-  registerLocaleData(fr.default);
-} }
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}

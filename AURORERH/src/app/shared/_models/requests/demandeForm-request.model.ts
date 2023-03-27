@@ -1,11 +1,11 @@
-export class DemandeFormRequestModel{
+export class DemandeFormRequestModel {
   constructor(
-    public  id:number,
-    public  date_demande:Date,
-    public  statut:String,
-    public  id_Employer:number,
-    public  id_Formation:number
-  ){}
+    public id: number,
+    public date_demande: string,
+    public statut: string,
+    public id_Employer: number,
+    public id_Formation: number
+  ) { }
 }
 
 

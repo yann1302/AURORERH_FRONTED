@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
     public submitted!: boolean;
     public isLoading!: boolean;
 
-
     constructor(
       private router: Router,
       private authService: AuthService,
@@ -31,7 +30,6 @@ export class LoginComponent implements OnInit {
       private route: ActivatedRoute,
       private notif: NotificationService
       ) { }
-
 
     ngOnInit(): void {
         this.currentUser = this.tokenStorage.getUser()
@@ -47,6 +45,7 @@ export class LoginComponent implements OnInit {
         this.formLogin = this.fb.group({
             login: ['', Validators.required],
             password: ['', Validators.required],
+            email:['']
         });
     }
 
@@ -60,7 +59,7 @@ export class LoginComponent implements OnInit {
             return;
         }
         let dto;
-        dto = new UserRequestModel(this.f.login.value, this.f.password.value)
+        dto = new UserRequestModel(this.f.login.value, this.f.password.value,this.f.email.value)
         this.authService.login(dto)
             .subscribe((result: any) => {
             console.log('result', result)
@@ -80,7 +79,7 @@ export class LoginComponent implements OnInit {
         })
     }
 
-   
+
 }
 
 

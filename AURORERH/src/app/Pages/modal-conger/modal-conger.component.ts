@@ -10,6 +10,7 @@ import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-
 import { CongerService } from 'src/app/shared/_services/conger.service';
 import { EmployerService } from 'src/app/shared/_services/employerService';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
+import { TokenStorageService } from 'src/app/shared/_services/token-storage.service';
 
 @Component({
   selector: 'app-modal-conger',
@@ -25,6 +26,7 @@ export class ModalCongerComponent implements OnInit {
   public isLoginFailed = false;
   public employers: EmployerReponseModel[] = [];
   public congers: CongerResponseModel[] = [];
+  currentUser!:any;
   id: any;
 
   constructor(
@@ -34,6 +36,7 @@ export class ModalCongerComponent implements OnInit {
     private fb: FormBuilder,
     private notif: NotificationService,
     private employerService: EmployerService,
+    private tokenStorage: TokenStorageService,
     private dialogRef: MatDialogRef<ModalCongerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
 
@@ -45,6 +48,7 @@ export class ModalCongerComponent implements OnInit {
   ngOnInit(): void {
     this.getEmployer();
     this.initFormConger();
+    this.getUser();
 
   }
 
@@ -122,6 +126,10 @@ getConger(){
     console.log(this.congers)
   }
   )
+}
+
+getUser(){
+  this.currentUser = this.tokenStorage.getUser()
 }
 
 

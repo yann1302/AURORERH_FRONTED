@@ -11,23 +11,21 @@ export class EmployerService {
   constructor(private http: HttpClient) {
   }
 
- public get(url:string) {
-  return this.http.get(url).toPromise();
- }
+  public get(url: string) {
+    return this.http.get(url).toPromise();
+  }
 
- public post(url:string, dto:EmployerRequestModel){
-  return this.http.post(url,dto).toPromise();
- }
+  public post(url: string, dto: EmployerRequestModel) {
+    return this.http.post(url, dto).toPromise();
+  }
 
- public put(url:string,dto:EmployerRequestModel){
-  return  this.http.put(url,dto).toPromise();
- }
+  public put(url: string, dto: EmployerRequestModel) {
+    return this.http.put(url, dto).toPromise();
+  }
 
- public delete(url:string){
-  return this.http.delete(url).toPromise();
- }
-
-
+  public delete(url: string) {
+    return this.http.delete(url).toPromise();
+  }
 
 }
 

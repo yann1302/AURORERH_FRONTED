@@ -45,10 +45,11 @@ export class ListingEmployerComponent implements OnInit {
     this.getEmployer(this.token);
   }
 
-  onChange(event: any) {
+  onChangeSize(event: any) {
     console.log(event);
     this.size = event.target.value;
     this.getEmployer(this.token);
+    this.page = 0;
   }
 
   getEmployer(token: any){

@@ -55,7 +55,7 @@ export class AjoutEmployerComponent implements OnInit {
         nom: [data ? data.nom :  '', Validators.required],
         matricule: [data ? data.matricule: '', Validators.required],
         adresse:[data ? data.adresse: ''],
-        date_debut:[data ?data.date_debut: ''],
+        date_debut:[data ?data.date_debut  : ''],
         date_fin:[data ? data.date_fin: ''],
         date_naissance:[data ? data.date_naissance: ''],
         id:[data ? data.id: ''],
@@ -72,7 +72,8 @@ export class AjoutEmployerComponent implements OnInit {
         ville_exertion:[data ? data.ville_exertion: '', Validators.required],
         type_contrat:[data ? data.type_contrat: ''],
         username:[data ? data.username: ''],
-        password:[data ? data.password: '']
+        password:[data ? data.password: ''],
+        email:[data ? data.email: '']
 
     });
 }
@@ -109,7 +110,8 @@ export class AjoutEmployerComponent implements OnInit {
       this.f.profession.value,
       this.f.poste.value,
       this.f.username.value,
-      this.f.password.value
+      this.f.password.value,
+      this.f.email.value
       )
       console.log('avant', dto)
     this.employerService.post(ADD_EMPLOYER,dto )

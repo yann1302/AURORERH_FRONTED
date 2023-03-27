@@ -1,12 +1,12 @@
 <div class="row">
 
-  <h3 style="margin-left: 3rem;color: blue;"><b>Liste des Employés</b> </h3>
+  <h3 style="margin-left: 3rem;color: rgb(43, 113, 252);"><b>Liste des Employés</b> </h3>
   <div class="container-fluid">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="listing-employer" routerLinkActive="router-link-active">Employés</a>
         </li>
-        <li class="breadcrumb-item"><a (click)="goTi()" style="color: blue;">Liste des employés </a></li>
+        <li class="breadcrumb-item"><a (click)="goTi()" style="color: rgb(43, 113, 252);">Liste des employés </a></li>
       </ol>
     </nav>
   </div>
@@ -18,7 +18,7 @@
     <br> <br>
     <div>
       <label style="margin-top:1.2rem ;"> Montrer
-        <select (change)="onChange($event)" name="example_length" aria-controls="example" style="width: 5rem;"
+        <select (change)="onChangeSize($event)" name="example_length" aria-controls="example" style="width: 5rem;"
           class="custom-select custom-select-sm form-control form-control-sm">
           <option value="5">5</option>
           <option value="10">10</option>
@@ -36,19 +36,19 @@
       aria-describedby="example_info">
       <thead>
         <tr role="row">
-          <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
             aria-sort="ascending" aria-label="Name: activate to sort column descending">Matricule employé</th>
-          <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
             aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
-          <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;"
             aria-label="Position: activate to sort column ascending">Matricule CNI</th>
-          <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;"
             aria-label="Office: activate to sort column ascending">poste</th>
-          <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;"
             aria-label="Age: activate to sort column ascending">Addresse</th>
-          <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
             aria-label="Start date: activate to sort column ascending">Date de debut </th>
-          <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;"
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;"
             aria-label="Salary: activate to sort column ascending">Action</th>
         </tr>
       </thead>
