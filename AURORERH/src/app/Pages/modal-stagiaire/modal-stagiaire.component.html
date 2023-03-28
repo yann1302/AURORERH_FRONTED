@@ -1,4 +1,4 @@
-<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Edition dun stagiaire </h2>
+<h2 mat-dialog-title  style="font-size: 200%; color: rgb(81, 81, 230); "> <b>Edition des informations d'un stagiaire </b> </h2>
 <hr>
 <div class="mat-dialog-content" [formGroup]="formStagiaire"  >
  <div class="main-card ">
@@ -9,7 +9,7 @@
               <label for="" class="">
                 Nom <span style="color: red;">*</span>
               </label>
-              <input name="" id="" placeholder="écrire le nom" type="" class="form-control" formControlName="nom">
+              <input placeholder="écrire le nom" type="" class="form-control" formControlName="nom">
             </div>
               <span *ngIf=" (submitted || formStagiaire.controls.nom.touched) && formStagiaire.controls.nom.errors "   style="color:red">  le nom est requis  </span>
         </div>
@@ -18,7 +18,7 @@
               <label  class="">
                 Prénom
               </label>
-              <input name="" id="" placeholder="ecire le prénom" type="" class="form-control" formControlName="prenom">
+              <input placeholder="ecire le prénom" type="" class="form-control" formControlName="prenom">
             </div>
         </div>
         <div class="col-md-2">
@@ -100,7 +100,7 @@
             <label for="" class="">
              Statut Matrimonial
             </label>
-            <input name="" id="" placeholder="ex:marié" type="" class="form-control" formControlName="statut_matrimoniale"></div>
+            <input placeholder="ex:marié" type="" class="form-control" formControlName="statut_matrimoniale"></div>
       </div>
       <div class="col-md-6">
           <div class="position-relative form-group">
@@ -118,7 +118,7 @@
             <label for="" class="">
               Annee Academique<span style="color: red;">*</span>
             </label>
-            <input name="" id="" placeholder="" type="" class="form-control" formControlName="annee_academique">
+            <input placeholder="" type="" class="form-control" formControlName="annee_academique">
             <span *ngIf=" (submitted || formStagiaire.controls.annee_academique.touched) && formStagiaire.controls.annee_academique.errors "   style="color:red">  le poste est requis   </span>
           </div>
       </div>
@@ -139,7 +139,7 @@
           <label for="" class="">
             duree<span style="color: red;">*</span>
           </label>
-          <input name="" id="" placeholder="" type="" class="form-control" formControlName="duree">
+          <input placeholder="" type="" class="form-control" formControlName="duree">
           <span *ngIf=" (submitted || formStagiaire.controls.duree.touched) && formStagiaire.controls.duree.errors "   style="color:red">  la profession est requise   </span>
         </div>
     </div>

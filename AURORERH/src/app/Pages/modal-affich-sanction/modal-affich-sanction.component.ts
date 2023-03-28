@@ -4,8 +4,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LIST_SANCTIONS } from 'src/app/shared/_elements/api_constante';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { SanctionResponseModel } from 'src/app/shared/_models/responses/sanction-response.model';
-import { EmployerService } from 'src/app/shared/_services/employerService';
-import { SanctionService } from 'src/app/shared/_services/sanctionService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
+import { SanctionService } from 'src/app/shared/_services/sanction.service';
 
 @Component({
   selector: 'app-modal-affich-sanction',

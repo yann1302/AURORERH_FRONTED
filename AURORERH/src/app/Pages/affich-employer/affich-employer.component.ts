@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { READBYID_EMPLOYER } from 'src/app/shared/_elements/api_constante';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 
 @Component({
   selector: 'app-affich-employer',

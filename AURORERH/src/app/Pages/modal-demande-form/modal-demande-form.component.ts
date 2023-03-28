@@ -6,8 +6,8 @@ import { ADD_DEMANDEFORMATION, LIST_EMPLOYERS, LIST_FORMATIONS } from 'src/app/s
 import { DemandeFormRequestModel } from 'src/app/shared/_models/requests/demandeForm-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { FormationResponseModel } from 'src/app/shared/_models/responses/formation-response.model';
-import { DemandeFormService } from 'src/app/shared/_services/demandeFormService';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { DemandeFormService } from 'src/app/shared/_services/demande-Form.service';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { FormationService } from 'src/app/shared/_services/formation.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 
@@ -94,7 +94,7 @@ addDemandeForm(){
 
 getEmployer(){
   this.employerService.get(LIST_EMPLOYERS).then((response:any) =>{
-    this.employers = response.data;
+    this.employers = response.data.content;
     console.log(this.employers)
   }
   )
@@ -102,7 +102,7 @@ getEmployer(){
 
 getFormation(){
   this.formationService.get(LIST_FORMATIONS).then((response:any)=>{
-    this.formations = response.data;
+    this.formations = response.data.content;
     console.log(this.formations)
   }
   )

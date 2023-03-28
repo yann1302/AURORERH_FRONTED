@@ -48,19 +48,28 @@
             aria-label="Age: activate to sort column ascending">Addresse</th>
           <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
             aria-label="Start date: activate to sort column ascending">Date de debut </th>
+          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
+            aria-label="Start date: activate to sort column ascending">Statut </th>
           <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;"
             aria-label="Salary: activate to sort column ascending">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr role="row" class="odd" *ngFor="let employer of employers | paginate:
-        { id: 'employer', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index ">
+        { id: 'employer', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index "
+         >
           <td>{{employer?.codeEmployer}}</td>
           <td tabindex="0" class="sorting_1">{{employer?.nom}} {{employer?.prenom}}</td>
           <td>{{employer?.matricule}}</td>
           <td>{{employer?.poste}}</td>
           <td>{{employer?.adresse}}</td>
           <td>{{employer?.date_debut | date: 'dd-MM-yyy'}}</td>
+          <td style="text-align: center;">
+            <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
+          'Actif': employer?.statut == 'ACTIF',
+          'Inactif': employer?.statut == 'INACTIF'
+        }">{{employer?.statut}}</div>
+          </td>
           <td>
             <button (click)="goToViewId(employer)" routerLink="/affich-employer"
               class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
@@ -77,10 +86,10 @@
         </tr>
     </table>
 
-<pagination-controls class="pagination" style="float: right;" id="employer" (pageChange)="onChangePageEmployer($event)"
-    [maxSize]="10" [directionLinks]="true"
-    [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >
-</pagination-controls>
+    <pagination-controls class="pagination" style="float: right;" id="employer"
+      (pageChange)="onChangePageEmployer($event)" [maxSize]="10" [directionLinks]="true" [autoHide]="true"
+      [responsive]="true" previousLabel="Précédent" nextLabel="Suivant">
+    </pagination-controls>
 
 
 

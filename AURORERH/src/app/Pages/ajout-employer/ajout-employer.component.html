@@ -89,7 +89,7 @@
                   <label class="">
                     Date de naissance
                   </label>
-                  <input type="date" class="form-control"  placeholder="" formControlName="date_naissance | date"></div>
+                  <input type="date" class="form-control"  placeholder="" formControlName="date_naissance"></div>
             </div>
 
             <div class="col-md-6">
@@ -123,7 +123,7 @@
           <h3 class="card-title">Informations professionnelles</h3>
 
           <div class="form-row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="" class="">
                Poste<span style="color: red;">*</span>
@@ -132,10 +132,8 @@
                   <span *ngIf=" (submitted || formEmployer.controls.poste.touched) && formEmployer.controls.poste.errors "   style="color:red">  le poste est requis   </span>
                 </div>
             </div>
-        </div>
 
-        <div class="form-row">
-          <div class="col-md-6">
+            <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
              Profession<span style="color: red;">*</span>
@@ -144,6 +142,9 @@
                 <span *ngIf=" (submitted || formEmployer.controls.profession.touched) && formEmployer.controls.profession.errors "   style="color:red">  la profession est requise   </span>
               </div>
           </div>
+        </div>
+
+        <div class="form-row">
           <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="examplePassword11" class="">
@@ -153,6 +154,19 @@
                 <span *ngIf=" (submitted || formEmployer.controls.ville_exertion.touched) && formEmployer.controls.ville_exertion.errors "   style="color:red">  la ville d'exertion est requise   </span>
               </div>
           </div>
+          <div class="col-md-6">
+            <div class="position-relative form-group">
+              <label for="" class="">
+                Statut
+              </label>
+              <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
+                <option value=""></option>
+                <option  value="ACTIF">Actif</option>
+                <option  value="INACTIF">Inactif</option>
+              </select>
+              <span *ngIf=" (submitted || formEmployer.controls.statut.touched) && formEmployer.controls.statut.errors " style="color:red">  le statut est requis  </span>
+            </div>
+        </div>
       </div>
       <div class="form-row">
         <div class="col-md-6">
@@ -160,7 +174,7 @@
               <label class="">
                 Date de début
               </label>
-              <input type="date" class="form-control"  placeholder="" formControlName="date_debut "></div>
+              <input type="date" class="form-control"  placeholder="" formControlName="date_debut"></div>
         </div>
 
         <div class="col-md-3">
@@ -168,7 +182,7 @@
             <label class="">
               Date de fin
             </label>
-            <input type="date" class="form-control"  placeholder="" formControlName="date_fin "></div>
+            <input type="date" class="form-control"  placeholder="" formControlName="date_fin"></div>
       </div>
       <div class="col-md-3">
         <div class="position-relative form-group">

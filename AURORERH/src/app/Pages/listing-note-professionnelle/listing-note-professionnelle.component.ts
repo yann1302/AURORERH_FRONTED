@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DELETE_NOTEPROFESSIONNELLES, LIST_NOTEPROFESSIONNELLES } from 'src/app/shared/_elements/api_constante';
 import { NoteProfessionnellesResponseModel } from 'src/app/shared/_models/responses/noteProfessionnelle-response.model';
-import { NoteProfessionnelleService } from 'src/app/shared/_services/noteProfessionnelle.service';
+import { NoteProfessionnelleService } from 'src/app/shared/_services/note-Professionnelle.service';
 import Swal from 'sweetalert2';
 import { ModalNoteProfessionelleComponent } from '../modal-note-professionelle/modal-note-professionelle.component';
 
@@ -45,7 +45,7 @@ export class ListingNoteProfessionnelleComponent implements OnInit {
     this.size = event.target.value;
     this.getNoteProfessionnelle(this.token);
   }
-  
+
   getNoteProfessionnelle(token: any){
     this.noteProfessionnelleService.get(`${LIST_NOTEPROFESSIONNELLES}?token=${token}&page=${this.page}&size=${this.size}`).then((response:any)=>{
       this.notesProfessionnelles = response.data.content;

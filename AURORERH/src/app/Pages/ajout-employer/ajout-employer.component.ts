@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ADD_EMPLOYER, READBYID_EMPLOYER, UPDATE_EMPLOYER } from 'src/app/shared/_elements/api_constante';
 import { EmployerRequestModel } from 'src/app/shared/_models/requests/employer-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2';
 
@@ -73,7 +73,8 @@ export class AjoutEmployerComponent implements OnInit {
         type_contrat:[data ? data.type_contrat: ''],
         username:[data ? data.username: ''],
         password:[data ? data.password: ''],
-        email:[data ? data.email: '']
+        email:[data ? data.email: ''],
+        statut:[data ? data.statut: '',Validators.required],
 
     });
 }
@@ -111,7 +112,8 @@ export class AjoutEmployerComponent implements OnInit {
       this.f.poste.value,
       this.f.username.value,
       this.f.password.value,
-      this.f.email.value
+      this.f.email.value,
+      this.f.statut.value
       )
       console.log('avant', dto)
     this.employerService.post(ADD_EMPLOYER,dto )

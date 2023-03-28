@@ -23,7 +23,8 @@ export class EmployerRequestModel {
     public poste: string,
     public username: string,
     public password: string,
-    public email: string
+    public email: string,
+    public statut: string,
 
   ) {
 

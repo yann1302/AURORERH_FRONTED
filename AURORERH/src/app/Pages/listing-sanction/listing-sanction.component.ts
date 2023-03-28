@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DELETE_SANCTIONS, LIST_SANCTIONS, READBYID_SANCTIONS } from 'src/app/shared/_elements/api_constante';
 import { SanctionResponseModel } from 'src/app/shared/_models/responses/sanction-response.model';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SanctionService } from 'src/app/shared/_services/sanctionService';
+import { SanctionService } from 'src/app/shared/_services/sanction.service';
 import Swal from 'sweetalert2';
 import {MatDialog} from '@angular/material/dialog';
 import { ModalSanctionComponent } from '../modal-sanction/modal-sanction.component';

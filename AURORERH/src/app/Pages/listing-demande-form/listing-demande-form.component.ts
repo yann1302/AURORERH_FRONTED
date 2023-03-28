@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DELETE_DEMANDEFORMATION, LIST_DEMANDEFORMATION } from 'src/app/shared/_elements/api_constante';
 import { DemandeFormrResponseModel } from 'src/app/shared/_models/responses/demandeForm-response.model';
-import { DemandeFormService } from 'src/app/shared/_services/demandeFormService';
+import { DemandeFormService } from 'src/app/shared/_services/demande-Form.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2';
 import { ModalDemandeFormComponent } from '../modal-demande-form/modal-demande-form.component';

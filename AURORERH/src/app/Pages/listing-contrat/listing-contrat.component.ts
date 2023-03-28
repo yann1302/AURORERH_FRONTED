@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DELETE_CONTRATS, LIST_CONTRATS } from 'src/app/shared/_elements/api_constante';
 import { ContratResponseModel } from 'src/app/shared/_models/responses/contrat-response.model';
-import { ContratService } from 'src/app/shared/_services/contratService';
+import { ContratService } from 'src/app/shared/_services/contrat.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2';
 import { AffichContratComponent } from '../affich-contrat/affich-contrat.component';

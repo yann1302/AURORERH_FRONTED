@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { READBYID_CONTRATS } from 'src/app/shared/_elements/api_constante';
-import { ContratService } from 'src/app/shared/_services/contratService';
+import { ContratService } from 'src/app/shared/_services/contrat.service';
 
 @Component({
   selector: 'app-affich-contrat',

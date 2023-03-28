@@ -5,7 +5,7 @@ import { DELETE_SESSIONFORMATIONS, LIST_SESSIONFORMATIONS } from 'src/app/shared
 import { SessionFormationResponseModel } from 'src/app/shared/_models/responses/sessionFormation-response.model';
 import { SessionListResponseModel } from 'src/app/shared/_models/responses/sessionList-response.model';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SessionFormationService } from 'src/app/shared/_services/sessionFormation.service';
+import { SessionFormationService } from 'src/app/shared/_services/session-Formation.service';
 import Swal from 'sweetalert2';
 import { ModalSessionFormComponent } from '../modal-session-form/modal-session-form.component';
 

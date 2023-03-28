@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { READBYID_STAGIAIRE } from 'src/app/shared/_elements/api_constante';
-import { StagiaireService } from 'src/app/shared/_services/stagiaireService';
+import { StagiaireService } from 'src/app/shared/_services/stagiaire.service';
 
 @Component({
   selector: 'app-affich-stagiaire',

@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ADD_CONTRATS, LIST_EMPLOYERS, READBYID_CONTRATS, UPDATE_CONTRATS } from 'src/app/shared/_elements/api_constante';
 import { ContratRequestModel } from 'src/app/shared/_models/requests/contrat-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
-import { ContratService } from 'src/app/shared/_services/contratService';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { ContratService } from 'src/app/shared/_services/contrat.service';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 
 @Component({

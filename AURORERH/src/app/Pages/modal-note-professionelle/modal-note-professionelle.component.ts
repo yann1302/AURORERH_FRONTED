@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ADD_NOTEPROFESSIONNELLES } from 'src/app/shared/_elements/api_constante';
 import { NoteProfessionnellesRequestModel } from 'src/app/shared/_models/requests/noteProfessionnel-request.model';
-import { NoteProfessionnelleService } from 'src/app/shared/_services/noteProfessionnelle.service';
+import { NoteProfessionnelleService } from 'src/app/shared/_services/note-Professionnelle.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 
 @Component({

@@ -8,7 +8,7 @@ import { CongerRequestModel } from 'src/app/shared/_models/requests/conger-reque
 import { CongerResponseModel } from 'src/app/shared/_models/responses/conger-response.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { CongerService } from 'src/app/shared/_services/conger.service';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import { TokenStorageService } from 'src/app/shared/_services/token-storage.service';
 

@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ADD_STAGIAIRE } from 'src/app/shared/_elements/api_constante';
 import { StagiaireRequestModel } from 'src/app/shared/_models/requests/stagiaire-request-model';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { StagiaireService } from 'src/app/shared/_services/stagiaireService';
+import { StagiaireService } from 'src/app/shared/_services/stagiaire.service';
 import { ModalSanctionComponent } from '../modal-sanction/modal-sanction.component';
 
 @Component({

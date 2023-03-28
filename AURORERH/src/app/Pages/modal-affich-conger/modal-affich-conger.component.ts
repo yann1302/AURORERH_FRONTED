@@ -6,7 +6,7 @@ import { LIST_CONGERS } from 'src/app/shared/_elements/api_constante';
 import { CongerResponseModel } from 'src/app/shared/_models/responses/conger-response.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { CongerService } from 'src/app/shared/_services/conger.service';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 
 @Component({

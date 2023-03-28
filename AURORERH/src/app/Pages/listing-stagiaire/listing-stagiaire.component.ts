@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DELETE_STAGIAIRE, LIST_STAGIAIRE } from 'src/app/shared/_elements/api_constante';
 import { StagiaireResponseModel } from 'src/app/shared/_models/responses/stagiaire-response.model';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { StagiaireService } from 'src/app/shared/_services/stagiaireService';
+import { StagiaireService } from 'src/app/shared/_services/stagiaire.service';
 import Swal from 'sweetalert2';
 import { ModalStagiaireComponent } from '../modal-stagiaire/modal-stagiaire.component';
 

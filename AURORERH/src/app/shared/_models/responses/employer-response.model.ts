@@ -1,4 +1,3 @@
-
 export class EmployerReponseModel {
   constructor(
     public codeEmployer: string,
@@ -21,8 +20,9 @@ export class EmployerReponseModel {
     public statut_matrimoniale: string,
     public type_contrat: string,
     public ville_exertion: string,
-    public username: String,
-    public password: String
+    public username: string,
+    public password: string,
+    public statut: string,
 
   ) {
 

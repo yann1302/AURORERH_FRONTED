@@ -29,18 +29,16 @@
     </label>
   </div>
   <br> <br>
-
-<div class="card" style="height:16rem" *ngFor="let items of notesProfessionnelles | paginate:
+ <div class="row">
+<div class="card " style="height:16rem; width: 45%; margin: 1%  " *ngFor="let items of notesProfessionnelles | paginate:
 { id: 'items', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index" >
   <div class="row ">
     <div class="col-md-7 px-3">
       <div class="card-block px-6">
         <div class="btn-group " style="float:right; height:1rem ">
           <button type="button"  aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="fas fa-ellipsis-h"></i></button>
-          <div style="background: none; border: none;" class="dropdown-menu-right  dropdown-menu" ><h6 tabindex="-1" style="margin-left:4rem" class="dropdown-header">Actions</h6>
-            <!-- <button style="margin-left:3rem" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
-              <i class="fa-solid fa-eye"></i>
-            </button> -->
+          <div style=" border: none;" class="dropdown-menu-right  dropdown-menu" ><h6 tabindex="-1" style="margin-left:4rem" class="dropdown-header">Actions</h6>
+
             <button style="margin-left:4rem" (click)="openDialog(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
               <i class="fa-solid fa-pen"></i>
             </button>
@@ -67,6 +65,50 @@
     </div>
   </div>
 </div>
+</div>
+
+
+  <!-- <div class="row justify-content-start : sur la gauche " style="background-color: black; ">
+    <div class="col-lg-6"  >
+      <div class="card card-margin" style="height: 20rem; width: 90%; " *ngFor="let items of notesProfessionnelles | paginate:
+      { id: 'items', currentPage: page + 1,  itemsPerPage: size, totalItems: totalElements }; let i=index" >
+          <div class="card-header no-border">
+              <h5 class="card-title">Note</h5>
+          </div>
+          <div class="card-body pt-0">
+              <div class="widget-49">
+                  <div class="widget-49-title-wrapper">
+                      <div class="widget-49-date-primary">
+                          <span class="widget-49-date-day">{{items?.date_publication | date: 'dd' }}</span>
+                          <span class="widget-49-date-month">{{items?.date_publication | date: 'MM' }}</span>
+                      </div>
+                      <div class="widget-49-meeting-info">
+                          <span class="widget-49-pro-title">{{items?.theme}} </span>
+                          <span class="widget-49-meeting-time">Mise en ligne le {{items?.date_publication | date: 'dd/MM/yy, à HH:mm' }}</span>
+                      </div>
+                  </div>
+                  <ol class="widget-49-meeting-points">
+                    {{items?.description}}
+                  </ol>
+                  <div class="btn-group " style="float:right; height:1rem ">
+                    <button type="button"  aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="fas fa-ellipsis-h"></i></button>
+                    <div style="background: none; border: none;" class="dropdown-menu-right  dropdown-menu" ><h6 tabindex="-1" style="margin-left:4rem" class="dropdown-header">Actions</h6>
+
+                      <button style="margin-left:4rem" (click)="openDialog(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+                      <button (click)="deleteNP(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                        <div class="p-3 text-right">
+                        </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </div></div> -->
 <pagination-controls class="pagination" style="float: right;" id="items" (pageChange)="onChangePageEmployer($event)"
     [maxSize]="10" [directionLinks]="true"
     [autoHide]="true" [responsive]="true" previousLabel="Précédent" nextLabel="Suivant" >

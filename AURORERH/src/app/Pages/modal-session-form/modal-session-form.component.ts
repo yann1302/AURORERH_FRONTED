@@ -7,10 +7,10 @@ import { ADD_SESSIONFORMATIONS, LIST_EMPLOYERS, LIST_FORMATIONS } from 'src/app/
 import { SessionFormationRequestModel } from 'src/app/shared/_models/requests/sessionFormation-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { FormationResponseModel } from 'src/app/shared/_models/responses/formation-response.model';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { FormationService } from 'src/app/shared/_services/formation.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SessionFormationService } from 'src/app/shared/_services/sessionFormation.service';
+import { SessionFormationService } from 'src/app/shared/_services/session-Formation.service';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';

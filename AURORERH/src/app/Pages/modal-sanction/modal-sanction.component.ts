@@ -7,9 +7,9 @@ import { ADD_SANCTIONS, LIST_EMPLOYERS, LIST_SANCTIONS, READBYID_SANCTIONS } fro
 import { SanctionRequestModel } from 'src/app/shared/_models/requests/sanction-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { SanctionResponseModel } from 'src/app/shared/_models/responses/sanction-response.model';
-import { EmployerService } from 'src/app/shared/_services/employerService';
+import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SanctionService } from 'src/app/shared/_services/sanctionService';
+import { SanctionService } from 'src/app/shared/_services/sanction.service';
 
 
 @Component({
