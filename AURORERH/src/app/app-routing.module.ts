@@ -4,9 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { AffichContratComponent } from './Pages/affich-contrat/affich-contrat.component';
 import { AffichEmployerComponent } from './Pages/affich-employer/affich-employer.component';
+import { AffichSessionFormComponent } from './Pages/affich-session-form/affich-session-form.component';
 import { AffichStagiaireComponent } from './Pages/affich-stagiaire/affich-stagiaire.component';
 import { AjoutContratComponent } from './Pages/ajout-contrat/ajout-contrat.component';
 import { AjoutEmployerComponent } from './Pages/ajout-employer/ajout-employer.component';
+import { ListingArchiveComponent } from './Pages/listing-archive/listing-archive.component';
 import { ListingCongerComponent } from './Pages/listing-conger/listing-conger.component';
 import { ListingContratComponent } from './Pages/listing-contrat/listing-contrat.component';
 import { ListingDemandeFormComponent } from './Pages/listing-demande-form/listing-demande-form.component';
@@ -30,6 +32,7 @@ const routes: Routes = [
     {path: 'ajout-employer', component:AjoutEmployerComponent},
     {path: 'ajout-employer/:id', component:AjoutEmployerComponent},
     {path: 'affich-employer/:id',component:AffichEmployerComponent},
+    {path: 'archive-employer', component:ListingArchiveComponent},
 
     //contrats
     {path: 'listing-contrat', component:ListingContratComponent},
@@ -57,7 +60,8 @@ const routes: Routes = [
     {path:'listing-demandeForm', component:ListingDemandeFormComponent},
 
     //les sessions de formations
-    {path: 'listing-session', component:ListingSessionFormationComponent}
+    {path: 'listing-session', component:ListingSessionFormationComponent},
+    {path: 'affich-session/:reference', component:AffichSessionFormComponent}
 
   ]
 },

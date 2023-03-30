@@ -5,8 +5,10 @@ import { DELETE_SESSIONFORMATIONS, LIST_SESSIONFORMATIONS } from 'src/app/shared
 import { SessionFormationResponseModel } from 'src/app/shared/_models/responses/sessionFormation-response.model';
 import { SessionListResponseModel } from 'src/app/shared/_models/responses/sessionList-response.model';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SessionFormationService } from 'src/app/shared/_services/session-Formation.service';
+import { SessionFormationService } from 'src/app/shared/_services/sessionFormation.service';
+
 import Swal from 'sweetalert2';
+import { ModalAffichSessionFormComponent } from '../modal-affich-session-form/modal-affich-session-form.component';
 import { ModalSessionFormComponent } from '../modal-session-form/modal-session-form.component';
 
 
@@ -83,6 +85,27 @@ export class ListingSessionFormationComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  openDialogDetail(data: any) {
+    const dialogRef = this.dialog.open(ModalAffichSessionFormComponent, {
+     width: '700px',
+     height: 'auto',
+     data:data,
+     disableClose: true,
+     
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+
+    
+  }
+
+  goToViewId(sessionForm: SessionListResponseModel){
+    this.router.navigate(['/affich-session/', sessionForm.reference])
   }
 
 }

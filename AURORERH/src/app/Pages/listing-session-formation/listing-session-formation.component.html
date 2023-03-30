@@ -55,7 +55,7 @@
       }" >{{items?.statut}}</div> -->
     </td>
       <td>
-        <button  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+        <button (click)="goToViewId(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
           <i class="fa-solid fa-eye"></i>
         </button>
         <button (click)="openDialog(items)" routerLinkActive="router-link-active"  class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">

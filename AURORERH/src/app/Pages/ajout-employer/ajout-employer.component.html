@@ -2,8 +2,8 @@
   <nav aria-label="breadcrumb" style="margin-right: 2rem; width: 91%;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a  >Employés</a></li>
-      <li class="breadcrumb-item"><a  style="color:rgb(43, 113, 252);" (click)="goTi()" >Liste des employés </a></li>
-      <li class="breadcrumb-item"><a  style="color: rgb(43, 113, 252);">Enregistrement </a></li>
+      <li class="breadcrumb-item"><a routerLink="listing-employer" routerLinkActive="router-link-active" style="color:rgb(43, 113, 252);" (click)="goTi()" >Liste des employés </a></li>
+      <li class="breadcrumb-item"><a routerLink="listing-employer" routerLinkActive="router-link-active" style="color: rgb(43, 113, 252);">Enregistrement </a></li>
     </ol>
   </nav>
 </div>
@@ -157,7 +157,7 @@
           <div class="col-md-6">
             <div class="position-relative form-group">
               <label for="" class="">
-                Statut
+                Statut<span style="color: red;">*</span>
               </label>
               <select name="select" placeholder=""  id="exampleSelect" type="text" class="" formControlName="statut" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
                 <option value=""></option>
@@ -174,7 +174,7 @@
               <label class="">
                 Date de début
               </label>
-              <input type="date" class="form-control"  placeholder="" formControlName="date_debut"></div>
+              <input  type="date" class="form-control" formControlName="date_debut" ></div>
         </div>
 
         <div class="col-md-3">
@@ -201,30 +201,30 @@
       <div class="col-md-6">
           <div  class="position-relative form-group">
             <label for="" class="">
-         pseudo
+         Nom et Prenom<span style="color: red;">*</span>
             </label>
             <input name="" id="" placeholder="nom ou surnom" type="" class="form-control" formControlName="username">
-            <!-- <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le poste est requis   </span> -->
+            <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le pseudo est requis   </span>
           </div>
       </div>
 
       <div class="col-md-6">
         <div  class="position-relative form-group">
           <label for="" class="">
-       Email
+       Email<span style="color: red;">*</span>
           </label>
           <input type="email" placeholder="....@gmail.com" class="form-control" formControlName="email">
-          <!-- <span *ngIf=" (submitted || formEmployer.controls.username.touched) && formEmployer.controls.username.errors "   style="color:red">  le poste est requis   </span> -->
+          <span *ngIf=" (submitted || formEmployer.controls.email.touched) && formEmployer.controls.email.errors "   style="color:red">  l'email est requis   </span>
         </div>
     </div>
 
       <div class="col-md-12">
         <div class="position-relative form-group">
           <label for="" class="">
-       Mot de passe
+       Mot de passe<span style="color: red;">*</span>
           </label>
           <input placeholder="plus de 8 characteres" type="" class="form-control" formControlName="password">
-          <!-- <span *ngIf=" (submitted || formEmployer.controls.password.touched) && formEmployer.controls.password.errors "   style="color:red">  le poste est requis   </span> -->
+          <span *ngIf=" (submitted || formEmployer.controls.password.touched) && formEmployer.controls.password.errors "   style="color:red">  un mot de passe de 8 characterers est requis   </span>
         </div>
     </div>
   </div>

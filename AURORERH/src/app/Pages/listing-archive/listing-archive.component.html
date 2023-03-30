@@ -1,25 +1,19 @@
 <div class="row">
 
-  <h3 style="margin-left: 3rem;color: rgb(43, 113, 252);"><b>Liste des Employés</b> </h3>
+  <h3 style="margin-left: 3rem;color: rgb(43, 113, 252);"><b>Liste des Employés archivés</b> </h3>
   <div class="container-fluid">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a>Employés</a>
+        <li class="breadcrumb-item"><a >Employés</a>
         </li>
-        <li class="breadcrumb-item"><a routerLink="listing-employer" routerLinkActive="router-link-active" (click)="goTi()" style="color: rgb(43, 113, 252);">Liste des employés </a></li>
+        <li class="breadcrumb-item"><a routerLink="listing-employer" routerLinkActive="router-link-active" (click)="goTi()" style="color: rgb(43, 113, 252);">Liste des employés  </a></li>
+        <li class="breadcrumb-item"><a  style="color: rgb(43, 113, 252);">Liste des Employés archivés </a></li>
       </ol>
     </nav>
   </div>
   <hr>
   <div class="col-sm-12">
-    <button (click)="goToArchive()" style="float: right;" class="mb-2 mr-2 btn-icon btn-icon-only  btn btn-secondary">
-      <i class="fa-solid fa-box-archive"></i>
-    </button>
-    <button (click)="goTo()" style="float: right;" class="mb-2 mr-2 btn-icon btn btn-success"> <i
-        class="fa-solid fa-user"></i>
-      Ajouter </button>
-   
-  
+
     <br> <br>
     <div>
       <label style="margin-top:1.2rem ;"> Montrer
@@ -84,11 +78,11 @@
               class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
               <i class="fa-solid fa-pen"></i>
             </button>
-            <!-- <button (click)="deleteEmployer(employer)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
-              <i class="fa-solid fa-trash"></i>
-            </button> -->
             <button (click)="statutChange(employer)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-secondary">
               <i class="fa-solid fa-box-archive"></i>
+            </button>
+            <button (click)="deleteEmployer(employer)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">
+              <i class="fa-solid fa-trash"></i>
             </button>
           </td>
         </tr>

@@ -10,10 +10,11 @@ import { FormationResponseModel } from 'src/app/shared/_models/responses/formati
 import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { FormationService } from 'src/app/shared/_services/formation.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import { SessionFormationService } from 'src/app/shared/_services/session-Formation.service';
+
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { SessionFormationService } from 'src/app/shared/_services/sessionFormation.service';
 @Component({
   selector: 'app-modal-session-form',
   templateUrl: './modal-session-form.component.html',

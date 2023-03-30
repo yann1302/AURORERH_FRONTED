@@ -47,6 +47,9 @@ import { ModalSessionFormComponent } from './Pages/modal-session-form/modal-sess
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CharacterCounterDirective } from './Pages/modal-formation/character-counter';
+import { AffichSessionFormComponent } from './Pages/affich-session-form/affich-session-form.component';
+import { ModalAffichSessionFormComponent } from './Pages/modal-affich-session-form/modal-affich-session-form.component';
+import { ListingArchiveComponent } from './Pages/listing-archive/listing-archive.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { CharacterCounterDirective } from './Pages/modal-formation/character-cou
     ListingDemandeFormComponent,
     ModalDemandeFormComponent,
     ModalSessionFormComponent,
-    CharacterCounterDirective
+    CharacterCounterDirective,
+    AffichSessionFormComponent,
+    ModalAffichSessionFormComponent,
+    ListingArchiveComponent
 
   ],
   imports: [

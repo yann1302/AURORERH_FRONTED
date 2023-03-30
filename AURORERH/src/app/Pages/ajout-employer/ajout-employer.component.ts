@@ -8,6 +8,7 @@ import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-
 import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
 import Swal from 'sweetalert2';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-ajout-employer',
@@ -30,6 +31,7 @@ export class AjoutEmployerComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    //private datePipe: DatePipe
     ) { }
 
   ngOnInit(): void {
@@ -47,6 +49,11 @@ export class AjoutEmployerComponent implements OnInit {
     });
   }
 
+  // formatDate(date: any) {
+  //   return this.datePipe.transform(date, 'yyyy-MM-dd');
+  // }
+
+
   get f() { return this.formEmployer.controls; }
 
   public initFormEmployer(data: any) {
@@ -55,7 +62,7 @@ export class AjoutEmployerComponent implements OnInit {
         nom: [data ? data.nom :  '', Validators.required],
         matricule: [data ? data.matricule: '', Validators.required],
         adresse:[data ? data.adresse: ''],
-        date_debut:[data ?data.date_debut  : ''],
+        date_debut:[data ? data.date_debut: ''],
         date_fin:[data ? data.date_fin: ''],
         date_naissance:[data ? data.date_naissance: ''],
         id:[data ? data.id: ''],
@@ -71,9 +78,9 @@ export class AjoutEmployerComponent implements OnInit {
         statut_matrimoniale:[data ? data.statut_matrimoniale: ''],
         ville_exertion:[data ? data.ville_exertion: '', Validators.required],
         type_contrat:[data ? data.type_contrat: ''],
-        username:[data ? data.username: ''],
-        password:[data ? data.password: ''],
-        email:[data ? data.email: ''],
+        username:[data ? data.username: '', Validators.required],
+        password:[data ? data.password: '', Validators.required],
+        email:[data ? data.email: '',Validators.required],
         statut:[data ? data.statut: '',Validators.required],
 
     });
@@ -126,7 +133,7 @@ export class AjoutEmployerComponent implements OnInit {
   }
     },err => {
       console.log(err)
-      this.notif.danger('Echec lors de ajout');
+      this.notif.danger('Echec lors de ajout, verifier les informations de connexion');
       this.isLoading = !this.isLoading;
       this.isLoginFailed = true;
   })

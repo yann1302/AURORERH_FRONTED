@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ADD_EMPLOYER, DELETE_EMPLOYER, LIST_EMPLOYERS, READBYID_EMPLOYER, UPDATE_EMPLOYER } from 'src/app/shared/_elements/api_constante';
+import { ADD_EMPLOYER, DELETE_EMPLOYER, LIST_EMPLOYERS } from 'src/app/shared/_elements/api_constante';
 import { EmployerRequestModel } from 'src/app/shared/_models/requests/employer-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
 import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { NotificationService } from 'src/app/shared/_services/notification.service';
-import Swal from 'sweetalert2'
-
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-listing-employer',
-  templateUrl: './listing-employer.component.html',
-  styleUrls: ['./listing-employer.component.css']
+  selector: 'app-listing-archive',
+  templateUrl: './listing-archive.component.html',
+  styleUrls: ['./listing-archive.component.css']
 })
-export class ListingEmployerComponent implements OnInit {
+export class ListingArchiveComponent implements OnInit {
 
   public isLoading!: boolean;
   public isLoginFailed = false;
@@ -25,9 +24,9 @@ export class ListingEmployerComponent implements OnInit {
   public token = '';
   public page = 0;
   public size = 5;
-  public statut = '';
+  public statut = 'INACTIF';
   public totalElements: any;
-  public employerStatus: any;
+  employerStatus: any;
 
   constructor(
     private employerService: EmployerService,
@@ -70,6 +69,17 @@ export class ListingEmployerComponent implements OnInit {
     )
   }
 
+  StatutEmployer(){
+    
+  }
+
+
+  // Méthode pour filtrer les employés actifs
+  filterEmployes() {
+    this.employesActifs = this.employers.filter(employes => employes.statut !== 'INACTIF');
+    console.log('employesActifs', this.employesActifs);
+  }
+
   statutChange(employer: any){
     this.employerStatus = employer.statut;
     console.log(employer);
@@ -106,7 +116,7 @@ export class ListingEmployerComponent implements OnInit {
       )
       Swal.fire({
         title: 'Êtes-vous sure?',
-        text: "l\'employé sera ajouter aux archives",
+        text: "l\'employé sera remis parmis les employés actifs",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: 'green',
@@ -116,14 +126,14 @@ export class ListingEmployerComponent implements OnInit {
         if (result.isConfirmed) {
           Swal.fire(
             'Supprimé!',
-            'l\'employé est dans les archives  ',
+            'l\'employé est dans la liste des employé actif  ',
             'success'
           )
     this.employerService.post(ADD_EMPLOYER,dto )
     .then((response: any) =>{
     console.log('response', response)
     this.isLoading = !this.isLoading;
-    this.notif.success('Archivage avec sucsess ')
+    this.notif.success('désarchivage avec sucsess ')
     if (this.notif ){
       this.getEmployer(this.token);
   }
@@ -139,13 +149,6 @@ export class ListingEmployerComponent implements OnInit {
       this.isLoginFailed = true;
   })
     console.log('this.employerStatus', this.employerStatus)
-  }
-
-
-  // Méthode pour filtrer les employés actifs
-  filterEmployes() {
-    this.employesActifs = this.employers.filter(employes => employes.statut !== 'INACTIF');
-    console.log('employesActifs', this.employesActifs);
   }
 
   deleteEmployer(item: any) {
@@ -201,12 +204,6 @@ export class ListingEmployerComponent implements OnInit {
   goTi() {
     this.router.navigate(['/listing-employer'])
   }
-  
-
-  goToArchive() {
-    this.router.navigate(['/archive-employer'])
-  }
-  
 
   goToViewId(employer: EmployerReponseModel) {
     this.router.navigate(['/affich-employer/', employer.id])
@@ -217,5 +214,3 @@ export class ListingEmployerComponent implements OnInit {
   }
 
 }
-
-

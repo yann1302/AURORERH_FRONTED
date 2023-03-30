@@ -1,0 +1,166 @@
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="width: 100%; ">
+      <li class="breadcrumb-item"><a>Employés</a></li>
+      <li class="breadcrumb-item"><a style="color: rgb(43, 113, 252);">Liste des Sessions de formation </a></li>
+      <li class="breadcrumb-item"><a style="color: rgb(43, 113, 252);"> Détail de {{reference?.themeForm}}</a></li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png" alt="" />
+          <!-- <img [src]="photo" alt=""/> -->
+          <!-- <img src="C:\fakepath\pussy.jpg" alt=""/> -->
+          <!-- {{id?.photo}} -->
+
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="profile-head">
+          <h6>
+          </h6>
+          <p class="proile-rating"><b>Thème de la session de formation :</b>{{reference?.themeForm}}
+            <span> </span>
+          </p>
+          <p class="proile-rating"><b>Reference de la session:</b>  {{reference?.reference}} <span> </span></p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Informations Personelles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Informations Profesionelles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="col-md-2">
+              <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+          </div> -->
+    </div>
+    <div class="row">
+    
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Formation</label>
+              </div>
+              <div class="col-md-6">
+                <p> {{reference?.formationResponseDTO?.theme_form}} </p>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date de debut de la session</label>
+              </div>
+              <div class="col-md-6">
+                <p> {{reference?.debut_form | date}} </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date de fin de la session</label>
+              </div>
+              <div class="col-md-6">
+                <p> {{reference?.fin_form | date}} </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Formateur</label>
+              </div>
+              <div class="col-md-6">
+                <p> {{reference?.formateur}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Participant</label>
+              </div>
+              <div>
+                <table style="width: 100%; background-color: white;" id=""
+                  class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid"
+                  aria-describedby="example_info">
+                  <thead>
+                    <tr role="row">
+                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Matricule employé
+                      </th>
+                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
+                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;"
+                        aria-label="Office: activate to sort column ascending">poste</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd" *ngFor="let employee of reference?.employerResponseDTO">
+                      <td> {{ employee.codeEmployer }}</td>
+                      <td tabindex="0" class="sorting_1"> {{ employee.nom }} {{ employee.prenom }}</td>
+                      <td> {{ employee.poste }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Description </label>
+              </div>
+              <div>
+                <textarea disabled style="width: 100%;" value=" {{reference?.reference}}" rows=""></textarea>
+              </div>
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>poste</label>
+              </div>
+              <div class="col-md-6">
+                <p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Profession</label>
+              </div>
+              <div class="col-md-6">
+                <p></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date de debut </label>
+              </div>
+              <div class="col-md-6">
+                <p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date de fin</label>
+              </div>
+              <div class="col-md-6">
+                <p></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

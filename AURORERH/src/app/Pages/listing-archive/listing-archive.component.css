@@ -1,0 +1,18 @@
+
+.Actif{
+  background-color: rgb(1, 255, 1);
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+  width: 70%;
+  text-align: center; 
+}
+
+.Inactif{
+  background-color: red;
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+  width: 70%;
+}
+

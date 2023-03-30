@@ -1,0 +1,9 @@
+{{reference?.employerResponseDTO?.codeEmployer}}
+{{reference?.formationResponseDTO?.theme_form}}
+
+
+
+<div *ngFor="let employee of reference?.employerResponseDTO">
+  {{ employee.codeEmployer }} - {{ employee.nom }} - {{ employee.prenom }}
+</div>
+
