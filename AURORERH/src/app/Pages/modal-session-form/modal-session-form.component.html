@@ -1,91 +1,102 @@
-
-
-<h2 mat-dialog-title  style="font-size: 200%; color: rgb(81, 81, 230); "> <b>Ajout d'une Session de Formation</b> </h2>
+<h2 mat-dialog-title style="font-size: 200%; color: rgb(81, 81, 230); "> <b>Ajout d'une Session de Formation</b> </h2>
 <hr>
-<div class="mat-dialog-content" [formGroup]="formSessionForm" >
-
-<div class="main-card " >
-
-  <div class="form-row">
-    <div class="col-md-12">
-      <div class="position-relative form-group ">
-        <label  >Thème relatif a la session de la formation<span style="color: red;">*</span></label>
-        <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="themeForm">
-  <span *ngIf=" (submitted || formSessionForm.controls.themeForm.touched) && formSessionForm.controls.themeForm.errors" style="color:red">le thème est requis est requis </span>
-      </div>
-  </div>
-</div>
-  <div class="form-row">
-    <div class="col-md-12">
-      <div class="position-relative form-group ">
-        <label   for="">La Formation concernée <span style="color: red;">*</span></label>
-        <select name="select" id="exampleSelect" class="" formControlName="formation_id" style="width: 100%; height: 2.2rem; border-color: rgb(218, 215, 215); border-radius: 5px;"  >
-          <option  *ngFor="let item of formations" value= {{item?.id}} > {{item?.theme_form}}</option>
-      </select>
-      <span *ngIf=" (submitted || formSessionForm.controls.formation_id.touched) && formSessionForm.controls.formation_id.errors " style="color:red">le nom de la formation est requise  </span>
-      </div>
-   </div>
-  </div>
-   <div class="form-row">
-     <div class="col-md-12">
-       <div class="position-relative form-group ">
-        <label  for="">Selection des Employés <span style="color: red;">*</span></label>
-            <select name="select" id="exampleSelect" placeholder="hh" class="multiselect form-control  " formControlName="employers" style="width: 100%; height: 4rem; border-color: rgb(218, 215, 215); border-radius: 5px;" multiple>
-              <option *ngFor="let item of employers" value={{item?.id}} >{{item?.nom}} {{item?.prenom}}</option>
-            </select>
-            <span *ngIf=" (submitted || formSessionForm.controls.employers.touched) && formSessionForm.controls.employers.errors" style="color:red">le nom de ou des employé(s) est requis  </span>
-          </div>
+<div class="mat-dialog-content" [formGroup]="formSessionForm">
+  <div class="main-card ">
+    <div class="form-row">
+      <div class="col-md-12">
+        <div class="position-relative form-group ">
+          <label>Thème relatif a la session de la formation<span style="color: red;">*</span></label>
+          <input name="" id="" placeholder="" type="text" class="form-control" formControlName="themeForm">
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.themeForm.touched) && formSessionForm.controls.themeForm.errors"
+            style="color:red">le thème est requis est requis </span>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-12">
-          <div class="position-relative form-group ">
-            <label  >Reference de la Session<span style="color: red;">*</span></label>
-            <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="reference">
-      <span *ngIf=" (submitted || formSessionForm.controls.reference.touched) && formSessionForm.controls.reference.errors" style="color:red">la reference  est requise </span>
-          </div>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-12">
         <div class="position-relative form-group ">
-          <label  >Formateur
-          </label>
-          <input  name="" id="" placeholder="" type="text" class="form-control" formControlName="formateur">
-
+          <label for="">La Formation concernée <span style="color: red;">*</span></label>
+          <select name="select" id="exampleSelect" class="" formControlName="formation_id"
+            style="width: 100%; height: 2.2rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
+            <option *ngFor="let item of formations" value={{item?.id}}> {{item?.theme_form}}</option>
+          </select>
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.formation_id.touched) && formSessionForm.controls.formation_id.errors "
+            style="color:red">le nom de la formation est requise </span>
         </div>
+      </div>
     </div>
-  </div>
     <div class="form-row">
       <div class="col-md-12">
-        <div  >
-        <label for="textarea">Description
-        </label>
-        <textarea rows="1" class="form-control autosize-input" style="height: 47px;" formControlName="description"></textarea>
+        <div class="position-relative form-group ">
+          <label for="">Selection des Employés <span style="color: red;">*</span></label>
+          <select name="select" id="exampleSelect" placeholder="hh" class="multiselect form-control  "
+            formControlName="employers"
+            style="width: 100%; height: 4rem; border-color: rgb(218, 215, 215); border-radius: 5px;" multiple>
+            <option *ngFor="let item of employers" value={{item?.id}}>{{item?.nom}} {{item?.prenom}}</option>
+          </select>
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.employers.touched) && formSessionForm.controls.employers.errors"
+            style="color:red">le nom de ou des employé(s) est requis </span>
+        </div>
+      </div>
+    </div>
 
+    <div class="form-row">
+      <div class="col-md-12">
+        <div class="position-relative form-group ">
+          <label>Reference de la Session<span style="color: red;">*</span></label>
+          <input name="" id="" placeholder="" type="text" class="form-control" formControlName="reference">
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.reference.touched) && formSessionForm.controls.reference.errors"
+            style="color:red">la reference est requise </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12">
+        <div class="position-relative form-group ">
+          <label>Formateur
+          </label>
+          <input name="" id="" placeholder="" type="text" class="form-control" formControlName="formateur">
 
         </div>
       </div>
     </div>
-        <div class="form-row">
+    <div class="form-row">
+      <div class="col-md-12">
+        <div>
+          <label for="textarea">Description
+          </label>
+          <textarea rows="1" class="form-control autosize-input" style="height: 47px;"
+            formControlName="description"></textarea>
+
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
       <div class="col-md-6">
         <div class="position-relative form-group ">
-          <label  >Date Debut<span style="color: red;">*</span></label>
-          <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="debut_form">
-<span *ngIf=" (submitted || formSessionForm.controls.debut_form.touched) && formSessionForm.controls.debut_form.errors" style="color:red">la date est requise </span>
+          <label>Date Debut<span style="color: red;">*</span></label>
+          <input name="" id="" placeholder="" type="date" class="form-control" formControlName="debut_form">
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.debut_form.touched) && formSessionForm.controls.debut_form.errors"
+            style="color:red">la date est requise </span>
         </div>
       </div>
-        <div class="col-md-6">
-          <div class="position-relative form-group ">
-            <label  >Date Fin<span style="color: red;">*</span></label>
-            <input  name="" id="" placeholder="" type="date" class="form-control" formControlName="fin_form">
-  <span *ngIf=" (submitted || formSessionForm.controls.fin_form.touched) && formSessionForm.controls.fin_form.errors" style="color:red">la date est requise </span>
-          </div>
+      <div class="col-md-6">
+        <div class="position-relative form-group ">
+          <label>Date Fin<span style="color: red;">*</span></label>
+          <input name="" id="" placeholder="" type="date" class="form-control" formControlName="fin_form">
+          <span
+            *ngIf=" (submitted || formSessionForm.controls.fin_form.touched) && formSessionForm.controls.fin_form.errors"
+            style="color:red">la date est requise </span>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<!-- <div class="form-row">
+  <!-- <div class="form-row">
   <div class="col-md-12">
     <div  >
       <label>
@@ -104,8 +115,9 @@
 
 
 <mat-dialog-actions align="end">
-  <button (click)="addSessionForm()" mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success"  class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
+  <button (click)="addSessionForm()" mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success"
+    class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement
-    </button>
+  </button>
   <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermer</button>
 </mat-dialog-actions>

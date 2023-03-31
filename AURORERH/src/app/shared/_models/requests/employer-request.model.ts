@@ -25,6 +25,8 @@ export class EmployerRequestModel {
     public password: string,
     public email: string,
     public statut: string,
+    // public sanction: any,
+    // public Conger:any
 
   ) {
 

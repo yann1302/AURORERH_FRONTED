@@ -70,7 +70,7 @@ export class ListingArchiveComponent implements OnInit {
   }
 
   StatutEmployer(){
-    
+
   }
 
 
@@ -163,7 +163,7 @@ export class ListingArchiveComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Supprimé!',
+          'Déarchivé!',
           'Employé supprimé.',
           'success'
         )

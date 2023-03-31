@@ -63,7 +63,7 @@ export class ModalCongerComponent implements OnInit {
     description:[this.data ? this.data.description: '',Validators.required],
     statut:[this.data ? this.data.statut: 'en attente d`une réponse'],
     jours:[this.data ? this.data.jours: '',Validators.required],
-    id_Employer:[this.data ? this.data.employerResponseDTO.id: '',Validators.required],
+    id_Employer:[this.data ? this.data.employerResponseDTO.id: ''],
     id:[this.data ? this.data.id: '' ],
     });
   }

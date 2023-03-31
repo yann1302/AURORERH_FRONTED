@@ -7,6 +7,7 @@ import { SanctionResponseModel } from 'src/app/shared/_models/responses/sanction
 import { EmployerService } from 'src/app/shared/_services/employer.service';
 import { SanctionService } from 'src/app/shared/_services/sanction.service';
 
+
 @Component({
   selector: 'app-modal-affich-sanction',
   templateUrl: './modal-affich-sanction.component.html',

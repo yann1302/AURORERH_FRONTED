@@ -81,7 +81,7 @@ export class AjoutEmployerComponent implements OnInit {
         username:[data ? data.username: '', Validators.required],
         password:[data ? data.password: '', Validators.required],
         email:[data ? data.email: '',Validators.required],
-        statut:[data ? data.statut: '',Validators.required],
+        statut:[data ? data.statut: 'ACTIF'],
 
     });
 }
@@ -120,7 +120,8 @@ export class AjoutEmployerComponent implements OnInit {
       this.f.username.value,
       this.f.password.value,
       this.f.email.value,
-      this.f.statut.value
+      this.f.statut.value,
+
       )
       console.log('avant', dto)
     this.employerService.post(ADD_EMPLOYER,dto )

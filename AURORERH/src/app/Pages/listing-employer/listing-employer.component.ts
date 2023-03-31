@@ -115,7 +115,7 @@ export class ListingEmployerComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
-            'Supprimé!',
+            'Archivé!',
             'l\'employé est dans les archives  ',
             'success'
           )
@@ -201,12 +201,12 @@ export class ListingEmployerComponent implements OnInit {
   goTi() {
     this.router.navigate(['/listing-employer'])
   }
-  
+
 
   goToArchive() {
     this.router.navigate(['/archive-employer'])
   }
-  
+
 
   goToViewId(employer: EmployerReponseModel) {
     this.router.navigate(['/affich-employer/', employer.id])

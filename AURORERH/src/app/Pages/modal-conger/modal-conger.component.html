@@ -11,7 +11,7 @@
             style="width: 100%; height: 2.2rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
             <option value={{item?.id}} *ngFor="let item of employers"> {{item?.nom}} {{item?.prenom}}</option>
           </select>
-          <!-- <input type="text" > {{currentUser?.username}} -->
+          <!-- <select name="" formControlName="id_Employer" id=""> <option value="{{currentUser?.username}}">{{currentUser?.username}}</option></select> -->
           <span
             *ngIf=" (submitted || formConger.controls.id_Employer.touched) && formConger.controls.id_Employer.errors "
             style="color:red">le nom l'employé est requis </span>

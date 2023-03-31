@@ -12,32 +12,19 @@
 <div class="container emp-profile">
   <form method="post">
     <div class="row">
-      <div class="col-md-4">
-        <div class="profile-img">
-          <img src="https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png" alt="" />
-          <!-- <img [src]="photo" alt=""/> -->
-          <!-- <img src="C:\fakepath\pussy.jpg" alt=""/> -->
-          <!-- {{id?.photo}} -->
-
-        </div>
-      </div>
       <div class="col-md-12">
         <div class="profile-head">
-          <h6>
-          </h6>
-          <p class="proile-rating"><b>Thème de la session de formation :</b>{{reference?.themeForm}}
+      
+          <p class="profile-rating"><b>Thème de la session de formation :</b>{{reference?.themeForm}}
             <span> </span>
           </p>
-          <p class="proile-rating"><b>Reference de la session:</b>  {{reference?.reference}} <span> </span></p>
+          <p class="profile-rating"><b>Reference de la session:</b>  {{reference?.reference}} <span> </span></p>
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">Informations Personelles</a>
+              <a class="nav-link active" style="margin-left:20rem;" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Informations Sur la session</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">Informations Profesionelles</a>
-            </li>
+          
           </ul>
         </div>
       </div>
@@ -46,7 +33,15 @@
           </div> -->
     </div>
     <div class="row">
-    
+      <div class="col-md-3" style="float: right;">
+        <div class="profile-img">
+          <img src="https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png" alt="" />
+          <!-- <img [src]="photo" alt=""/> -->
+          <!-- <img src="C:\fakepath\pussy.jpg" alt=""/> -->
+          <!-- {{id?.photo}} -->
+
+        </div>
+      </div>
       <div class="col-md-8">
         <div class="tab-content profile-tab" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -118,47 +113,12 @@
                 <label>Description </label>
               </div>
               <div>
-                <textarea disabled style="width: 100%;" value=" {{reference?.reference}}" rows=""></textarea>
+                <textarea disabled style="width: 100%;" value=" {{reference?.description}}" rows=""></textarea>
               </div>
             </div>
 
           </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="row">
-              <div class="col-md-6">
-                <label>poste</label>
-              </div>
-              <div class="col-md-6">
-                <p></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Profession</label>
-              </div>
-              <div class="col-md-6">
-                <p></p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label>Date de debut </label>
-              </div>
-              <div class="col-md-6">
-                <p></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Date de fin</label>
-              </div>
-              <div class="col-md-6">
-                <p></p>
-              </div>
-            </div>
-
-          </div>
+         
         </div>
       </div>
     </div>

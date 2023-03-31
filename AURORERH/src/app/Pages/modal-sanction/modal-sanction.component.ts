@@ -12,6 +12,7 @@ import { NotificationService } from 'src/app/shared/_services/notification.servi
 import { SanctionService } from 'src/app/shared/_services/sanction.service';
 
 
+
 @Component({
   selector: 'app-modal-sanction',
   templateUrl: './modal-sanction.component.html',
@@ -31,7 +32,6 @@ export class ModalSanctionComponent implements OnInit {
   constructor(
     private sanctionService: SanctionService,
     private route: ActivatedRoute,
-    private router: Router,
     private fb: FormBuilder,
     private notif: NotificationService,
     private employerService: EmployerService,

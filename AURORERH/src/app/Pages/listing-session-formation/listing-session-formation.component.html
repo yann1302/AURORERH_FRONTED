@@ -30,7 +30,7 @@
   <thead>
   <tr role="row">
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Thème de la formation</th>
-    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 40.2px;" aria-label="Position: activate to sort column ascending">Reference de la session</th>
+
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Date de debut</th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Date de fin </th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 1.2px;" aria-label="Age: activate to sort column ascending">Formateur </th>
@@ -42,7 +42,6 @@
   <tbody>
   <tr role="row" class="odd" *ngFor="let items of sessionForms ">
       <td tabindex="0" class="sorting_1">{{items?.themeForm}} </td>
-      <td >{{items?.reference}} </td>
       <td>{{items?.debut_form | date: 'dd-MM-yyy' }}</td>
       <td>{{items?.fin_form | date: 'dd-MM-yyy' }}</td>
       <td>{{items?.formateur}}</td>

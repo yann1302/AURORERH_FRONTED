@@ -31,9 +31,6 @@ export class ModalSessionFormComponent implements OnInit {
   id: any;
 
   constructor(
-    private sessionFormationService: SessionFormationService,
-    private route: ActivatedRoute,
-    private router: Router,
     private fb: FormBuilder,
     private notif: NotificationService,
     private employerService: EmployerService,
@@ -77,7 +74,7 @@ export class ModalSessionFormComponent implements OnInit {
     formation_id:[this.data ? this.data.formationResponseDTO.id: '', Validators.required  ],
     themeForm:[this.data ? this.data.themeForm: '', Validators.required  ],
     reference:[this.data ? this.data.reference: '', Validators.required  ],
-    id:[this.data ? this.data.id: '' ],
+    id:[this.data ? this.data.id: null ],
     });
   }
 
