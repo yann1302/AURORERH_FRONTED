@@ -121,11 +121,11 @@ export class ListingArchiveComponent implements OnInit {
         showCancelButton: true,
         confirmButtonColor: 'green',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Oui, supprimez !'
+        confirmButtonText: 'Oui, désarchivé !'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
-            'Supprimé!',
+            'désarchivé!',
             'l\'employé est dans la liste des employé actif  ',
             'success'
           )
@@ -144,7 +144,7 @@ export class ListingArchiveComponent implements OnInit {
 
     },err => {
       console.log(err)
-      this.notif.danger('Echec lors de l\'archivage');
+      this.notif.danger('Echec lors du desarchivage');
       this.isLoading = !this.isLoading;
       this.isLoginFailed = true;
   })
@@ -163,14 +163,14 @@ export class ListingArchiveComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Déarchivé!',
-          'Employé supprimé.',
+          'Désarchivé!',
+          'Employé Supprimé.',
           'success'
         )
         this.employerService.delete(`${DELETE_EMPLOYER}/${item.id}`)
           .then((response: any) => {
             console.log('response', response)
-            this.notif.success('Ajout avec sucsess ')
+            this.notif.success('suppression avec sucsess ')
 
             if (this.notif) {
               this.getEmployer(this.token);

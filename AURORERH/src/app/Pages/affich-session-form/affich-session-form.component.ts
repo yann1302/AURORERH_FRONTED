@@ -20,8 +20,6 @@ reference: any;
     this.reference = this.route.snapshot.params['reference'];
     console.log(this.reference);
     this.viewSessionForm(this.reference);
-
-
   }
 
   viewSessionForm(reference: string) {

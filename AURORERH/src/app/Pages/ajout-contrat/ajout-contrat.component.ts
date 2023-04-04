@@ -83,15 +83,18 @@ export class AjoutContratComponent implements OnInit {
       periode_essaie: [data ? data.periode_essaie : ''],
       debut_periode_essaie: [data ? data.debut_periode_essaie : ''],
       fin_periode_essaie: [data ? data.fin_periode_essaie : ''],
+      debut_essaie: [data ? data.debut_essaie : ''],
+      fin_essaie: [data ? data.fin_essaie : ''],
       type_contrat: [data ? data.type_contrat : ''],
       poste: [data ? data.poste : ''],
       lieu_travail: [data ? data.lieu_travail : ''],
       salaire_brut: [data ? data.salaire_brut : ''],
       etat_civil: [data ? data.etat_civil : ''],
-      statut: [data ? data.statut : ''],
+      statut: [data ? data.statut : 'EN COURS'],
       liste_diplo: [data ? data.liste_diplo : ''],
       id_Employer: [data ? data.employerResponseDTO.id : ''],
       document: [data ? data.document : ''],
+      congerAnnuel: [data ? data.congerAnnuel : ''],
       id: [data ? data.id : null],
     })
   }
@@ -116,6 +119,8 @@ export class AjoutContratComponent implements OnInit {
       this.f.periode_essaie.value,
       this.f.debut_periode_essaie.value,
       this.f.fin_periode_essaie.value,
+      this.f.debut_essaie.value,
+      this.f.fin_essaie.value,
       this.f.type_contrat.value,
       this.f.poste.value,
       this.f.lieu_travail.value,
@@ -124,7 +129,8 @@ export class AjoutContratComponent implements OnInit {
       this.f.statut.value,
       this.f.liste_diplo.value,
       this.f.document.value,
-      this.f.id_Employer.value
+      this.f.id_Employer.value,
+      this.f.congerAnnuel.value
     )
     console.log('avant', dto)
     this.contratService.post(ADD_CONTRATS, dto)

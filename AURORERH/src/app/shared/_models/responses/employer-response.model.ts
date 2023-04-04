@@ -23,8 +23,8 @@ export class EmployerReponseModel {
     public username: string,
     public password: string,
     public statut: string,
-    private sanction: any,
-    private Conger:any
+    public sanction: any,
+    public Conger:any
 
   ) {
 

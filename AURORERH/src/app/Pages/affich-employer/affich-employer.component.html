@@ -13,7 +13,7 @@
       <div class="row">
           <div class="col-md-4">
               <div class="profile-img">
-                  <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> -->
+                  <img src="http://www.alliedrisk.ie/wp-content/uploads/2018/05/user-male-icon.png" alt=""/>
                     <!-- <img [src]="photo" alt=""/> -->
                     <!-- <img src="C:\fakepath\pussy.jpg" alt=""/> -->
                   <!-- {{id?.photo}} -->
@@ -198,6 +198,74 @@
                                       <p>{{id?.date_fin | date}}</p>
                                   </div>
                               </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label>Liste des sanctions </label>
+                              </div>
+                              <div>
+                                <table style="width: 100%; background-color: white;" id=""
+                                  class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid"
+                                  aria-describedby="example_info">
+                                  <thead>
+                                    <tr role="row">
+                                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Type de sanction
+                                      </th>
+                                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                                        aria-sort="ascending" aria-label="Name: activate to sort column descending">description</th>
+                                      <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;"
+                                        aria-label="Office: activate to sort column ascending">statut</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr role="row" class="odd" *ngFor="let employee of id?.sanctions">
+                                      <td> {{ employee.type_sanction }}</td>
+                                      <td tabindex="0" class="sorting_1"> {{ employee.description }} </td>
+                                      <td><div style="display: inline-block; vertical-align: middle;" [ngClass]="{
+                                        'valider': id?.statut == 'EN COURS',
+                                        'suspendu': id?.statut == 'TERMINER',
+                                        'examen': id?.statut == 'EN EXAMENS'
+                                      }" >{{employee?.statut}}</div></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                            </div>
+                            <div>
+                              <label>Liste des congés </label>
+                              <table style="width: 100%; background-color: white;" id=""
+                                class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid"
+                                aria-describedby="example_info">
+                                <thead>
+                                  <tr role="row">
+                                    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                                      aria-sort="ascending" aria-label="Name: activate to sort column descending">Type de sanction
+                                    </th>
+                                    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;"
+                                      aria-sort="ascending" aria-label="Name: activate to sort column descending">description</th>
+                                    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;"
+                                      aria-label="Office: activate to sort column ascending">statut</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr role="row" class="odd" *ngFor="let employee of id?.congers">
+                                    <td> {{ employee.type_conger }}</td>
+                                    <td tabindex="0" class="sorting_1"> {{ employee.description }} </td>
+                                    <td style="text-align: center; " >
+                                      <div style=" display: inline-block; vertical-align: middle;" [ngClass]="{
+                                    'Actif': employee?.statut == 'ACTIF',
+                                    'Inactif': employee?.statut == 'INACTIF'
+                                  }">{{employee?.statut}}</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
 
                   </div>
               </div>

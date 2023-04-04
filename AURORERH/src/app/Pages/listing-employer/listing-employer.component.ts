@@ -106,12 +106,12 @@ export class ListingEmployerComponent implements OnInit {
       )
       Swal.fire({
         title: 'Êtes-vous sure?',
-        text: "l\'employé sera ajouter aux archives",
+        text: "l\'employé sera ajouter aux archives et ses contrats suspendus ",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: 'green',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Oui, supprimez !'
+        confirmButtonText: 'Oui, Archivé !'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
@@ -148,51 +148,7 @@ export class ListingEmployerComponent implements OnInit {
     console.log('employesActifs', this.employesActifs);
   }
 
-  deleteEmployer(item: any) {
-    Swal.fire({
-      title: 'Êtes-vous sure?',
-      text: "Vous ne pourrez pas revenir en arrière !",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: 'green',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Oui, supprimez !'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Supprimé!',
-          'Employé supprimé.',
-          'success'
-        )
-        this.employerService.delete(`${DELETE_EMPLOYER}/${item.id}`)
-          .then((response: any) => {
-            console.log('response', response)
-            this.notif.success('Ajout avec sucsess ')
 
-            if (this.notif) {
-              this.getEmployer(this.token);
-            }
-          }, err => {
-            console.log(err)
-            this.notif.danger('Echec lors de la suppresion, il ya des instances en cours ');
-            this.isLoading = !this.isLoading;
-            this.isLoginFailed = true;
-            Swal.fire(
-              'Annulé!',
-              'Employé non supprimé.',
-              'error'
-            )
-          })
-      }
-      else {
-        Swal.fire(
-          'Annulé!',
-          'Employé non supprimé.',
-          'error'
-        )
-      }
-    })
-  }
 
   goTo() {
     this.router.navigate(['/ajout-employer'])

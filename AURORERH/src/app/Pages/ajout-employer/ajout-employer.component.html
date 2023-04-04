@@ -223,7 +223,7 @@
           <label for="" class="">
        Mot de passe<span style="color: red;">*</span>
           </label>
-          <input placeholder="plus de 8 characteres" type="" class="form-control" formControlName="password">
+          <input placeholder="plus de 8 characteres" type="password" class="form-control" formControlName="password">
           <span *ngIf=" (submitted || formEmployer.controls.password.touched) && formEmployer.controls.password.errors "   style="color:red">  un mot de passe de 8 characterers est requis   </span>
         </div>
     </div>

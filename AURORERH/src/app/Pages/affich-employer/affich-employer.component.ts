@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { READBYID_EMPLOYER } from 'src/app/shared/_elements/api_constante';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
+import { SanctionResponseModel } from 'src/app/shared/_models/responses/sanction-response.model';
 import { EmployerService } from 'src/app/shared/_services/employer.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { EmployerService } from 'src/app/shared/_services/employer.service';
 export class AffichEmployerComponent implements OnInit {
   public id!: any;
   public photo!: any;
+  public sanction!: any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
