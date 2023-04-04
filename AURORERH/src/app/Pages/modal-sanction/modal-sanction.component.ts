@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as moment from 'moment';
+import * as moment from 'moment'
 import { ADD_SANCTIONS, LIST_EMPLOYERS, LIST_SANCTIONS, READBYID_SANCTIONS } from 'src/app/shared/_elements/api_constante';
 import { SanctionRequestModel } from 'src/app/shared/_models/requests/sanction-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
@@ -52,8 +52,8 @@ export class ModalSanctionComponent implements OnInit {
   public initFormSanction(){
     this.formSanction =this.fb.group({
     type_sanction:[this.data ? this.data.type_sanction: '', Validators.required],
-    debut_sanction:[this.data ? moment(this.data.debut_sanction, 'yyyy-MM-dd'):  Validators.required],
-    fin_sanction:[this.data ?  moment(this.data.fin_sanction, 'yyyy-MM-dd'):  Validators.required],
+    debut_sanction:[this.data ? this.data.debut_sanction: '',  Validators.required],
+    fin_sanction:[this.data ?  this.data?.fin_sanction: '',  Validators.required],
     description:[this.data ? this.data.description: '', Validators.required],
     statut:[this.data ? this.data.statut: '', Validators.required],
     id_Employer:[this.data ? this.data.employerResponseDTO.id: '', Validators.required],

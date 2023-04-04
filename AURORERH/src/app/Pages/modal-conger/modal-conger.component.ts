@@ -55,8 +55,8 @@ export class ModalCongerComponent implements OnInit {
   public initFormConger(){
     this.formConger =this.fb.group({
     type_conger:[this.data ? this.data.type_conger: '',Validators.required],
-    date_debut:[this.data ? moment(this.data.debut_conger, '0:yyyy-MM-dd') : '',Validators.required],
-    date_fin:[this.data ? this.data.fin_conger: '',Validators.required],
+    date_debut:[this.data ? this.data.date_debut: '',Validators.required],
+    date_fin:[this.data ? this.data.date_fin: '',Validators.required],
     date_reprise:[this.data ? this.data.date_reprise: '',Validators.required],
     etablissement_conger:[this.data ? this.data.etablissement_conger: ''],
     validation:[this.data ? this.data.validation: 'en attente d\'une réponse'],

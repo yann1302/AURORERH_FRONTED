@@ -1,13 +1,13 @@
-<h2 mat-dialog-title class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "  > Détail du congé ou de la permission de {{data?.employerResponseDTO.nom}}  </h2>
+<h2 mat-dialog-title style="font-size: 200%; color: rgb(81, 81, 230); "  > Détail du congé ou de la permission de {{data?.employerResponseDTO.nom}}  </h2>
 <hr>
-<div class="mat-dialog-content" >
+<div class="mat-dialog-content" [formGroup]="formConger">
 <div class="main-card " >
 
       <!-- <form class="mat-typography"  > -->
         <div  class="form-row">
               <div class="col-md-12">
-                  <div class="position-relative form-group card-title">
-                    <label  class="card-title" for="">Nom & Prénom</label>
+                  <div class="position-relative form-group ">
+                    <label  for="">Nom & Prénom</label>
                    <input type="text" class="form-control" disabled value="{{data?.employerResponseDTO.nom}} {{data?.employerResponseDTO.prenom}}">
                   </div>
               </div>
@@ -15,47 +15,60 @@
 
           <div class="form-row">
             <div class="col-md-6">
-              <div class="position-relative form-group card-title">
-                <label  class="card-title">Type</label>
+              <div class="position-relative form-group ">
+                <label >Type</label>
                 <input type="text" class="form-control" disabled value="{{data?.type_conger}}">
               </div>
             </div>
               <div class="col-md-6">
-                <div class="position-relative form-group card-title">
-                  <label  class="card-title" for="">Jours </label>
+                <div class="position-relative form-group ">
+                  <label  for="">Jours </label>
                   <input type="text" class="form-control" disabled value="{{data?.jours}}">
                 </div>
                 </div>
       </div>
         <div class="form-row">
           <div class="col-md-6">
-          <div class="position-relative form-group card-title">
-            <label  class="card-title" for="">Jour de debut  </label>
+          <div class="position-relative form-group ">
+            <label  for="">Jour de debut  </label>
             <input type="text" class="form-control" disabled value="{{data?.date_debut | date}}">
           </div>
           </div>
 
             <div class="col-md-3">
-                <div  class="card-title">
-                  <label class="card-title" for="">Jour de fin </label>
+                <div >
+                  <label for="">Jour de fin </label>
                   <input type="text" class="form-control" disabled value="{{data?.date_fin| date}}">
                 </div>
             </div>
 
             <div class="col-md-3">
-              <div  class="card-title">
-                <label class="card-title" for="">Date de reprise </label>
+              <div >
+                <label for="">Date de reprise </label>
                 <input type="text" class="form-control" disabled value="{{data?.date_reprise| date}}">
               </div>
           </div>
           </div>
           <div class="form-row">
             <div class="col-md-12">
-              <div  class="card-title">
+              <div >
               <label for="textarea">Description
               </label>
               <textarea type="text" class="form-control" disabled value="{{data?.description}}"> </textarea>
               </div>
+              </div>
+              <div class="col-md-12">
+                <div class="">
+                  <label>
+                    Statut
+                  </label>
+                  <select class="form-control" formControlName="statut">
+                    <option value=""></option>
+                    <option value="EN COURS">En cours</option>
+                    <option value="SUSPENDU">suspendu</option>
+                    <option value="TERMINER">Terminer</option>
+                  </select>
+                </div>
               </div>
       <!-- </form> -->
   </div>
@@ -63,6 +76,10 @@
 
 </div>
 <mat-dialog-actions align="end">
+  <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)=" addConger()"
+    class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
+    Enregistrement
+  </button>
   <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermer</button>
 </mat-dialog-actions>
 

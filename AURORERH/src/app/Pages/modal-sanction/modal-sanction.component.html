@@ -56,7 +56,7 @@
         <div class="col-md-6">
           <div class="position-relative form-group ">
             <label> date de debut de la sanction <span style="color: red;">*</span> </label>
-            <input type="date" value="{{data?.debut_sanction}} " class="form-control" formControlName="debut_sanction">
+            <input type="date"  class="form-control" formControlName="debut_sanction">
             <span
               *ngIf=" (submitted || formSanction.controls.debut_sanction.touched) && formSanction.controls.debut_sanction.errors "
               style="color:red"> cette date est requise </span>
@@ -66,7 +66,7 @@
         <div class="col-md-6">
           <div>
             <label for="">date de fin de la sanction<span style="color: red;">*</span></label>
-            <input type="date" class="form-control" placeholder="" formControlName="fin_sanction">
+            <input type="date" class="form-control"  formControlName="fin_sanction">
             <span
               *ngIf=" (submitted || formSanction.controls.fin_sanction.touched) && formSanction.controls.fin_sanction.errors "
               style="color:red"> cette date est requise </span>

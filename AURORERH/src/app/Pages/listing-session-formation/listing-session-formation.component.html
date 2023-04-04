@@ -35,7 +35,7 @@
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Date de fin </th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 1.2px;" aria-label="Age: activate to sort column ascending">Formateur </th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">nombre de Patricipant </th>
-    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Statut</th>
+    <!-- <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">Statut</th> -->
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
   </tr>
   </thead>
@@ -46,13 +46,13 @@
       <td>{{items?.fin_form | date: 'dd-MM-yyy' }}</td>
       <td>{{items?.formateur}}</td>
       <td>{{items?.totalEmploye}}</td>
-      <td>
-        <!-- <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
+      <!-- <td>
+        <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': items?.statut == 'EN COURS',
         'suspendu': items?.statut == 'TERMINER',
         'examen': items?.statut == 'EN EXAMENS'
-      }" >{{items?.statut}}</div> -->
-    </td>
+      }" >{{items?.statut}}</div>
+    </td> -->
       <td>
         <button (click)="goToViewId(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
           <i class="fa-solid fa-eye"></i>
