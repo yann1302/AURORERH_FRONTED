@@ -22,7 +22,7 @@
                       Nom & Prénom
                     </label>
                     <select name="select" id="exampleSelect" class="" formControlName="id_Employer" style="width: 100%; height: 2.2rem; border-color: rgb(218, 215, 215); border-radius: 5px;"  >
-                      <option value= {{item?.id}} *ngFor="let item of employers" > {{item?.nom}} {{item?.prenom}}</option>
+                      <option value= {{item?.id}} *ngFor="let item of employers" > {{item?.codeEmployer}}  {{item?.nom}} {{item?.prenom}}</option>
                   </select>
                   <!-- <span *ngIf=" (submitted || formContrat.controls.id_Employer.touched) && formContrat.controls.id_Employer.errors "style="color:red">le nom l'employé est requis  </span> -->
                   </div>
@@ -176,7 +176,7 @@
           <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
-                  Liste des Diplomes<span style="color: red;">*</span>
+                  Liste des Diplomes
                 </label>
                 <textarea rows="1" class="form-control autosize-input" style="height: 37px;" formControlName="liste_diplo"></textarea>
                 <!-- <span *ngIf=" (submitted || formContrat.controls.salaire_brut.touched) && formContrat.controls.salaire_brut.errors " style="color:red">  le salaire est requis  </span> -->
@@ -186,7 +186,7 @@
           <div class="col-md-6">
             <div class="position-relative form-group">
               <label for="" class="">
-                Documents liés  <span style="color: red;">*</span>
+                Documents liés 
               </label>
               <input type="file" class="form-control" formControlName="document">
               <!-- <span *ngIf=" (submitted || formContrat.controls.statut.touched) && formContrat.controls.statut.errors " style="color:red">  le salaire est requis  </span> -->
