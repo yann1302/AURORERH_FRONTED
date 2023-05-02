@@ -69,9 +69,7 @@
             <option value="M">M</option>
             <option value="F">F</option>
             <option value="Autres">Autres</option>
-
           </select>
-
         </div>
     </div>
 </div>
@@ -98,9 +96,16 @@
       <div class="col-md-6">
           <div class="position-relative form-group">
             <label for="" class="">
-             Statut Matrimonial
+             Type de Stage
             </label>
-            <input placeholder="ex:marié" type="" class="form-control" formControlName="statut_matrimoniale"></div>
+            <!-- <input placeholder="ex:marié" type="" class="form-control" formControlName="statut_matrimoniale"></div> -->
+            <select name="select"   id="exampleSelect" type="text" class="form-control select" formControlName="statut_matrimoniale" style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
+              <option value=""></option>
+              <option value="Académique">Académique</option>
+              <option value="Professionnelle">Professionnelle</option>
+
+            </select>
+          </div>
       </div>
       <div class="col-md-6">
           <div class="position-relative form-group">
@@ -110,7 +115,7 @@
             <input name="" id="text" placeholder="" type="text" class="form-control" formControlName="ecole">
           </div>
       </div>
-  </div>
+  </div>  </div>
 
     <div class="form-row">
       <div class="col-md-6">
@@ -175,5 +180,5 @@
   <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)="addStagiaire()" class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement
     </button>
-  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermeture</button>
+  <button class="mb-2 mr-2 btn-icon btn btn-danger" mat-dialog-close>Fermer</button>
 </mat-dialog-actions>

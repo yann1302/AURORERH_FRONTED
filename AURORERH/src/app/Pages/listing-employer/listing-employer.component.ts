@@ -182,8 +182,6 @@ export class ListingEmployerComponent implements OnInit {
       });
   }
 
-
-
   goTo() {
     this.router.navigate(['/ajout-employer'])
   }
@@ -192,11 +190,9 @@ export class ListingEmployerComponent implements OnInit {
     this.router.navigate(['/listing-employer'])
   }
 
-
   goToArchive() {
     this.router.navigate(['/archive-employer'])
   }
-
 
   goToViewId(employer: EmployerReponseModel) {
     this.router.navigate(['/affich-employer/', employer.id])
@@ -205,6 +201,7 @@ export class ListingEmployerComponent implements OnInit {
   recupId(employer: EmployerReponseModel) {
     this.router.navigate(['/ajout-employer/', employer.id])
   }
+
 
 }
 

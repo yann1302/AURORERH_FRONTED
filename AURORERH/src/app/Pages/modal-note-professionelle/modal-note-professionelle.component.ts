@@ -37,7 +37,7 @@ export class ModalNoteProfessionelleComponent implements OnInit {
     this.formNP = this.fb.group({
         theme: [this.data ? this.data.theme :  '', Validators.required],
         description: [this.data ? this.data.description: '', Validators.required],
-        date_publication:[this.data ? this.data.date_publication: '', Validators.required],
+        date_publication:[this.data ? this.data.date_publication:  new Date()],
         photo:[this.data ? this.data.photo: ''],
         id:[this.data ? this.data.id: null],
     });

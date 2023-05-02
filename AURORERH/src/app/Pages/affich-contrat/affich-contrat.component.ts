@@ -55,8 +55,8 @@ export class AffichContratComponent implements OnInit {
           texte: 'EMPLOYER_ID',
           valeur: id
 
-        },
-        console.log(id)
+        }
+
       ]
     };
     console.log(dto);

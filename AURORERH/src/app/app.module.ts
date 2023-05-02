@@ -50,6 +50,8 @@ import { CharacterCounterDirective } from './Pages/modal-formation/character-cou
 import { AffichSessionFormComponent } from './Pages/affich-session-form/affich-session-form.component';
 import { ModalAffichSessionFormComponent } from './Pages/modal-affich-session-form/modal-affich-session-form.component';
 import { ListingArchiveComponent } from './Pages/listing-archive/listing-archive.component';
+import { CanvasJSChart } from 'src/assets/canvasjs-3.7.5/canvasjs.angular.component';
+
 
 @NgModule({
   declarations: [
@@ -86,7 +88,10 @@ import { ListingArchiveComponent } from './Pages/listing-archive/listing-archive
     CharacterCounterDirective,
     AffichSessionFormComponent,
     ModalAffichSessionFormComponent,
-    ListingArchiveComponent
+    ListingArchiveComponent,
+    CanvasJSChart ,
+
+
 
   ],
   imports: [

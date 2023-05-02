@@ -46,10 +46,10 @@
             Mise en ligne le {{items?.date_publication | date: 'dd/MM/yy'}}
           </p>
           <div class="card-footer">
-              <button style="margin-left:5rem" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
+              <!-- <button style="margin-left:5rem" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary">
               <i class="fa-solid fa-eye"></i>
-            </button>
-            <button (click)="openDialog(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
+            </button> -->
+            <button style="margin-left:5rem" (click)="openDialog(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-warning">
               <i class="fa-solid fa-pen"></i>
             </button>
             <button (click)="deleteFormation(items)" class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger">

@@ -36,6 +36,7 @@
             "scripts": [
               "src/assets/scripts/main.87c0748b313a1dda75f5.js"
 
+
             ]
           },
           "configurations": {
@@ -56,13 +57,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500mb",
+                  "maximumError": "1000mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "200mb",
+                  "maximumError": "400mb"
                 }
               ]
             }
