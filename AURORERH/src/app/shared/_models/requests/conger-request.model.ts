@@ -10,6 +10,10 @@ export class CongerRequestModel {
     public statut: string,
     public description: string,
     public jours: number,
+    public  dureeMatern:number,
+    public  dateDebutMatern:string,
+    public  dateFinMatern:string,
     public id_Employer: number,
+
   ) { }
 }

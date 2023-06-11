@@ -8,6 +8,9 @@ import { AuthService } from "src/app/shared/_services/auth.service";
 import { NotificationService } from "src/app/shared/_services/notification.service";
 import { TokenStorageService } from "src/app/shared/_services/token-storage.service";
 import { UserRequestModel } from "src/app/shared/_models/requests/user-request.model";
+import { EmployerReponseModel } from "src/app/shared/_models/responses/employer-response.model";
+import { ResetPasswordComponent } from "src/app/Pages/reset-password/reset-password.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
     selector: 'ms-login-session',
@@ -28,7 +31,8 @@ export class LoginComponent implements OnInit {
       private tokenStorage: TokenStorageService,
       private fb: FormBuilder,
       private route: ActivatedRoute,
-      private notif: NotificationService
+      private notif: NotificationService,
+      public dialog: MatDialog
       ) { }
 
     ngOnInit(): void {
@@ -80,6 +84,26 @@ export class LoginComponent implements OnInit {
         })
     }
 
+  goToArchive() {
+    this.router.navigate(['/resetpassword'])
+  }
+  openDialogView(data: any) {
+    const dialogRef = this.dialog.open(ResetPasswordComponent, {
+     width: '700px',
+     height: 'auto',
+     data:data,
+     disableClose: true
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  ouvrirPageWeb() {
+    window.open('http://localhost:4200/resetpassword', '_blank');
+  }
 
 }
 

@@ -24,7 +24,8 @@ export class EmployerReponseModel {
     public password: string,
     public statut: string,
     public sanction: any,
-    public Conger:any
+    public Conger:any,
+    public Contrat:any
 
   ) {
 

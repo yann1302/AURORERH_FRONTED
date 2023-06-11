@@ -54,8 +54,7 @@
             aria-label="Office: activate to sort column ascending">poste</th>
           <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;"
             aria-label="Age: activate to sort column ascending">Addresse</th>
-          <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
-            aria-label="Start date: activate to sort column ascending">Date de debut </th>
+
           <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;"
             aria-label="Start date: activate to sort column ascending">Statut </th>
           <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;"
@@ -71,7 +70,6 @@
           <td>{{employer?.matricule}}</td>
           <td>{{employer?.poste}}</td>
           <td>{{employer?.adresse}}</td>
-          <td>{{employer?.date_debut | date: 'dd-MM-yyy'}}</td>
           <td style="text-align: center;">
             <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
           'Actif': employer?.statut == 'ACTIF',

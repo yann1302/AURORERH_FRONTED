@@ -90,6 +90,9 @@ export class ModalAffichCongerComponent implements OnInit {
       this.f.statut.value,
       this.f.description.value,
       this.f.jours.value,
+      this.f.dureeMatern.value,
+      this.f.dateDebutMatern.value,
+      this.f.dateFinMatern.value,
       this.f.id_Employer.value,
 
       )

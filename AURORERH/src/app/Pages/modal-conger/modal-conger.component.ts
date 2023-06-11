@@ -49,20 +49,52 @@ export class ModalCongerComponent implements OnInit {
     this.getEmployer();
     this.initFormConger();
     this.getUser();
+    this.formConger.get('jours')?.valueChanges.subscribe(() => {
+      this.updateDates();
+    });
 
+  }
+  selectedValue: string = '';
+  maternityMonths: number = 0;
+
+
+  updateDates() {
+    const nbJoursConge = parseInt(this.formConger.value.jours, 10);
+    if (isNaN(nbJoursConge)) {
+      return;
+    }
+    const dateDebut = new Date();
+    dateDebut.setDate(dateDebut.getDate() + 1);
+    this.formConger.patchValue({
+      date_debut: moment(dateDebut).format('YYYY-MM-DD'),
+    });
+    const dateFin = new Date(dateDebut);
+    dateFin.setDate(dateFin.getDate() + nbJoursConge - 1);
+    this.formConger.patchValue({
+      date_fin: moment(dateFin).format('YYYY-MM-DD'),
+    });
+
+    const dateReprise = new Date(dateDebut);
+    dateReprise.setDate(dateReprise.getDate() + nbJoursConge );
+    this.formConger.patchValue({
+      date_reprise: moment(dateReprise).format('YYYY-MM-DD'),
+    });
   }
 
   public initFormConger(){
     this.formConger =this.fb.group({
     type_conger:[this.data ? this.data.type_conger: '',Validators.required],
-    date_debut:[this.data ? this.data.date_debut: '',Validators.required],
-    date_fin:[this.data ? this.data.date_fin: '',Validators.required],
-    date_reprise:[this.data ? this.data.date_reprise: '',Validators.required],
+    date_debut:[this.data ? this.data.date_debut: ''],
+    date_fin:[this.data ? this.data.date_fin: ''],
+    date_reprise:[this.data ? this.data.date_reprise: ''],
+    dureeMatern:[this.data ? this.data.dureeMatern: ''],
+    dateDebutMatern:[this.data ? this.data.dateDebutMatern: ''],
+    dateFinMatern:[this.data ? this.data.dateFinMatern: ''],
     etablissement_conger:[this.data ? this.data.etablissement_conger: ''],
     validation:[this.data ? this.data.validation: 'en attente d\'une réponse'],
     description:[this.data ? this.data.description: '',Validators.required],
     statut:[this.data ? this.data.statut: 'en attente d`une réponse'],
-    jours:[this.data ? this.data.jours: '',Validators.required],
+    jours:[this.data ? this.data.jours: ''],
     id_Employer:[this.data ? this.data.employerResponseDTO.id: ''],
     id:[this.data ? this.data.id: '' ],
     });
@@ -91,6 +123,9 @@ export class ModalCongerComponent implements OnInit {
       this.f.statut.value,
       this.f.description.value,
       this.f.jours.value,
+      this.f.dureeMatern.value,
+      this.f.dateDebutMatern.value,
+      this.f.dateFinMatern.value,
       this.f.id_Employer.value,
 
       )
@@ -105,10 +140,11 @@ export class ModalCongerComponent implements OnInit {
   }
     },err => {
       console.log(err)
-      this.notif.danger('Echec lors de ajout');
+      this.notif.danger('Echec lors de ajout verifier le nombre de jours restant pour cette année');
       this.isLoading = !this.isLoading;
       this.isLoginFailed = true;
   })
+
 }
 
 

@@ -35,6 +35,7 @@
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 52.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom & Prénom</th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 72.2px;" aria-label="Position: activate to sort column ascending">Type de conger ou permission</th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de jours</th>
+    <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Office: activate to sort column ascending">Nombres de Mois</th>
     <!-- <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 27.2px;" aria-label="Age: activate to sort column ascending">validation</th> -->
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 46.2px ;" aria-label="Salary: activate to sort column ascending"> Statut</th>
     <th class="" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 16%;" aria-label="Salary: activate to sort column ascending">Action</th>
@@ -47,6 +48,7 @@
       <td tabindex="0" class="sorting_1">{{conger?.employerResponseDTO?.nom}} {{conger?.employerResponseDTO?.prenom}}</td>
       <td>{{conger?.type_conger}}</td>
       <td>{{conger?.jours}} jours</td>
+      <td>{{conger?.dureeMatern }}</td>
       <td style="text-align: center;">
         <div style="display: inline-block; vertical-align: middle;" [ngClass]="{
         'valider': conger?.statut == 'EN COURS',

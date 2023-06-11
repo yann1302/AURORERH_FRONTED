@@ -20,58 +20,63 @@ import { ListingSessionFormationComponent } from './Pages/listing-session-format
 import { ListingStagiaireComponent } from './Pages/listing-stagiaire/listing-stagiaire.component';
 import { LoginComponent } from './session/login/login.component';
 import { UserGuardService } from './shared/_helpers/user-guard.service';
+import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 
 const routes: Routes = [
-{path:'session/login', component:LoginComponent},
-{
-  path:'', component:MainComponent, canActivate: [UserGuardService],
-  children:[
-    //employés
-    {path:'', component:DashboardComponent},
-    {path:'listing-employer', component:ListingEmployerComponent },
-    {path: 'ajout-employer', component:AjoutEmployerComponent},
-    {path: 'ajout-employer/:id', component:AjoutEmployerComponent},
-    {path: 'affich-employer/:id',component:AffichEmployerComponent},
-    {path: 'archive-employer', component:ListingArchiveComponent},
+  // resetpassord
+  {path: 'resetpassword', component:ResetPasswordComponent},
+  { path: 'session/login', component: LoginComponent },
 
-    //contrats
-    {path: 'listing-contrat', component:ListingContratComponent},
-    {path: 'ajout-contrat', component:AjoutContratComponent},
-    {path: 'affich-contrat/:id', component:AffichContratComponent},
-    {path: 'ajout-contrat/:id', component:AjoutContratComponent},
+  {
+    path: '',
+    component: MainComponent,
+    canActivate: [UserGuardService],
+    children: [
+      //employés
+      { path: '', component: DashboardComponent },
+      { path: 'listing-employer', component: ListingEmployerComponent },
+      { path: 'ajout-employer', component: AjoutEmployerComponent },
+      { path: 'ajout-employer/:id', component: AjoutEmployerComponent },
+      { path: 'affich-employer/:id', component: AffichEmployerComponent },
+      { path: 'archive-employer', component: ListingArchiveComponent },
 
-    //sanctions
-    {path: 'listing-sanction', component:ListingSanctionComponent},
+      //contrats
+      { path: 'listing-contrat', component: ListingContratComponent },
+      { path: 'ajout-contrat', component: AjoutContratComponent },
+      { path: 'affich-contrat/:id', component: AffichContratComponent },
+      { path: 'ajout-contrat/:id', component: AjoutContratComponent },
 
-    //conger
-    {path: 'listing-conger', component:ListingCongerComponent},
+      //sanctions
+      { path: 'listing-sanction', component: ListingSanctionComponent },
 
-    //stagiaire
-    {path:'listing-stagiaire', component:ListingStagiaireComponent},
-    {path:'affich-stagiaire/:id', component:AffichStagiaireComponent},
+      //conger
+      { path: 'listing-conger', component: ListingCongerComponent },
 
-    //noteProfessionnelle
-    {path:'listing-noteProfessionelle', component:ListingNoteProfessionnelleComponent},
+      //stagiaire
+      { path: 'listing-stagiaire', component: ListingStagiaireComponent },
+      { path: 'affich-stagiaire/:id', component: AffichStagiaireComponent },
 
-    //formation
-    {path:'listing-formation', component:ListingFormationComponent},
+      //noteProfessionnelle
+      { path: 'listing-noteProfessionelle', component: ListingNoteProfessionnelleComponent },
 
-    //les demandes de formation
-    {path:'listing-demandeForm', component:ListingDemandeFormComponent},
+      //formation
+      { path: 'listing-formation', component: ListingFormationComponent },
 
-    //les sessions de formations
-    {path: 'listing-session', component:ListingSessionFormationComponent},
-    {path: 'affich-session/:reference', component:AffichSessionFormComponent}
+      //les demandes de formation
+      { path: 'listing-demandeForm', component: ListingDemandeFormComponent },
 
-  ]
-},
+      //les sessions de formations
+      { path: 'listing-session', component: ListingSessionFormationComponent },
+      { path: 'affich-session/:reference', component: AffichSessionFormComponent },
 
+      // Redirection vers le dashboard si la route n'existe pas
+      { path: '**', redirectTo: '' }
+    ]
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

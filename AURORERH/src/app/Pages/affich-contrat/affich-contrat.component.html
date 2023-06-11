@@ -8,7 +8,7 @@
     </ol>
   </nav>
 </div>
-<div class="main-card mb-3 card" style="height: 50rem;">
+<div class="main-card mb-3 card" style="height: 55rem;">
   <div class="card-body">
     <div ><h1 class="card-title" style="font-size: 200%; color: rgb(81, 81, 230); "> Details du contrat de {{id?.employerResponseDTO?.nom}}</h1></div>
     <hr>
@@ -31,7 +31,7 @@
             <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
-                  type de contrat<span style="color: red;">*</span>
+                  type de contrat
                 </label>
                 <input name="" disabled value="{{id?.type_contrat}}" id="" placeholder="" type="" class="form-control" >
               </div>
@@ -40,7 +40,7 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="country" class="">
-                    lieu de recrutement<span style="color: red;">*</span>
+                    lieu de recrutement
                   </label>
                   <input name="" disabled  value="{{id?.lieu_recrutememnt}}" id="" placeholder="" type="" class="form-control" >
 
@@ -51,7 +51,7 @@
           <div class="col-md-6">
           <div class="position-relative form-group">
             <label for="" class="">
-              date d'embauche <span style="color: red;">*</span>
+              date d'embauche
             </label>
             <input name="" disabled value="{{id?.date_embauche  | date: 'yyyy-MM-dd'}}" id="" placeholder="" type="date" class="form-control" >
 
@@ -60,7 +60,7 @@
           <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
-                  Periode d'essaie<span style="color: red;">*</span>
+                  Periode d'essaie
                 </label>
                 <input name="" disabled value="{{id?.periode_essaie}}" id="" placeholder="" type="text" class="form-control" >
 
@@ -73,7 +73,7 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label class="">
-                    debut de la periode d'essaie<span style="color: red;">*</span>
+                    debut de la periode d'essaie
                   </label>
                   <input type="date" disabled value="{{id?.debut_periode_essaie | date: 'yyyy-MM-dd'}}" class="form-control"  placeholder="" >
 
@@ -84,7 +84,7 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="" class="">
-                    fin de la periode d'essaie<span style="color: red;">*</span>
+                    fin de la periode d'essaie
                   </label>
                   <input name="" id="" disabled value="{{id?.fin_periode_essaie  | date: 'yyyy-MM-dd'}}" type="date" class="form-control" placeholder="" >
 
@@ -98,7 +98,7 @@
             <div class="col-md-6">
               <div class="position-relative form-group">
                 <label  class="">
-                  poste<span style="color: red;">*</span>
+                  poste
                 </label>
                 <input name="address" disabled value="{{id?.poste}}" id="exampleAddress" placeholder="" type="text" class="form-control">
 
@@ -107,18 +107,58 @@
             <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="examplePassword11" class="">
-                    lieu de travail<span style="color: red;">*</span>
+                    lieu de travail
                   </label>
                   <input name="" disabled value="{{id?.lieu_travail}}" id="" placeholder="" type="text" class="form-control" >
 
                 </div>
             </div>
         </div>
+
+        <div class="form-row">
+          <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="" class="">
+                 Congé Annuel
+                </label>
+                <input name="" id="" disabled value="{{id?.congerAnnuel}} Jours" placeholder="" type="" class="form-control" >
+
+              </div>
+          </div>
+        <div class="col-md-3">
+            <div class="position-relative form-group">
+              <label for="" class="">
+               jours pris au cour de l'année
+              </label>
+              <input name="" id="" disabled value="{{id?.jours_de_conges_pris}} jours" placeholder="" type="" class="form-control" >
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="position-relative form-group">
+            <label for="" class="">
+             Congé Annuel restant
+            </label>
+            <input name="" id="conge_restant" disabled value="{{id?.congerAnnuel - id?.jours_de_conges_pris}} jours" placeholder="" type="" class="form-control" >
+          </div>
+      </div>
+    </div>
+
+    <script>
+      var congeAnnuel = "{{id?.congerAnnuel}}"
+      var joursPris = "{{id?.jours_de_conges_pris}}"
+
+      var congeRestant = congeAnnuel - joursPris;
+
+      document.getElementById("conge_restant").value = congeRestant + " jours";
+    </script>
+
          <div class="form-row">
             <div class="col-md-12">
                 <div class="position-relative form-group">
                   <label for="" class="">
-                    Salaire brut<span style="color: red;">*</span>
+                    Salaire brut
                   </label>
                   <input name="" id="" disabled value="{{id?.salaire_brut}} FCFA" placeholder="" type="" class="form-control" >
 
@@ -130,7 +170,7 @@
           <div class="col-md-6">
               <div class="position-relative form-group">
                 <label for="" class="">
-                  Liste des Diplomes<span style="color: red;">*</span>
+                  Liste des Diplomes
                 </label>
                 <input name="" id="" disabled value="{{id?.liste_diplo}}" placeholder="" type="" class="form-control" >
 
@@ -140,7 +180,7 @@
           <div class="col-md-6">
             <div class="position-relative form-group">
               <label for="" class="">
-                Documents liés <span style="color: red;">*</span>
+                Documents liés
               </label>
               <input name="" id="" disabled value="{{id?.document}}" placeholder="" type="" class="form-control" >
               <button style="border:none; float:right" (click)="imprimerDoc(id)" >Telecharger le document </button>

@@ -20,6 +20,7 @@ export class ContratRequestModel {
     public document: string,
     public id_Employer: number,
     public congerAnnuel: number,
+    public  duree_cdd: number,
 
   ) { }
 }

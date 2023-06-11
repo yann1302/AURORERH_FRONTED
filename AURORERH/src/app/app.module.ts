@@ -51,6 +51,7 @@ import { AffichSessionFormComponent } from './Pages/affich-session-form/affich-s
 import { ModalAffichSessionFormComponent } from './Pages/modal-affich-session-form/modal-affich-session-form.component';
 import { ListingArchiveComponent } from './Pages/listing-archive/listing-archive.component';
 import { CanvasJSChart } from 'src/assets/canvasjs-3.7.5/canvasjs.angular.component';
+import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { CanvasJSChart } from 'src/assets/canvasjs-3.7.5/canvasjs.angular.compon
     AffichSessionFormComponent,
     ModalAffichSessionFormComponent,
     ListingArchiveComponent,
-    CanvasJSChart ,
+    CanvasJSChart,
+    ResetPasswordComponent ,
 
 
 

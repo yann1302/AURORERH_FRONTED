@@ -24,13 +24,13 @@
         <div class="position-relative form-group ">
           <label class="">Type<span style="color: red;">*</span></label>
           <select name="select" placeholder="" id="exampleSelect" type="text" class="" formControlName="type_conger"
-            style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;">
+                  style="width: 100%; height: 2.4rem; border-color: rgb(218, 215, 215); border-radius: 5px;"
+                  [(ngModel)]="selectedValue">
             <option value=""></option>
             <option value="congés payés annuels">congés payés annuels</option>
             <option value="Réduction du temps de travail (RTT)">Réduction du temps de travail (RTT)</option>
             <option value="Congé maternité">Congé maternité</option>
-            <option value="Congé de paternité et d'accueil de l'enfant">Congé de paternité et d'accueil de l'enfant
-            </option>
+            <option value="Congé de paternité et d'accueil de l'enfant">Congé de paternité et d'accueil de l'enfant</option>
             <option value="Congé en cas d'hospitalisation immédiate de l'enfant après sa naissance"> Congé en cas
               d'hospitalisation immédiate de l'enfant après sa naissance</option>
             <option value="Congé d'adoption">Congé d'adoption </option>
@@ -39,14 +39,34 @@
             <option value="Décès d'un proche">Décès d'un proche</option>
             <option value="Permission">Permision</option>
           </select>
-          <span
-            *ngIf=" (submitted || formConger.controls.type_conger.touched) && formConger.controls.type_conger.errors "
-            style="color:red">le type de la demande est requise </span>
+          <span *ngIf="(submitted || formConger.controls.type_conger.touched) && formConger.controls.type_conger.errors " style="color:red">le type de la demande est requise </span>
+        </div>
+        <div id="maternityMonths" *ngIf="selectedValue === 'Congé maternité'">
+          <div class="position-relative form-group">
+            <label for="maternityInput">Durée du congé (mois) :</label>
+            <input type="number" id="maternityInput" name="maternityInput" formControlName="dureeMatern" class="form-control" [(ngModel)]="maternityMonths">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="dateDebutMater">Date de début :</label>
+                <input type="date" id="dateDebutMater" name="dateDebutMater" formControlName="dateDebutMatern" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="dateFinMater">Date de fin :</label>
+                <input type="date" id="dateFinMater" name="dateFinMater" formControlName="dateFinMatern" class="form-control">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="position-relative form-group ">
-          <label class="">Jours <span style="color: red;">*</span> </label>
+          <label class="">Jours <span ></span> </label>
           <input type="number" class="form-control" formControlName="jours">
           <!-- <span *ngIf=" (submitted || formConger.controls.jours.touched) && formConger.controls.jours.errors "   style="color:red">  cette date est requise  </span> -->
         </div>
@@ -55,30 +75,30 @@
     <div class="form-row">
       <div class="col-md-6">
         <div class="position-relative form-group ">
-          <label class="" for="">Jour de debut <span style="color: red;">*</span> </label>
+          <label class="" for="">Jour de debut <span ></span> </label>
           <input type="date" class="form-control" formControlName="date_debut">
-          <span *ngIf=" (submitted || formConger.controls.date_debut.touched) && formConger.controls.date_debut.errors "
-            style="color:red"> cette date est requise </span>
+          <!-- <span *ngIf=" (submitted || formConger.controls.date_debut.touched) && formConger.controls.date_debut.errors "
+            style="color:red"> cette date est requise </span> -->
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="">
-          <label class="" for="">Jour de fin <span style="color: red;">*</span></label>
+          <label class="" for="">Jour de fin <span >*</span></label>
           <input type="date" class="form-control" placeholder="" formControlName="date_fin"
             >
-          <span *ngIf=" (submitted || formConger.controls.date_fin.touched) && formConger.controls.date_fin.errors "
-            style="color:red"> cette date est requise </span>
+          <!-- <span *ngIf=" (submitted || formConger.controls.date_fin.touched) && formConger.controls.date_fin.errors "
+            style="color:red"> cette date est requise </span> -->
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="">
-          <label class="" for="">Date de reprise <span style="color: red;">*</span></label>
+          <label class="" for="">Date de reprise <span ></span></label>
           <input type="date" class="form-control" placeholder="" formControlName="date_reprise">
-          <span
+          <!-- <span
             *ngIf=" (submitted || formConger.controls.date_reprise.touched) && formConger.controls.date_reprise.errors "
-            style="color:red"> cette date est requise </span>
+            style="color:red"> cette date est requise </span> -->
         </div>
       </div>
     </div>
@@ -96,32 +116,7 @@
       </div>
     </div>
     <div class="form-row">
-      <!-- <div class="col-md-6">
-                <div  class="">
-                  <label>
-                    validation
-                  </label>
-                  <select  class="form-control" formControlName="validation" >
-                    <option value=""></option>
-                    <option  value="VALIDER">Valider</option>
-                    <option  value="EN EXAMEN">En Examen</option>
-                    <option value="REFUSER">Réfuser</option>
-                  </select>
-                </div>
-          </div> -->
-      <!-- <div class="col-md-12">
-        <div class="">
-          <label>
-            Statut
-          </label>
-          <select class="form-control" formControlName="statut">
-            <option value=""></option>
-            <option value="EN COURS">En cours</option>
-            <option value="SUSPENDU">suspendu</option>
-            <option value="TERMINER">Terminer</option>
-          </select>
-        </div>
-      </div> -->
+
     </div>
     <div *ngIf="isLoading" class="body-block-example-2 d-none" style="cursor: default;">
       <div class="loader">
@@ -138,7 +133,7 @@
 
 </div>
 <mat-dialog-actions align="end">
-  <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)=" addConger()"
+  <button mat-dialog-close class="mb-2 mr-2 btn-icon btn btn-success" (click)="addConger()"
     class="btn btn-success mr-2 mb-2 block-page-btn-example-2">
     Enregistrement
   </button>

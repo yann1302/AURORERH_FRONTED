@@ -47,35 +47,26 @@ export class AffichContratComponent implements OnInit {
 
   imprimerDoc(id: number) {
     const typeDoc = 'contrat de travail';
+    const idEtat = 3;
     const dto = {
       exporter: true,
-      idEtat: 6,
+      idEtat: idEtat,
       paramEtats: [
         {
           texte: 'EMPLOYER_ID',
           valeur: id
-
         }
-
       ]
     };
-    console.log(dto);
-    // const activity = this.activityService.open({
-    //   style: 'color',
-    //   text: '<div class="mt-2 display1 fg-darkBlue">Impression ...</div>',
-    //   type: 'cycle',
-    //   overlayColor: '#A7A0A0',
-    // });
+    console.log('Printing document with parameters:', dto);
     this.genericsService.reportPostResource('etat/etat/imprimer', dto)
       .then((result: any) => {
-        //this.activityService.close(activity);
-        console.log(result);
-        const filename = typeDoc.split('-').join('_')
-          + '_';
-       this.genericsService.getByteArrayAndSaveReportPDF(result, filename);
+        console.log('Printing result:', result);
+        const filename = typeDoc.split('-').join('_') + '_';
+        this.genericsService.getByteArrayAndSaveReportPDF(result, filename);
       })
       .catch((err) => {
-        //this.activityService.close(activity);
+        //console.error('Error while printing:', err);
       });
   }
 }

@@ -21,6 +21,8 @@ export class ContratResponseModel {
     public liste_diplo: string,
     public document: string,
     public congerAnnuel: number,
+    public Jours_de_conges_pris: number,
+    public  duree_cdd: number,
     public employerResponseDTO: EmployerReponseModel,
   ) { }
 }

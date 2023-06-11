@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ADD_CONTRATS, LIST_EMPLOYERS, READBYID_CONTRATS, UPDATE_CONTRATS } from 'src/app/shared/_elements/api_constante';
 import { ContratRequestModel } from 'src/app/shared/_models/requests/contrat-request.model';
 import { EmployerReponseModel } from 'src/app/shared/_models/responses/employer-response.model';
@@ -14,7 +15,7 @@ import { NotificationService } from 'src/app/shared/_services/notification.servi
   styleUrls: ['./ajout-contrat.component.css']
 })
 export class AjoutContratComponent implements OnInit {
-
+  type_contrat: string = '';
   public formContrat!: FormGroup;
   public submitted!: boolean;
   public isLoading!: boolean;
@@ -22,6 +23,7 @@ export class AjoutContratComponent implements OnInit {
   public isLoginFailed = false;
   public employers: EmployerReponseModel[] = [];
   id: any;
+
 
 
 
@@ -40,8 +42,50 @@ export class AjoutContratComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
     this.editContrat(this.id);
+    this.formContrat.get('periode_essaie')?.valueChanges.subscribe(() => {
+      this.updateDates();
+    });
 
+    this.formContrat.get('duree_cdd')?.valueChanges.subscribe(() => {
+      this.updateDates1();
+    });
   }
+
+  updateDates() {
+    const nbMoisConge = parseInt(this.formContrat.value.periode_essaie, 10);
+    if (isNaN(nbMoisConge)) {
+      return;
+    }
+    const dateDebut = new Date();
+    dateDebut.setDate(dateDebut.getDate() + 1);
+    this.formContrat.patchValue({
+      debut_essaie: moment(dateDebut).format('YYYY-MM-DD'),
+    });
+    const dateFin = new Date(dateDebut);
+    dateFin.setMonth(dateFin.getMonth() + nbMoisConge - 1);
+    this.formContrat.patchValue({
+      fin_essaie: moment(dateFin).format('YYYY-MM-DD'),
+    });
+  }
+
+  updateDates1() {
+    const anneesContrat = parseInt(this.formContrat.value.duree_cdd, 10);
+    if (isNaN(anneesContrat)) {
+      return;
+    }
+    const dateDebut = new Date();
+    dateDebut.setDate(dateDebut.getDate() + 1);
+    this.formContrat.patchValue({
+      debut_periode_essaie: moment(dateDebut).format('YYYY-MM-DD'),
+    });
+    const dateFin = new Date(dateDebut);
+    dateFin.setFullYear(dateFin.getFullYear() + anneesContrat - 1);
+    this.formContrat.patchValue({
+      fin_periode_essaie: moment(dateFin).format('YYYY-MM-DD'),
+    });
+  }
+
+
 
 
   editContrat(id: number) {
@@ -95,6 +139,8 @@ export class AjoutContratComponent implements OnInit {
       id_Employer: [data ? data.employerResponseDTO.id : ''],
       document: [data ? data.document : ''],
       congerAnnuel: [data ? data.congerAnnuel : ''],
+      duree_cdd: [data ? data.duree_cdd : ''],
+
       id: [data ? data.id : null],
     })
   }
@@ -130,7 +176,8 @@ export class AjoutContratComponent implements OnInit {
       this.f.liste_diplo.value,
       this.f.document.value,
       this.f.id_Employer.value,
-      this.f.congerAnnuel.value
+      this.f.congerAnnuel.value,
+      this.f.duree_cdd.value
     )
     console.log('avant', dto)
     this.contratService.post(ADD_CONTRATS, dto)

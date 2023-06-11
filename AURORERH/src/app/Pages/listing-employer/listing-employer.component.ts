@@ -151,10 +151,10 @@ export class ListingEmployerComponent implements OnInit {
   }
 
   imprimerDoc() {
-    const typeDoc = 'liste des employés';
+    const typeDoc = 'liste_des_employés';
     const dto = {
       exporter: true,
-      idEtat: 4,
+      idEtat: 1,
       paramEtats: [
         {
           texte: 'string',
@@ -163,18 +163,11 @@ export class ListingEmployerComponent implements OnInit {
       ]
     };
     console.log(dto);
-    // const activity = this.activityService.open({
-    //   style: 'color',
-    //   text: '<div class="mt-2 display1 fg-darkBlue">Impression ...</div>',
-    //   type: 'cycle',
-    //   overlayColor: '#A7A0A0',
-    // });
     this.genericsService.reportPostResource('etat/etat/imprimer', dto)
       .then((result: any) => {
         //this.activityService.close(activity);
         console.log(result);
-        const filename = typeDoc.split('-').join('_')
-          + '_';
+        const filename = typeDoc.split('-').join('_')+ '_';
        this.genericsService.getByteArrayAndSaveReportPDF(result, filename);
       })
       .catch((err) => {

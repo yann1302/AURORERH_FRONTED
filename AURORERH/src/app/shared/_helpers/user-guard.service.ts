@@ -17,10 +17,13 @@ export class UserGuardService implements CanActivate {
     private tokenStorage: TokenStorageService,
     private authService: AuthService,
     private notifService: NotificationService
-    )
-    {}
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const allowedRoutes = ['/resetpassword', '/session/login'];
+    if (allowedRoutes.indexOf(state.url) !== -1) {
+      return true;
+    }
 
     if (this.tokenStorage.getToken()) {
       const helper = new JwtHelperService();
@@ -28,10 +31,8 @@ export class UserGuardService implements CanActivate {
         return !helper.isTokenExpired(this.tokenStorage.getToken());
       }
     } else {
-      // this.notifService.warning('acces refuse');
-      this.router.navigate (['/session/login']);
+      this.router.navigate(['/session/login'] );
     }
-
 
     return true;
   }

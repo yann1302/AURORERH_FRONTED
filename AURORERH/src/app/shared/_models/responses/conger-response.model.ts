@@ -13,6 +13,10 @@ export class CongerResponseModel {
     public date_reprise: string,
     public etablissement_conger: string,
     public jours: number,
+    public Contrat:any,
+    public  dureeMatern:number,
+    public  dateDebutMatern:string,
+    public  dateFinMatern:string,
     public employerResponseDTO: EmployerReponseModel,
 
   ) { }
