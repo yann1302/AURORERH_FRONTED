@@ -34,6 +34,28 @@
             <input type="text" class="form-control" disabled value="{{data?.date_debut | date}}">
           </div>
           </div>
+          <div class="position-relative form-group">
+            <label for="maternityInput">Durée du congé (mois) :</label>
+            <input type="text" class="form-control" disabled value="{{data?.dureeMatern}}">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="dateDebutMater">Date de début :</label>
+                <input type="text" class="form-control" disabled value="{{data?.dateDebutMatern | date}}">
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="dateFinMater">Date de fin :</label>
+                <input type="text" class="form-control" disabled value="{{data?.dateFinMatern | date}}">
+
+              </div>
+            </div>
+          </div>
 
             <div class="col-md-3">
                 <div >
